@@ -9,7 +9,7 @@ gem 'capybara'
 group :development do 
 	gem 'rspec-rails'
 	gem 'rails-footnotes'
-	gem 'annotate-models'
+	gem 'annotate'
 	gem "factory_girl_rails", "~> 1.0.1"
 end
 
