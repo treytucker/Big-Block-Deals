@@ -1,0 +1,7 @@
+
+### Ignoring Finder files
+.DS_Store
+
+
+### Ignoring log files
+Log/*.log
