@@ -336,3 +336,58 @@ ActionController::RoutingError (No route matches "/javascripts/jquery_ujs.js"):
   
 
 Rendered /Users/andrewellis/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+  [1m[36mSQL (8.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateQuotes (20110713191155)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("quotes")
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from debug_rjs= at /usr/local/rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.9/lib/action_view/base.rb:171)
+
+
+Started GET "/" for 206.123.64.210 at Thu Jul 14 23:14:48 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+  [1m[36mSQL (5.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mQuote Load (0.2ms)[0m  SELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1
+Rendered howitworks/consumer.html.erb within layouts/application (72.7ms)
+Completed 200 OK in 119ms (Views: 84.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/javascripts/jquery.js" for 206.123.64.210 at Thu Jul 14 23:14:48 -0500 2011
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/javascripts/jquery_ujs.js" for 206.123.64.210 at Thu Jul 14 23:14:48 -0500 2011
+
+ActionController::RoutingError (No route matches "/javascripts/jquery_ujs.js"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 46.105.24.61 at Thu Jul 14 23:31:19 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+  [1m[36mQuote Load (0.2ms)[0m  [1mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1[0m
+Rendered howitworks/consumer.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 17ms (Views: 9.7ms | ActiveRecord: 0.2ms)

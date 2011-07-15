@@ -4,4 +4,4 @@
 
 
 ### Ignoring log files
-Log/*.log
+log/*.log

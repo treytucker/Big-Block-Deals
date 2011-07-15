@@ -1,6 +1,6 @@
 Bigblockdeals::Application.routes.draw do
   get "howitworks/consumer"
-
+  root :to => "howitworks#consumer"
   get "howitworks/business"
 
   get "deals/index"

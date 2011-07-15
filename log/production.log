@@ -1,0 +1,241 @@
+
+
+Started GET "/" for 206.123.64.210 at Thu Jul 14 22:56:48 -0500 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+
+
+Started GET "/" for 206.123.64.210 at Thu Jul 14 22:58:30 -0500 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+
+
+Started GET "/" for 206.123.64.210 at Thu Jul 14 22:58:31 -0500 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+
+
+Started GET "/" for 206.123.64.210 at Thu Jul 14 23:02:26 -0500 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+
+
+Started GET "/howitworks/consumer" for 206.123.64.210 at Thu Jul 14 23:04:45 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 35ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/howitworks/consumer" for 206.123.64.210 at Thu Jul 14 23:06:13 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/howitworks/consumer" for 206.123.64.210 at Thu Jul 14 23:06:15 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/howitworks/consumer" for 206.123.64.210 at Thu Jul 14 23:06:16 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/howitworks/consumer" for 206.123.64.210 at Thu Jul 14 23:06:16 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/" for 206.123.64.210 at Thu Jul 14 23:07:25 -0500 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+
+
+Started GET "/" for 206.123.64.210 at Thu Jul 14 23:08:06 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 32ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/" for 206.123.64.210 at Thu Jul 14 23:14:12 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/" for 206.123.64.210 at Thu Jul 14 23:58:26 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 31ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/" for 206.123.64.210 at Fri Jul 15 00:00:20 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/" for 46.105.24.61 at Fri Jul 15 00:01:19 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/" for 206.123.64.210 at Fri Jul 15 00:04:43 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 19ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/" for 206.123.64.210 at Fri Jul 15 00:06:35 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/" for 206.123.64.210 at Fri Jul 15 00:06:38 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/" for 206.123.64.210 at Fri Jul 15 00:07:04 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+  [1m[36mSQL (5.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed 500 Internal Server Error in 27ms
+
+NoMethodError (undefined method `eq' for nil:NilClass):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/" for 206.123.64.210 at Fri Jul 15 00:18:34 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mQuote Load (0.1ms)[0m  SELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1
+Completed 404 Not Found in 4ms
+
+ActiveRecord::RecordNotFound (Couldn't find Quote with ID=1):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/howitworks/consumer" for 206.123.64.210 at Fri Jul 15 00:18:41 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+  [1m[36mQuote Load (0.3ms)[0m  [1mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1[0m
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Quote with ID=1):
+  app/controllers/howitworks_controller.rb:3:in `consumer'
+
+
+
+Started GET "/howitworks/consumer" for 206.123.64.210 at Fri Jul 15 00:20:35 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+  [1m[35mQuote Load (0.3ms)[0m  SELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1
+Rendered howitworks/consumer.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/javascripts/jquery.min" for 206.123.64.210 at Fri Jul 15 00:20:35 -0500 2011
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.min"):
+  
+
+
+
+Started GET "/javascripts/jquery_ujs.js" for 206.123.64.210 at Fri Jul 15 00:20:35 -0500 2011
+
+ActionController::RoutingError (No route matches "/javascripts/jquery_ujs.js"):
+  
+
+
+
+Started GET "/howitworks/consumer" for 206.123.64.210 at Fri Jul 15 00:21:11 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+  [1m[36mQuote Load (0.3ms)[0m  [1mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1[0m
+Rendered howitworks/consumer.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/jquery_ujs.js" for 206.123.64.210 at Fri Jul 15 00:21:11 -0500 2011
+
+ActionController::RoutingError (No route matches "/javascripts/jquery_ujs.js"):
+  
+
+
+
+Started GET "/javascripts/jquery.min" for 206.123.64.210 at Fri Jul 15 00:21:11 -0500 2011
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.min"):
+  
+
+
+
+Started GET "/" for 46.105.24.61 at Fri Jul 15 00:21:47 -0500 2011
+  Processing by HowitworksController#consumer as HTML
+  [1m[35mQuote Load (0.4ms)[0m  SELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1
+Rendered howitworks/consumer.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.4ms)
