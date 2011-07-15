@@ -10,7 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713191155) do
+ActiveRecord::Schema.define(:version => 20110715134031) do
+
+  create_table "merchant_informations", :force => true do |t|
+    t.string   "merchant_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "website"
+    t.integer  "office_phone"
+    t.string   "email"
+    t.string   "contact_name"
+    t.string   "industry"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "quotes", :force => true do |t|
     t.string   "author"
