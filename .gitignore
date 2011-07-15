@@ -5,3 +5,4 @@
 
 ### Ignoring log files
 log/*.log
+log/development.log
