@@ -437,3 +437,157 @@ Migrating to CreateMerchantInformations (20110715134031)
 [0m
   [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("merchant_informations")
   [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("quotes")[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateQuotes (20110713191155)
+Migrating to CreateMerchantInformations (20110715134031)
+Migrating to CreateDealDetails (20110715135044)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "deal_details" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255), "merchant_name" varchar(255), "deal_name" varchar(255), "date_to_run" varchar(255), "deal_expiration_date" varchar(255), "max_total_purchase" integer, "max_customer_purchase" integer, "regular_price" decimal, "sale_price" decimal, "restrictions" text, "highlights" text, "full_detail" text, "sales_representative" varchar(255), "phone" integer, "teir_rate" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110715135044')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("deal_details")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("merchant_informations")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("quotes")
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateQuotes (20110713191155)
+Migrating to CreateMerchantInformations (20110715134031)
+Migrating to CreateDealDetails (20110715135044)
+Migrating to CreateCustomersSummaries (20110715135321)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "customers_summaries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "address" varchar(255), "city" varchar(255), "state" varchar(255), "zip" integer, "number_purchased" integer, "referr_a_friend_credits" integer, "was_referral" boolean, "creation_date" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110715135321')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("customers_summaries")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("deal_details")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("merchant_informations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("quotes")[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateQuotes (20110713191155)
+Migrating to CreateMerchantInformations (20110715134031)
+Migrating to CreateDealDetails (20110715135044)
+Migrating to CreateCustomersSummaries (20110715135321)
+Migrating to CreateCustomerDetails (20110715135639)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "customer_details" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "address" varchar(255), "city" varchar(255), "state" varchar(255), "zip" integer, "deal_name" varchar(255), "date_of_deal" varchar(255), "date_of_purchase" varchar(255), "sale_price" decimal, "industry" varchar(255), "affiliate_enitity_name" varchar(255), "gender" boolean, "home_owner" boolean, "interests" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110715135639')
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("customer_details")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("customers_summaries")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("deal_details")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("merchant_informations")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("quotes")
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateQuotes (20110713191155)
+Migrating to CreateMerchantInformations (20110715134031)
+Migrating to CreateDealDetails (20110715135044)
+Migrating to CreateCustomersSummaries (20110715135321)
+Migrating to CreateCustomerDetails (20110715135639)
+Migrating to CreateAffiliates (20110715135852)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "affiliates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "entity_name" varchar(255), "email" varchar(255), "address" varchar(255), "city" varchar(255), "state" varchar(255), "zip" integer, "sales_price" decimal, "merchant" integer, "number_sold" integer, "total_revenue" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110715135852')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("affiliates")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("customer_details")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("customers_summaries")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("deal_details")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("merchant_informations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("quotes")[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateQuotes (20110713191155)
+Migrating to CreateMerchantInformations (20110715134031)
+Migrating to CreateDealDetails (20110715135044)
+Migrating to CreateCustomersSummaries (20110715135321)
+Migrating to CreateCustomerDetails (20110715135639)
+Migrating to CreateAffiliates (20110715135852)
+Migrating to CreatePromotions (20110715140023)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "promotions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "promotion_name" varchar(255), "company_name" varchar(255), "merchant_name" varchar(255), "code" varchar(255), "start" varchar(255), "end" varchar(255), "discount" decimal, "total_used" integer, "max_total_used" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110715140023')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("affiliates")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("customer_details")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("customers_summaries")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("deal_details")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("merchant_informations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("promotions")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("quotes")
