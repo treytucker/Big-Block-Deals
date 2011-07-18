@@ -1,13 +1,4 @@
 Bigblockdeals::Application.routes.draw do
-  get "howitworks/consumer"
-  root :to => "howitworks#consumer"
-  get "howitworks/business"
-
-  get "deals/index"
-  
-  resources :howitworks
-
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
