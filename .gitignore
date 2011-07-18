@@ -1,7 +1,5 @@
-
-### Ignoring Finder files
 .DS_Store
-
-
-### Ignoring log files
 log/*.log
+tmp/**/*
+config/database.yml
+db/*.sqlite3
