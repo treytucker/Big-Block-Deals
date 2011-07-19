@@ -25,3 +25,23 @@ Administration
 		Edit Page content
 		Contacts
 		Manage Blog
+		Manage Widgets
+		Manage Quotes
+		
+Widget
+	Index
+	Show
+	Edit
+	Update
+	New
+	Delete
+	Create
+
+Quote
+	Index
+	Show
+	Edit
+	Update
+	New
+	Delete
+	Create

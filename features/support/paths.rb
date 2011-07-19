@@ -10,6 +10,9 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+    when /the new basic page/
+      new_basic_path
+
     when /the new browse_blog page/
       new_browse_blog_path
 
