@@ -12,7 +12,6 @@ Bigblockdeals::Application.routes.draw do
 # This is for all the Quotes
   resources :quotes
 
-
 # This is for all the Widgets
   resources :widgets
 
