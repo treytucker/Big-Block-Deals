@@ -1,62 +1,22 @@
 Bigblockdeals::Application.routes.draw do
-  resources :blogs
-  
-  root :to => "blogs#show"
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  @controllers = [ "about_uses", "contacts", "current_deals",  "for_businesses","how_it_works_businesses", "how_it_works_consumers", "recent_deals", "privacy_policies", "terms_of_services" ]
+  @controllers.each do |f|
+      get "#{f}/(:format)", :controller => "#{f}", :action => "index", :as => "#{f}"
+      get "administration/#{f}/edit/(:id)(:format)", :controller => "#{f}", :action => "edit", :as => "#{f}_edit"
+      put "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
+      post "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
+  end
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+  root :to => "current_deals#index"
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
+  # This is for all the Blogs
+    resources :blogs
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  # This is for all the Quotes
+    resources :quotes
 
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  # This is for all the Widgets
+    resources :widgets
 
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => "welcome#index"
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
 end

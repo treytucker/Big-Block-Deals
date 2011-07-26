@@ -10,111 +10,112 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110715140023) do
+ActiveRecord::Schema.define(:version => 20110726163104) do
 
-  create_table "affiliates", :force => true do |t|
-    t.string   "entity_name"
-    t.string   "email"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.decimal  "sales_price"
-    t.integer  "merchant"
-    t.integer  "number_sold"
-    t.decimal  "total_revenue"
+  create_table "about_us", :force => true do |t|
+    t.string   "title"
+    t.string   "header_1"
+    t.text     "content_1"
+    t.string   "header_2"
+    t.text     "content_2"
+    t.string   "header_3"
+    t.text     "content_3"
+    t.string   "tag_line"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "customer_details", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.string   "deal_name"
-    t.string   "date_of_deal"
-    t.string   "date_of_purchase"
-    t.decimal  "sale_price"
-    t.string   "industry"
-    t.string   "affiliate_enitity_name"
-    t.boolean  "gender"
-    t.boolean  "home_owner"
-    t.string   "interests"
+  create_table "contacts", :force => true do |t|
+    t.string   "title"
+    t.string   "header_1"
+    t.string   "link_1"
+    t.string   "header_2"
+    t.string   "link_2"
+    t.string   "number"
+    t.text     "address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "customers_summaries", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.integer  "number_purchased"
-    t.integer  "referr_a_friend_credits"
-    t.boolean  "was_referral"
-    t.string   "creation_date"
+  create_table "current_deals", :force => true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "deal_details", :force => true do |t|
-    t.string   "company_name"
-    t.string   "merchant_name"
-    t.string   "deal_name"
-    t.string   "date_to_run"
-    t.string   "deal_expiration_date"
-    t.integer  "max_total_purchase"
-    t.integer  "max_customer_purchase"
-    t.decimal  "regular_price"
-    t.decimal  "sale_price"
-    t.text     "restrictions"
-    t.text     "highlights"
-    t.text     "full_detail"
-    t.string   "sales_representative"
-    t.integer  "phone"
-    t.decimal  "teir_rate"
+  create_table "for_businesses", :force => true do |t|
+    t.string   "title"
+    t.string   "header"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "merchant_informations", :force => true do |t|
-    t.string   "merchant_name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.string   "website"
-    t.integer  "office_phone"
-    t.string   "email"
-    t.string   "contact_name"
-    t.string   "industry"
-    t.string   "note"
+  create_table "how_it_works_businesses", :force => true do |t|
+    t.string   "title"
+    t.string   "main_header"
+    t.text     "main_content"
+    t.string   "subheader_1"
+    t.text     "subcontent_1"
+    t.string   "subheader_2"
+    t.text     "subcontent_2"
+    t.string   "subheader_3"
+    t.text     "subcontent_3"
+    t.string   "subheader_4"
+    t.text     "subcontent_4"
+    t.string   "subheader_5"
+    t.text     "subcontent_5"
+    t.string   "subheader_6"
+    t.text     "subcontent_6"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "promotions", :force => true do |t|
-    t.string   "promotion_name"
-    t.string   "company_name"
-    t.string   "merchant_name"
-    t.string   "code"
-    t.string   "start"
-    t.string   "end"
-    t.decimal  "discount"
-    t.integer  "total_used"
-    t.integer  "max_total_used"
+  create_table "how_it_works_consumers", :force => true do |t|
+    t.string   "title"
+    t.string   "header_1"
+    t.text     "content_1"
+    t.string   "header_2"
+    t.text     "content_2"
+    t.string   "header_3"
+    t.text     "content_3"
+    t.string   "header_4"
+    t.text     "content_4"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "privacy_policies", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "quotes", :force => true do |t|
     t.string   "author"
-    t.text     "quote"
+    t.string   "words_of_wisdom"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recent_deals", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "terms_of_services", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "widgets", :force => true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

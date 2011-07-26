@@ -1,0 +1,2 @@
+module HowItWorksBusinessesHelper
+end

@@ -2,7 +2,7 @@ class CreateQuotes < ActiveRecord::Migration
   def self.up
     create_table :quotes do |t|
       t.string :author
-      t.text :quote
+      t.string :words_of_wisdom
 
       t.timestamps
     end
