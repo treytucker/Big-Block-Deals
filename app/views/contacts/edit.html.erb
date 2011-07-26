@@ -1,0 +1,36 @@
+<% form_for( @content, :url => { :action => "update" } ) do |f| -%>
+
+	<% if @content.errors.any? %>
+	<div id="errorExplanation">
+	  <h2><%= pluralize(@content.errors.count, "error") %> prohibited this record from being saved:</h2>
+	  <ul>
+	  <% @content.errors.full_messages.each do |msg| %>
+	    <li><%= msg %></li>
+	  <% end %>
+	  </ul>
+	</div>
+	<% end %>
+
+	<%= f.label :title, "Title" %><br>
+	<%= f.text_field :title %><br>
+
+	<%= f.label :header_1, "header_1" %><br>
+	<%= f.text_field :header_1 %><br>
+
+	<%= f.label :link_1, "link_1" %><br>
+	<%= f.text_area :link_1 %><br>
+
+	<%= f.label :header_2, "header_2" %><br>
+	<%= f.text_field :header_2 %><br>
+
+	<%= f.label :link_2, "link_2" %><br>
+	<%= f.text_area :link_2 %><br>
+
+	<%= f.label :number, "number" %><br>
+	<%= f.text_field :number %><br>
+	
+	<%= f.label :address, "address" %><br>
+	<%= f.text_area :address %><br>
+	
+	<%= f.submit "Save!", :disable_with => 'Saving...' %>
+<% end -%>

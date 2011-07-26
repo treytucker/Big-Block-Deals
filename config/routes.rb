@@ -1,10 +1,14 @@
 Bigblockdeals::Application.routes.draw do
 
-  root :to => "deals#current"
+@controllers = [ "about_uses", "contacts", "current_deals",  "for_businesses","how_it_works_businesses", "how_it_works_consumers", "recent_deals", "privacy_policies", "terms_of_services" ]
+@controllers.each do |f|
+    get "#{f}/(:format)", :controller => "#{f}", :action => "index", :as => "#{f}"
+    get "administration/#{f}/edit/(:id)(:format)", :controller => "#{f}", :action => "edit", :as => "#{f}_edit"
+    put "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
+    post "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
+  end
 
-# This is all the Deals views
-  get "deals/current"
-  get "deals/recent"
+root :to => "current_deals#index"
 
 # This is for all the Blogs
   resources :blogs

@@ -1,14 +1,16 @@
-class Widget < ActiveRecord::Base
+require 'spec_helper'
+
+describe PrivacyPolicy do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
 
 # == Schema Information
 #
-# Table name: widgets
+# Table name: privacy_policies
 #
 #  id         :integer         not null, primary key
 #  title      :string(255)
-#  text       :text
-#  link       :string(255)
+#  content    :text
 #  created_at :datetime
 #  updated_at :datetime
 #

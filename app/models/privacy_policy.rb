@@ -1,14 +1,13 @@
-class Widget < ActiveRecord::Base
+class PrivacyPolicy < ActiveRecord::Base
 end
 
 # == Schema Information
 #
-# Table name: widgets
+# Table name: privacy_policies
 #
 #  id         :integer         not null, primary key
 #  title      :string(255)
-#  text       :text
-#  link       :string(255)
+#  content    :text
 #  created_at :datetime
 #  updated_at :datetime
 #
