@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
       @content = Contact.new(params[:contact])
       if @content.valid?
         @content.save
-        redirect_to :about_uses_index
+        redirect_to :contacts
       else
         render :edit 
       end

@@ -1,8 +1,19 @@
 class CurrentDealsController < ApplicationController
-  def index
-  end
+    def index
+      @content = CurrentDeal.last
+    end
 
-  def edit
-  end
+    def edit
+      @content = CurrentDeal.last
+    end
 
-end
+    def update
+      @content = CurrentDeal.new(params[:current_deal])
+      if @content.valid?
+        @content.save
+        redirect_to :current_deals
+      else
+        render :edit 
+      end
+    end
+  end
