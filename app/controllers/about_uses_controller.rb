@@ -4,6 +4,7 @@
 
 class AboutUsesController < ApplicationController
   def index
+    @title = "About Us"
     @content = AboutUs.last
   end
 

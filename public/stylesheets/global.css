@@ -1,3 +1,11 @@
+@font-face {
+	font-family: 'cafetaRegular';
+	src: url('/fonts/cafeta/cafeta_regular-webfont.eot');
+	src: local('☺'), url('/fonts/cafeta/cafeta_regular-webfont.woff') format('woff'), url('/fonts/cafeta/cafeta_regular-webfont.ttf') format('truetype'), url('/fonts/cafeta/cafeta_regular-webfont.svg#webfontSsbe2OX7') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
 	
 }
@@ -12,6 +20,7 @@ body {
 	#navigation {
 		background:url(/images/nav-bg.jpg) top left no-repeat;
 		height:128px;
+		font-family:'cafetaRegular';
 		margin:auto;
 		width:960px;
 	}
