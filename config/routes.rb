@@ -1,11 +1,28 @@
 Bigblockdeals::Application.routes.draw do
 
-  @controllers = [ "about_uses", "contacts", "current_deals",  "for_businesses","how_it_works_businesses", "how_it_works_consumers", "recent_deals", "privacy_policies", "terms_of_services" ]
-  @controllers.each do |f|
-      get "#{f}/(:format)", :controller => "#{f}", :action => "index", :as => "#{f}"
-      get "administration/#{f}/edit/(:id)(:format)", :controller => "#{f}", :action => "edit", :as => "#{f}_edit"
-      put "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
-      post "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
+  get "basics/about_uses"
+  
+  get "basics/contacts"
+  
+  get "basics/current_deals"
+  
+  get "basics/for_businesses"
+  
+  get "basics/how_it_works_businesses"
+  
+  get "basics/how_it_works_consumers"
+  
+  get "basics/privacy_policies"
+  
+  get "basics/recent_deals"
+  
+  get "basics/terms_of_services"
+
+  BASIC_CONTROLLERS.each do |f|
+      get "#{f.first}/(:format)", :controller => "basics", :action => "#{f.first}", :as => "#{f.first}"
+      # get "administration/#{f}/edit/(:id)(:format)", :controller => "#{f}", :action => "edit", :as => "#{f}_edit"
+      # put "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
+      # post "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
   end
 
   root :to => "current_deals#index"

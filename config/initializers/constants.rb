@@ -1,0 +1,3 @@
+#This is a list of all the controllers used on teh static pages.
+
+BASIC_CONTROLLERS = { :about_uses => "AboutUs", :contacts => "Contact", :current_deals => "CurrentDeal", :for_businesses => "ForBusiness", :how_it_works_businesses => "HowItWorksBusiness", :how_it_works_consumers => "HowItWorksConsumer", :privacy_policies => "PrivacyPolicy", :recent_deals => "RecentDeal", :terms_of_services => "TermsOfService" }
