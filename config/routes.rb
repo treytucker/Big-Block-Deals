@@ -8,7 +8,7 @@ Bigblockdeals::Application.routes.draw do
     post "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
   end
 
-root :to => "current_deals#index"
+  root :to => "basics#current_deals"
 
 # This is for all the Blogs
   resources :blogs

@@ -1,3 +1,7 @@
+=begin
+  THOUGHTS some = BasicsController.new.about_uses; ActiveRecord.const_get(some).first;
+=end
+
 class AboutUs < ActiveRecord::Base
   validates_presence_of :title, 
                         :header_1, 
@@ -7,6 +11,7 @@ class AboutUs < ActiveRecord::Base
                         :header_3, 
                         :content_3, 
                         :tag_line
+
 end
 
 # == Schema Information
