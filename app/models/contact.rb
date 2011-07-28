@@ -17,3 +17,6 @@ end
 #  updated_at :datetime
 #
 
+=begin
+  TODO Fix the address field. Should be broken up
+=end
