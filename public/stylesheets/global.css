@@ -1,0 +1,52 @@
+body {
+	
+}
+
+	#nav-container {
+		background:url(/images/nav-repeater.jpg) top left repeat-x;
+		float:left;
+		height:115px;
+		width:100%;
+	}
+	
+	#navigation {
+		background:url(/images/nav-bg.jpg) top left no-repeat;
+		height:128px;
+		margin:auto;
+		width:960px;
+	}
+	
+	#greater-container {
+		background:url(/images/container-repeater.jpg) top center repeat-y;
+		width:100%;
+	}
+	
+		#container {
+			margin:auto;
+			min-height:850px;
+			width:960px;
+		}
+	
+	#footer-topper {
+		background:url(/images/footer-topper.jpg) top center no-repeat;
+		height:25px;
+		width:100%;
+	}
+	
+	#footer-container, .debug_dump {
+		background:url(/images/footer-bg.jpg) top left repeat;
+		width:100%;
+	}
+	
+		#footer {
+			color:#969696;
+			margin:auto;
+			width:960px;
+			text-shadow:1px 0px 0px #122123;
+			-moz-text-shadow:1px 0px 0px #122123;
+			-webkit-text-shadow:1px 0px 0px #122123;
+		}
+		
+	.debug_dump {
+		color:#fff;
+	}

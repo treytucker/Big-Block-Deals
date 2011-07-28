@@ -1,22 +1,23 @@
 Bigblockdeals::Application.routes.draw do
 
-@controllers = [ "about_uses", "contacts", "current_deals",  "for_businesses","how_it_works_businesses", "how_it_works_consumers", "recent_deals", "privacy_policies", "terms_of_services" ]
-@controllers.each do |f|
-    get "#{f}/(:format)", :controller => "#{f}", :action => "index", :as => "#{f}"
-    get "administration/#{f}/edit/(:id)(:format)", :controller => "#{f}", :action => "edit", :as => "#{f}_edit"
-    put "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
-    post "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
+  @controllers = [ "about_uses", "contacts", "current_deals",  "for_businesses","how_it_works_businesses", "how_it_works_consumers", "recent_deals", "privacy_policies", "terms_of_services" ]
+  @controllers.each do |f|
+      get "#{f}/(:format)", :controller => "#{f}", :action => "index", :as => "#{f}"
+      get "administration/#{f}/edit/(:id)(:format)", :controller => "#{f}", :action => "edit", :as => "#{f}_edit"
+      put "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
+      post "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
   end
 
-  root :to => "basics#current_deals"
+  root :to => "current_deals#index"
 
-# This is for all the Blogs
-  resources :blogs
 
-# This is for all the Quotes
-  resources :quotes
+  # This is for all the Blogs
+    resources :blogs
 
-# This is for all the Widgets
-  resources :widgets
+  # This is for all the Quotes
+    resources :quotes
+
+  # This is for all the Widgets
+    resources :widgets
 
 end
