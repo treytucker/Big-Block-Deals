@@ -1,7 +1,25 @@
 Bigblockdeals::Application.routes.draw do
+  post "basic_edits/about_uses_create"
+  get "basic_edits/contacts"
+
+  get "basic_edits/current_deals"
+
+  get "basic_edits/for_businesses"
+
+  get "basic_edits/how_it_works_businesses"
+
+  get "basic_edits/how_it_works_consumers"
+
+  get "basic_edits/privacy_policies"
+
+  get "basic_edits/recent_deals"
+
+  get "basic_edits/terms_of_services"
+
 #This is a list of all the controllers used on the static pages.
 
     get "/about_us" => "basics#about_uses"
+    get "/administration/about_us/edit" => "basic_edits#about_uses"
     get "/contact" => "basics#contacts"
     get "/current_deal" => "basics#current_deals"
     get "/for_businesses" => "basics#for_businesses"

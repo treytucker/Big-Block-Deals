@@ -1,10 +1,12 @@
 require 'spec_helper'
 
 describe BasicsController do
+  render_views
+
 
   describe "GET 'about_uses'" do
     it "should be successful" do
-      get 'about_uses'
+      get 'about_us'
       response.should be_success
     end
   end
