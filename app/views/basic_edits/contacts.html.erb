@@ -1,0 +1,26 @@
+<%= form_for @content, :url => :contacts_create do |f| -%>
+
+<%= f.label :title, "Title" %><br>
+<%= f.text_field :title %><br>
+
+<%= f.label :header_1, "Header_1" %><br>
+<%= f.text_field :header_1 %><br>
+
+<%= f.label :link_1, "Link_1" %><br>
+<%= f.text_field :link_1 %><br>
+
+<%= f.label :header_2, "Header_2" %><br>
+<%= f.text_field :header_2 %><br>
+
+<%= f.label :link_2, "Link_2" %><br>
+<%= f.text_field :link_2 %><br>
+
+<%= f.label :number, "Number" %><br>
+<%= f.text_field :number %><br>
+
+<%= f.label :address, "Address" %><br>
+<%= f.text_field :address %><br>
+
+<%= f.submit "Save", :disable_with => 'Saving...' %>
+
+<% end -%>

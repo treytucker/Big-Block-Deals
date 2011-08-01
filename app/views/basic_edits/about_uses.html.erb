@@ -1,0 +1,29 @@
+<%= form_for @content, :url => :about_uses_create do |f| -%>
+
+<%= f.label :title, "Title" %><br>
+<%= f.text_field :title %><br>
+
+<%= f.label :header_1, "Header_1" %><br>
+<%= f.text_field :header_1 %><br>
+
+<%= f.label :content_1, "Content_1" %><br>
+<%= f.text_area :content_1 %><br>
+
+<%= f.label :header_2, "Header_2" %><br>
+<%= f.text_field :header_2 %><br>
+
+<%= f.label :content_2, "Content_2" %><br>
+<%= f.text_area :content_2 %><br>
+
+<%= f.label :header_3, "Header_3" %><br>
+<%= f.text_field :header_3 %><br>
+
+<%= f.label :content_3, "Content_3" %><br>
+<%= f.text_area :content_3 %><br>
+
+<%= f.label :tag_line, "Tag_line" %><br>
+<%= f.text_field :tag_line %><br>
+
+<%= f.submit "Save", :disable_with => 'Saving...' %>
+
+<% end -%>

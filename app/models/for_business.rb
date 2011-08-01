@@ -1,3 +1,6 @@
+=begin
+  TODO Add validations
+=end
 class ForBusiness < ActiveRecord::Base
 end
 
