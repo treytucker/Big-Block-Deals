@@ -1,3 +1,6 @@
+=begin
+  TODO Add validations
+=end
 class Quote < ActiveRecord::Base
 end
 

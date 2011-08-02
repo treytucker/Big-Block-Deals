@@ -1,5 +1,8 @@
 #This is a list of all the controllers used on teh static pages.
-
+=begin
+  FIXME Fix the url name for recent deals
+  FIXME Test the new urls
+=end
 BASIC_CONTROLLERS = { 
   :about_uses => {:model => "AboutUs", :url => 'about_us'}, 
   :contacts => {:model => "Contact", :url => :contact}, 

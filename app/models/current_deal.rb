@@ -1,3 +1,6 @@
+=begin
+  TODO Add validations
+=end
 class CurrentDeal < ActiveRecord::Base
 end
 

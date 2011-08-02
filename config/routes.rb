@@ -1,41 +1,10 @@
 Bigblockdeals::Application.routes.draw do
-  post "basic_edits/about_uses_create"
-  get "basic_edits/contacts"
 
-  get "basic_edits/current_deals"
-
-  get "basic_edits/for_businesses"
-
-  get "basic_edits/how_it_works_businesses"
-
-  get "basic_edits/how_it_works_consumers"
-
-  get "basic_edits/privacy_policies"
-
-  get "basic_edits/recent_deals"
-
-  get "basic_edits/terms_of_services"
-
-#This is a list of all the controllers used on the static pages.
-
-    get "/about_us" => "basics#about_uses"
-    get "/administration/about_us/edit" => "basic_edits#about_uses"
-    get "/contact" => "basics#contacts"
-    get "/current_deal" => "basics#current_deals"
-    get "/for_businesses" => "basics#for_businesses"
-    get "/how_it_works_businesses" => "basics#how_it_works_businesses"
-    get "/how_it_works_consumers" => "basics#how_it_works_consumers"
-    get "/privacy_policy" => "basics#privacy_policies"
-    get "/recent_deals" => "basics#recent_deals"
-    get "/terms_of_service" => "basics#terms_of_services"
-
-  # Potentially implimented in future to refactor the code...
-  # BASIC_CONTROLLERS.each do |f|
-  #     get "#{f.first}/(:format)", :controller => "basics", :action => "#{f.first}"
-  #     # get "administration/#{f}/edit/(:id)(:format)", :controller => "#{f}", :action => "edit", :as => "#{f}_edit"
-  #     # put "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
-  #     # post "administration/#{f}/update/(:id)(:format)", :controller => "#{f}", :action => "update"
-  # end
+  BASIC_CONTROLLERS.each do |f|
+      get "#{f.last[:url].to_sym}/(:format)", :controller => "basics", :action => "#{f.first}", :as => f.last[:url]
+      get "administration/#{f.last[:url].to_sym}/edit/(:id)(:format)", :controller => "basic_edits", :action => "#{f.first}", :as => "#{f.first}_edit"
+      match "administration/#{f.last[:url].to_sym}/create/(:id)(:format)", :controller => "basic_edits", :action => "#{f.first}_create", :as => "#{f.first}_create"
+  end
   root :to => "basics#current_deals"
 
 
