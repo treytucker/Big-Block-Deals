@@ -1,6 +1,21 @@
+@font-face {
+	font-family: 'cafetaRegular';
+	src: url('/fonts/cafeta/cafeta_regular-webfont.eot');
+	src: local('☺'), url('/fonts/cafeta/cafeta_regular-webfont.woff') format('woff'), url('/fonts/cafeta/cafeta_regular-webfont.ttf') format('truetype'), url('/fonts/cafeta/cafeta_regular-webfont.svg#webfontSsbe2OX7') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
 	
 }
+
+/*= = = = = = = = = = = = = = = = = = = = = = = = =*/
+/*      GLOBAL APPLICATION STYLES     */
+/*= = = = = = = = = = = = = = = = = = = = = = = = =*/
+
+
+/* NAVIGATION */
 
 	#nav-container {
 		background:url(/images/nav-repeater.jpg) top left repeat-x;
@@ -12,9 +27,42 @@ body {
 	#navigation {
 		background:url(/images/nav-bg.jpg) top left no-repeat;
 		height:128px;
+		font-family:'cafetaRegular';
 		margin:auto;
+		position:relative;
 		width:960px;
 	}
+	
+		h1#root-link a {
+		    background: none repeat scroll 0 0 #EEEEEE;
+		    height: 70px;
+		    left: 7px;
+		    position: absolute;
+		    top: 37px;
+		    width: 225px;
+			
+		}
+		
+		ul#minor-nav {
+			float:right;
+			height:30px;
+			max-width:730px;
+		}
+		
+			li.minor-link {
+				float:left;
+				margin:3px 0px 0px 20px;
+			}
+			
+				li.minor-link a {
+					color:#a9e2ff;
+					font-size:12px;
+					text-decoration:none;
+					text-transform:uppercase;
+					text-shadow:0px -1px 1px #36aeeb;
+				}
+	
+/* CONTAINER */
 	
 	#greater-container {
 		background:url(/images/container-repeater.jpg) top center repeat-y;
@@ -26,7 +74,9 @@ body {
 			min-height:850px;
 			width:960px;
 		}
-	
+
+/* FOOTER */
+
 	#footer-topper {
 		background:url(/images/footer-topper.jpg) top center no-repeat;
 		height:25px;
