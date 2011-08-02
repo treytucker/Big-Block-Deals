@@ -7,6 +7,7 @@ class AboutUs < ActiveRecord::Base
                         :header_3, 
                         :content_3, 
                         :tag_line
+
 end
 
 # == Schema Information

@@ -1,3 +1,6 @@
+=begin
+  TODO Add validations
+=end
 class HowItWorksBusiness < ActiveRecord::Base
   
 end

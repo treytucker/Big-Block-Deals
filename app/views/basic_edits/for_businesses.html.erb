@@ -1,0 +1,14 @@
+<%= form_for @content, :url => :for_businesses_create do |f| -%>
+
+<%= f.label :title, "Title" %><br>
+<%= f.text_field :title %><br>
+
+<%= f.label :header, "Header" %><br>
+<%= f.text_field :header %><br>
+
+<%= f.label :content, "Content" %><br>
+<%= f.text_area :content %><br>
+
+<%= f.submit "Save", :disable_with => 'Saving...' %>
+
+<% end -%>
