@@ -1,6 +1,4 @@
 Bigblockdeals::Application.routes.draw do
-<<<<<<< HEAD
-<<<<<<< HEAD
 
   BASIC_CONTROLLERS.each do |f|
       get "#{f.last[:url].to_sym}/(:format)", :controller => "basics", :action => "#{f.first}", :as => f.last[:url]
@@ -20,5 +18,3 @@ Bigblockdeals::Application.routes.draw do
     resources :widgets
 
 end
-=======
-=======
