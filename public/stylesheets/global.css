@@ -34,18 +34,32 @@ body {
 	}
 	
 		h1#root-link a {
-		    background: none repeat scroll 0 0 #EEEEEE;
+		    background: none;
 		    height: 70px;
 		    left: 7px;
 		    position: absolute;
+			text-indent:-9999px;
 		    top: 37px;
 		    width: 225px;
 			
 		}
 		
+		ul#greater-nav {
+			float:right;
+			height:92px;
+			width:722px;
+		}
+		
+			.greater-nav-item {
+				float:left;
+				height:92px;	
+			}
+			
+			
+		
 		ul#minor-nav {
 			float:right;
-			height:30px;
+			height:22px;
 			max-width:730px;
 		}
 		
