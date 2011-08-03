@@ -1,18 +1,20 @@
+=begin
+  THOUGHTS Add revision functionality.
+=end
 class BasicEditsController < ApplicationController
 
 # BASIC_CONTROLLERS is defined in #{rails_root}/config/initializers/constants.rb
 
   BASIC_CONTROLLERS.each do |f|
-    create = "#{f.first}_create"
-    edit = f.first
-    models = f.last[:model]
-    url = f.last[:url].to_sym
-    
+    create = "#{f.first}_create" # Defines the create method name
+    edit = f.first # Defines the edit method name
+    models = f.last[:model] # used for refactoring the models
+    url = f.last[:url].to_sym # Used for redirections
+
     define_method(edit) {
       @content = ActiveRecord.const_get(models).last
     }
-  
-  
+
     define_method(create) {
         @content = ActiveRecord.const_get(models).new(params[url])
         if @content.valid?

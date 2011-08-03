@@ -2,8 +2,9 @@
   TODO Add validations
 =end
 class Contact < ActiveRecord::Base
-end
+  validates_presence_of :title, :header_1, :link_1, :header_2, :link_2, :number, :address
 
+end
 # == Schema Information
 #
 # Table name: contacts

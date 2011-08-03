@@ -2,6 +2,7 @@
   TODO Add validations
 =end
 class RecentDeal < ActiveRecord::Base
+  validates_presence_of :title
 end
 
 # == Schema Information
