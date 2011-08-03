@@ -1,6 +1,3 @@
-=begin
-  TODO Add validations
-=end
 class ForBusiness < ActiveRecord::Base
   validates_presence_of :title, :header, :content
 end

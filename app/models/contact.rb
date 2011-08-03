@@ -1,6 +1,3 @@
-=begin
-  TODO Add validations
-=end
 class Contact < ActiveRecord::Base
   validates_presence_of :title, :header_1, :link_1, :header_2, :link_2, :number, :address
 

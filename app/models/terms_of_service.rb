@@ -1,6 +1,3 @@
-=begin
-  TODO Add validations
-=end
 class TermsOfService < ActiveRecord::Base
   validates_presence_of :title, :content
 end
