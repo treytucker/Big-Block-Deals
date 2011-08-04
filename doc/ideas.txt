@@ -1,3 +1,4 @@
-Administration Authentication?
+TODO Build out Authentication system for admin controller
 	Devise
-	
+TODO Build out the Widgets
+TODO Build out the Quotes

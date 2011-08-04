@@ -1,5 +1,6 @@
 =begin
   THOUGHTS Add revision functionality.
+  TODO Add login stuff
 =end
 class BasicEditsController < ApplicationController
 
@@ -13,6 +14,7 @@ class BasicEditsController < ApplicationController
 
     define_method(edit) {
       @content = ActiveRecord.const_get(models).last
+      @title = "Edit #{f.last[:title]} Page"
     }
 
     define_method(create) {

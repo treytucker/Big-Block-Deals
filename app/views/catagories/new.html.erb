@@ -1,0 +1,13 @@
+<!--
+	TODO refactor this crap
+-->
+<h1>Catagories#new</h1>
+
+<% form_for @catagory do |f| -%>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name, :autofocus => :autofocus %>
+
+<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end -%>
+
+<%= link_to "Back", catagories_path %>
