@@ -1,4 +1,4 @@
-#This is a list of all the controllers used on teh static pages.
+#This is a list of all the controllers used on the static pages.
 
 BASIC_CONTROLLERS = { 
   :about_uses => {:model => "AboutUs", :url => 'about_us', :title => "About Us"}, 
