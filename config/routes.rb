@@ -9,12 +9,16 @@ Bigblockdeals::Application.routes.draw do
 
 
   # This is for all the Blogs
-    resources :blogs
+    resources :good_reads
+    get '/good_reads/catagory/:id', :controller => 'good_reads', :action => 'show_catagories', :as => "good_reads_catagory"
 
   # This is for all the Quotes
     resources :quotes
 
   # This is for all the Widgets
     resources :widgets
+    
+  #this is for all the Catagories for the good reads
+    resources :catagories
 
 end

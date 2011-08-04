@@ -1,0 +1,32 @@
+<h1>Good Reads</h1>
+<!--
+	TODO Needs to add style to the flash notices
+-->
+<p><%= flash.notice %></p>
+<% if @post.empty? %>
+	<p>There are no posts in this catagory</p>
+<% else %>
+	  
+	<% @post.each do |f| %>
+
+	<h1><%= f.title %></h1><br>
+	<p><%= special_date(f.created_at) %></p><br>
+
+	<% unless f.catagory.nil? %>
+		<h1><%= f.catagory.name %></h1><br>
+	<% end %>
+
+	<p><%= f.post %></p>
+		<% unless session[:your_the_bomb_dot_com] %>
+
+			<br><br>
+			<%= link_to "Edit This Post", edit_good_read_path(f.id) %><br><br>
+			<%= link_to "Delete This Post", { :action => "destroy", :id => f.id }, :confirm => 'Are you sure?', :method => :delete %>	
+
+
+		<% end %>
+
+	<% end %>
+<% end %>
+<br><br>
+<%= link_to "Back to Good Reads", good_reads_path %>

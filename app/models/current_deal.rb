@@ -1,7 +1,6 @@
-=begin
-  TODO Add validations
-=end
 class CurrentDeal < ActiveRecord::Base
+validates_presence_of :title
+
 end
 
 # == Schema Information

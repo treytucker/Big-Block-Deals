@@ -1,7 +1,5 @@
-=begin
-  TODO Add validations
-=end
 class PrivacyPolicy < ActiveRecord::Base
+  validates_presence_of :title, :content
 end
 
 # == Schema Information
