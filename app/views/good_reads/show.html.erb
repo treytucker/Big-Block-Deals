@@ -1,0 +1,26 @@
+<h1>Good Reads</h1>
+<!--
+	TODO Needs to add style to the flash notices
+-->
+<p><%= flash.notice %></p>
+<% @post %>
+
+	<h1><%= @post.title %></h1><br>
+	<p><%= special_date(@post.created_at) %></p><br>
+
+	<% unless @post.catagory.nil? %>
+		<h1><%= @post.catagory.name %></h1><br>
+	<% end %>
+
+	<p><%= @post.post %></p>
+		<% unless session[:your_the_bomb_dot_com] %>
+
+			<br><br>
+			<%= link_to "Edit This Post", edit_good_read_path(@post.id) %><br><br>
+			<%= link_to "Delete This Post", { :action => "destroy", :id => @post.id }, :confirm => 'Are you sure?', :method => :delete %>	
+
+
+		<% end %>
+
+<br><br>
+<%= link_to "Back to Good Reads", good_reads_path %>
