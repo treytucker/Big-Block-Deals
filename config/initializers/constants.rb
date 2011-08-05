@@ -8,6 +8,6 @@ BASIC_CONTROLLERS = {
   :how_it_works_businesses => {:model => "HowItWorksBusiness", :url => :how_it_works_business, :title => "How it Works"}, 
   :how_it_works_consumers => {:model => "HowItWorksConsumer", :url => :how_it_works_consumer, :title => "How it Works"}, 
   :privacy_policies => {:model => "PrivacyPolicy", :url => :privacy_policy, :title => "Privacy Policy"}, 
-  :recent_deals => {:model => "RecentDeal", :url => :recent_deal, :title => "Recent Deals"},
+  :recent_deals => {:model => "RecentDeal", :url => :recent_deals, :title => "Recent Deals"},
   :terms_of_services => {:model => "TermsOfService", :url => :terms_of_service, :title => "Terms of Service"}
 }

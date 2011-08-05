@@ -3,17 +3,17 @@
 	TODO Needs to add style to the flash notices
 -->
 <p><%= flash.notice %></p>
-<% if @post.empty? %>
-	<p>There are no posts in this catagory</p>
+<% if @posts.empty? %>
+	<p>There are no posts in the <%= params[:id].capitalize %> category</p>
 <% else %>
 	  
-	<% @post.each do |f| %>
+	<% @posts.each do |f| %>
 
 	<h1><%= f.title %></h1><br>
 	<p><%= special_date(f.created_at) %></p><br>
 
 	<% unless f.catagory.nil? %>
-		<h1><%= f.catagory.name %></h1><br>
+		<%= link_to "#{f.catagory.name}", :action => "show_catagories", :id => f.catagory.name %>
 	<% end %>
 
 	<p><%= f.post %></p>

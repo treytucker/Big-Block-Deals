@@ -2,3 +2,5 @@ TODO Build out Authentication system for admin controller
 	Devise
 TODO Build out the Widgets
 TODO Build out the Quotes
+THOUGHTS Highlighting text overlaps in firefox
+THOUGHTS Talk to trey about the flash notification system.

@@ -1,5 +1,4 @@
-<h1>GOOD READS</h1>
-
+<h1>GOOD READS</h1><br><br>
 <% if @posts.nil? %>
 	<p>No New Posts. Please check back soon. </p>
 <% else %>
@@ -8,15 +7,14 @@
 	<h2><%= @posts[0].title %></h2>
 	<p><%= special_date(@posts[0].created_at) %></p><br>
 	<% unless @posts[0].catagory.nil? %>
-	<h1><%= @posts[0].catagory.name %></h1><br>
+		<%= link_to "#{@posts[0].catagory.name}", :action => "show_catagories", :id => @posts[0].catagory.name %><br>
 	<% end %>
-	
-	<p><%= shorten(@posts[0].post) %><br><br>
-	<%= link_to "Read More", good_read_path(@posts[0].id) %></p><br>
+	&nbsp;<br><p><%= shorten(@posts[0].post) %><br><br>
+	<%= link_to "Read More", good_read_path(@posts[0].id) %></p>&nbsp;<br><br>
 
 <!-- This is for all the posts after -->
 	<% i = 1 %>
-	<% until i == 6 %>
+	<% until i == @num %>
 	<% unless @posts[i].nil? %>
 		<br>
 		<h2><%= @posts[i].title %></h2>
@@ -24,28 +22,22 @@
 		<p><%= special_date(@posts[i].created_at) %></p><br>
 		
 		<% unless @posts[i].catagory.nil? %>
-			<h1><%= @posts[i].catagory.name %></h1><br>
+			<%= link_to "#{@posts[i].catagory.name}", :action => "show_catagories", :id => @posts[i].catagory.name %>&nbsp;
 		<% end %>
 		
-		<p><%= shorten(@posts[i].post) %><br><br>
+		<% unless @posts[i].image.nil? %>
+			<%= image_tag @posts[i].image.url(:thumb) %>
+		<% end %>
 		
-		<%= link_to "Read More", good_read_path(@posts[i].id) %></p><br>
+		<br>&nbsp;<br><p><%= shorten(@posts[i].post) %><br><br>
+		
+		<%= link_to "Read More", good_read_path(@posts[i].id) %></p><br>&nbsp;<br><br>
 	<% end %>
 	<% i += 1 %>
 	<% end %>
 	
 <% end %>
 
-<% if @catagories.nil? %>
-	NO CATAGORIES YO!
-<% else %>
-	<h1>CATAGORIES</h1>
-	<% @catagories.each do |f| %>
-		<p><%= f.name %></p>
-		<%= link_to "#{f.name}", :action => "show_catagories", :id => f.id %>
-	<% end %>
-<% end %>
+<%= render :partial => 'catagories' %>
 
-<% unless session[:your_the_bomb_dot_com] %>
-	<br><%= link_to "Manage Catagories", catagories_path %>
-<% end %>
+<%= render :partial => 'dates' %>
