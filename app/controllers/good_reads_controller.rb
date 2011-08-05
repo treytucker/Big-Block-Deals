@@ -5,7 +5,6 @@
   TODO Add catagory section
   TODO Build Side widget - Blogs by Date
   TODO Build Side widget - Blogs by Catagory
-  TODO Fix the destroy images. might be associated with mac os x permissions.
 =end
 
 class GoodReadsController < ApplicationController
@@ -77,7 +76,8 @@ class GoodReadsController < ApplicationController
   end
   
   def destroy
-    @post = GoodRead.find(params[:id]).delete
+    @post = GoodRead.find(params[:id])
+    @post.destroy
     redirect_to :good_reads, :notice => "Post Deleted"
   end
 
