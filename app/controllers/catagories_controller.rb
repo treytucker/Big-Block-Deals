@@ -1,5 +1,5 @@
 =begin
-  FIXME When a catagory is deleted, needs to check if any good reads are on that catagory
+  FIXME Shows flash notice on redirect
 =end
 
 class CatagoriesController < ApplicationController
@@ -28,11 +28,22 @@ class CatagoriesController < ApplicationController
   end
 
   def destroy
-    if @catagory = Catagory.find(params[:id]).delete
-      redirect_to catagories_path, :notice => "Catagory '#{@catagory.name}' Deleted."
+    @catagory = Catagory.find(params[:id])
+    if @catagory.good_reads.count == 0
+      if @catagory.destroy
+        redirect_to catagories_path, :notice => "Catagory '#{@catagory.name}' Deleted."
+      else
+        render catagories_path, :notice => "The catagory was not deleted..."
+      end
     else
-      render catagories_path, :notice => "The catagory was not deleted..."
+      a = []
+      @good_reads = @catagory.good_reads.each do |f|
+        a.concat(["#{f.title}"])
+      end
+      flash[:notice] = "The catagory was not deleted...Please move #{@good_reads.to_sentence} to a new catagory."
+      redirect_to catagories_path
     end
+
   end
 
   def create

@@ -3,10 +3,12 @@
 	<p>there are no catagories...</p><%= link_to "Add One", new_catagory_path %>
 <% else %>
   <% @catagories.each do |f| %>
-	<li><%= f.name %> - <%= link_to "Edit", edit_catagory_path(f.id) %> <%= link_to "Delete", { :action => "destroy", :id => f.id }, :confirm => 'Are you sure?', :method => :delete %>	
-	</li>
+	<p><%= f.name %> - 
+	<%= link_to "Edit", edit_catagory_path(f.id) %> 
+	<%= link_to "Delete", { :action => "destroy", :id => f.id }, :confirm => 'Are you sure?', :method => :delete %></p><br>
   <% end %>
 <% end %>
 <ul>
-	
-<%= link_to "New Catagory", new_catagory_path %>
+
+<%= link_to "New Catagory", new_catagory_path %><br>
+<%= link_to "Back to Good Reads", good_reads_path() %>

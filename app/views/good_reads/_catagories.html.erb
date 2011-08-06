@@ -1,0 +1,21 @@
+<!-- Trey don't laugh.... I just did this really quick so itd be readable -->
+
+<div class="sidebar">
+	<div class="indiv-widget">
+		<div class="widget-topper"></div>
+		<div class="widget-content">
+			<% if @catagories.nil? %>
+				<h3>NO CATAGORIES YO!</h3>
+			<% else %>
+				<h3>CATAGORIES</h3>
+				<% @catagories.each do |f| %>
+					<%= link_to "#{f.name}", :action => "show_catagories", :id => f.name %><br>
+				<% end %>
+			<% end %>
+			<% unless session[:your_the_bomb_dot_com] %>
+				<br><%= link_to "Manage Catagories", catagories_path %>
+			<% end %>
+		</div>
+		<div class="widget-bottom"></div>
+	</div>
+</div>

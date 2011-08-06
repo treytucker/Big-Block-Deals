@@ -2,7 +2,7 @@
 <!--
 	TODO Needs to add style to the flash notices
 -->
-<p><%= flash.notice %></p>
+<p><%= flash.notice %></p><br>
 <% @post %>
 
 	<h1><%= @post.title %></h1><br>
@@ -12,10 +12,15 @@
 		<h1><%= @post.catagory.name %></h1><br>
 	<% end %>
 
-	<p><%= @post.post %></p>
+	<% unless @post.image.nil? %>
+		<%= image_tag @post.image.url(:medium) %>
+	<% end %>
+
+
+		&nbsp;<br><p><%= @post.post %></p>
 		<% unless session[:your_the_bomb_dot_com] %>
 
-			<br><br>
+			&nbsp;<br><br>
 			<%= link_to "Edit This Post", edit_good_read_path(@post.id) %><br><br>
 			<%= link_to "Delete This Post", { :action => "destroy", :id => @post.id }, :confirm => 'Are you sure?', :method => :delete %>	
 

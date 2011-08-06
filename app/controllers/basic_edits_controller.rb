@@ -1,5 +1,5 @@
 =begin
-  THOUGHTS Add revision functionality.
+  TODO Add revision functionality.
   TODO Add login stuff
 =end
 class BasicEditsController < ApplicationController
