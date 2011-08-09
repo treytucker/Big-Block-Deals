@@ -7,26 +7,13 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+
 	<%= render  'layouts/navigation' %>
+
 	<div id="greater-container">
 		<div id="container">
-			<div class="quote-container">
-				<a href="#" id="quote-closer">×</a>
-				<div id="all-quotes">
-					<div class="indiv-quote">
-						<p class="main-quote-text">Here's some example text to see how this stuff looks when it's all styled.</p>
-						<p class="main-quote-author"> - Author Name</p>
-					</div>
-					<div class="indiv-quote">
-						<p class="main-quote-text">Another really really nice quote that people will really love to read.</p>
-						<p class="main-quote-author"> - John Doe</p>
-					</div>
-				</div>
-				<div id="controls">
-					<a href="#" class="quote-left-btn prev"></a>
-					<a href="#" class="quote-right-btn next"></a>
-				</div>
-			</div>
+			<%= render 'layouts/quotes' %>
+			
 			<div class="content <%= @layout %>">
 				<div class="three-fourths-topper"></div>
 				<div class="main-content">
@@ -35,22 +22,13 @@
 				<div class="three-fourths-bottom"></div>
 			</div>
 			
-			<div class="sidebar">
-				<div class="indiv-widget">
-					<div class="widget-topper"></div>
-					<div class="widget-content">
-						<img class="widget-image" src="/images/armbar_example.jpg"/>
-						<h3 class="widget-title">Baby Armbar</h3>
-						<span class="widget-text">Killing baby kills other babies with armbars. <a href="#" class="widget-link">Example Link</a></span>
-						<span class="minor-widget-text">Says Sensai.</span>
-					</div>
-					<div class="widget-bottom"></div>
-				</div>
-			</div>
-			
+			<%= render 'layouts/widgets' %>
+
 		</div>
 	</div>
+
 	<%= render 'layouts/footer' %>
+
 </body>
 </html>
 <%= debug(params) if Rails.env.development? %>
