@@ -377,6 +377,7 @@ p {
 
 .three-fourths {
 	float:left;
+	min-height:300px;
     margin:20px 35px 0px 0px;
     width: 704px;
 }
@@ -407,7 +408,7 @@ p {
 	
 .full-width {
 	float:left;
-    height: 300px;
+    min-height: 300px;
 	margin:20px 0px 0px;
     width: 960px;
 }
