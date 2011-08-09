@@ -11,6 +11,7 @@ Bigblockdeals::Application.routes.draw do
   # This is for all the Blogs
   get '/good_reads/catagory/:id', :controller => 'good_reads', :action => 'show_catagories', :as => "good_reads_catagory"
   get '/good_reads/date/(:year(/:month))', :controller => 'good_reads', :action => 'show_dates', :as => "good_reads_date"
+
   # TODO Add in redirect for /good_reads/date => /good_reads
     resources :good_reads
   # This is for all the Quotes

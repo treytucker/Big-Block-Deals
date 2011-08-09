@@ -7,6 +7,10 @@ class AboutUs < ActiveRecord::Base
                         :header_3, 
                         :content_3, 
                         :tag_line
+                        
+  # has_and_belongs_to_many :quote, :join_table => "about_uses_quotes"
+  has_many :quotes, :as => :quotable
+  has_many :widgets, :as => :wedgetable
 
 end
 

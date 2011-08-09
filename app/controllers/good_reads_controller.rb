@@ -2,9 +2,6 @@
   TODO Add paginaion
   TODO Add errors to views
   TODO Add in login stuffes
-  TODO Add catagory section
-  TODO Build Side widget - Blogs by Date
-  TODO Build Side widget - Blogs by Catagory
 =end
 
 class GoodReadsController < ApplicationController

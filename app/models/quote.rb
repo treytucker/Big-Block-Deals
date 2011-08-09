@@ -1,7 +1,11 @@
 =begin
-  TODO Add validations
+  TODO Add Associations.
 =end
 class Quote < ActiveRecord::Base
+  validates_presence_of :author, :words_of_wisdom
+  # has_and_belongs_to_many :about_us, :join_table => "about_uses_quotes"
+  belongs_to :quotable, :polymorphic => true
+  
 end
 
 # == Schema Information
