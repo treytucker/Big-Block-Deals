@@ -15,6 +15,7 @@ class BasicEditsController < ApplicationController
     define_method(edit) {
       @content = ActiveRecord.const_get(models).last
       @title = "Edit #{f.last[:title]} Page"
+      @quotes = Quote.all
     }
 
     define_method(create) {

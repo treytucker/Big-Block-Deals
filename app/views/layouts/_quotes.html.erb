@@ -1,13 +1,14 @@
-
+<% unless @content.quotes.empty? %>
 <div class="quote-container">
 	
 	<a href="#" id="quote-closer">×</a>
 	<div id="all-quotes">
-
-		<div class="indiv-quote">
-			<p class="main-quote-text">Here's some example text to see how this stuff looks when it's all styled.</p>
-			<p class="main-quote-author"> - Author Name</p>
-		</div>
+		<% @content.quotes.each do |f| %>
+			<div class="indiv-quote">
+				<p class="main-quote-text"><%= f.words_of_wisdom %></p>
+				<p class="main-quote-author"> - <%= f.author %></p>
+			</div>
+		<% end %>
 		
 		<div class="indiv-quote">
 			<p class="main-quote-text">Another really really nice quote that people will really love to read.</p>
@@ -22,3 +23,4 @@
 	</div>
 
 </div>
+<% end %>
