@@ -1,3 +1,29 @@
-<p><%= @content.title %></p>
-<p><%= @content.header %></p>
-<p><%= @content.content %></p>
+<div class="content-header">
+	<img class="page-header" src="/images/feature-your-business-title.jpg"/>
+</div>
+<div class="for-businesses-main">
+	<h2><%= @content.header %></h2>
+	<p><%= @content.content %></p>
+	<form id="business-contact-form">
+		<div class="half-width-form">
+			<label>First Name</label>
+			<input name="first_name"/>
+		</div>
+		<div class="half-width-form">
+			<label>Last Name</label>
+			<input name="last_name"/>
+		</div>
+		<div class="half-width-form">
+			<label>Email</label>
+			<input name="email"/>
+		</div>
+		<div class="half-width-form">
+			<label>Phone Number</label>
+			<input name="phone"/>
+		</div>
+		<div class="full-width-form">
+			<label>Company Name</label>
+			<input name="company"/>
+		</div>
+	</form>
+</div>

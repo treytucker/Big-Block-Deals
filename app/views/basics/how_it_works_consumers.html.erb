@@ -1,9 +1,31 @@
-<p><%= @content.title %></p>
-<p><%= @content.header_1 %></p>
-<p><%= @content.content_1 %></p>
-<p><%= @content.header_2 %></p>
-<p><%= @content.content_2 %></p>
-<p><%= @content.header_3 %></p>
-<p><%= @content.content_3 %></p>
-<p><%= @content.header_4 %></p>
-<p><%= @content.content_4 %></p>
+<div class="content-header">
+	<img class="page-header" src="/images/how-it-works-title.jpg"/>
+	<div class="how-it-works-nav">
+		<a class="consumers consumer-active"></a>
+		<%= link_to	'', :how_it_works_business, :class => "businesses" %>
+	</div>
+</div>
+<div class="hiw-content">
+	<img id="hiw-consumer-graphic" src="/images/how-it-works_consumer.jpg"/>
+	<div class="hiw-consumer-text">
+		<h2>In The Beginning</h2>
+		<p><%= @content.header_1 %></p>
+		<span><%= @content.content_1 %></span>
+	</div>
+	<div class="hiw-consumer-text">
+		<h2>Purchase the Deal</h2>
+		<p><%= @content.header_2 %></p>
+		<span><%= @content.content_2 %></span>
+	</div>
+	<div class="hiw-consumer-text">
+		<h2>Share</h2>
+		<p><%= @content.header_3 %></p>
+		<span><%= @content.content_3 %></span>
+	</div>
+	<div class="hiw-consumer-text">
+		<h2>Bring the Value Home</h2>
+		<p><%= @content.header_4 %></p>
+		<span><%= @content.content_4 %></span>
+	</div>
+	
+</div>

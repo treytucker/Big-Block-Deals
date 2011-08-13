@@ -1,9 +1,11 @@
 <div id="footer-topper"></div>
 <div id="footer-container">
 	<ul id="footer">
-		<li><a class="footer-link">Item 1</a></li>
-		<li><a class="footer-link">Item 2</a></li>
-		<li><a class="footer-link">Item 3</a></li>
-		<li><a class="footer-link">Item 4</a></li>
+		<li><%= link_to 'About Us', :about_us, :class => "footer-link" %></li>
+		<li><%= link_to 'Contact', :contact, :class => "footer-link" %></li>
+		<li><%= link_to 'Policy', :privacy_policy, :class => "footer-link" %></li>
+		<li><a class="footer-link" href="http://twitter.com/bigblockdeals">Twitter</a></li>
+		<li><a class="footer-link" href="http://facebook.com/bigblockdeals">Facebook</a></li>
+		<li class="footer-link">Copyright 2011 Digital Slough</li>
 	</ul>
 </div>

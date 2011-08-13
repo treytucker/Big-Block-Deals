@@ -12,18 +12,25 @@
 
 	<div id="greater-container">
 		<div id="container">
-			<%= render 'layouts/quotes' %>
+			<%= #render 'layouts/quotes' 
+			%>
 			
 			<div class="content <%= @layout %>">
-				<div class="three-fourths-topper"></div>
+				<div class="topper"></div>
 				<div class="main-content">
 					<%= yield %>
 				</div>
-				<div class="three-fourths-bottom"></div>
+				<div class="bottom"></div>
 			</div>
+<<<<<<< HEAD
 			
 			<%= render 'layouts/widgets' %>
 
+			<% if @layout == 'three-fourths' %>
+				<%= render 'layouts/sidebar' %>
+			<% end %>
+						
+>>>>>>> master
 		</div>
 	</div>
 
