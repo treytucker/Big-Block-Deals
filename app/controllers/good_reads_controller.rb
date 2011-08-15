@@ -8,9 +8,11 @@
 =end
 
 class GoodReadsController < ApplicationController
+  uses_tiny_mce
+  
   def index
     @num = 12
-    @posts = GoodRead.all(:limit => @num)
+    @posts = GoodRead.all(:limit => @num).reverse
     @title = "Good Reads"
     @catagories = Catagory.all
     @dates = GoodRead.all( :select => "created_at", :order => "created_at" )
@@ -23,11 +25,11 @@ class GoodReadsController < ApplicationController
   end
   
   def show_catagories
-    @catagory = Catagory.where("? = name", params[:id])
-    if @catagory.empty?
+    @catagory = Catagory.find_by_name(params[:id])
+    if @catagory.good_reads.nil?
       redirect_to good_reads_path, :notice => "There is no catagory named #{params[:id]}"
     else
-      @posts = GoodRead.where("? = catagory_id", @catagory_id)
+      @posts = @catagory.good_reads
     end
   end
   
@@ -65,11 +67,13 @@ class GoodReadsController < ApplicationController
   def edit
     @post = GoodRead.find(params[:id])
     @title = "Good Read | Edit #{@post.created_at.to_s(:good_reads_title)}"
+    @catagories = Catagory.find(:all, :order => "name")
   end
 
   def update
     @post = GoodRead.find(params[:id])
     if @post.update_attributes(params[:good_read])
+      
       redirect_to(@post, :notice => "Update Successful")
     else
       render :edit

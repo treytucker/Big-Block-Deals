@@ -12,7 +12,7 @@
 		<h1><%= @post.catagory.name %></h1><br>
 	<% end %>
 
-	<% unless @post.image.nil? %>
+	<% if @post.image? %>
 		<%= image_tag @post.image.url(:medium) %>
 	<% end %>
 
@@ -23,7 +23,6 @@
 			&nbsp;<br><br>
 			<%= link_to "Edit This Post", edit_good_read_path(@post.id) %><br><br>
 			<%= link_to "Delete This Post", { :action => "destroy", :id => @post.id }, :confirm => 'Are you sure?', :method => :delete %>	
-
 
 		<% end %>
 
