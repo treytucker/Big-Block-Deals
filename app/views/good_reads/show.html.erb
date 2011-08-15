@@ -17,7 +17,7 @@
 	<% end %>
 
 
-		&nbsp;<br><p><%= @post.post %></p>
+		&nbsp;<br><p><%= @post.post.html_safe %></p>
 		<% unless session[:your_the_bomb_dot_com] %>
 
 			&nbsp;<br><br>

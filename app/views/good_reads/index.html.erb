@@ -43,7 +43,7 @@
 			<%= image_tag @posts[i].image.url(:medium) %>
 		<% end %>
 		
-		<br>&nbsp;<br><p><%= shorten(@posts[i].post) %><br><br>
+		<br>&nbsp;<br><p><%= shorten(@posts[i].post.html_safe) %><br><br>
 		
 		<%= link_to "Read More", good_read_path(@posts[i].id) %></p><br>&nbsp;<br><br>
 	<% end %>
