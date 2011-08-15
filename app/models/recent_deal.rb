@@ -1,5 +1,9 @@
 class RecentDeal < ActiveRecord::Base
   validates_presence_of :title
+  has_many :quotes, :as => :quotable
+  has_many :widgets, :as => :wedgetable
+
+
 end
 
 # == Schema Information

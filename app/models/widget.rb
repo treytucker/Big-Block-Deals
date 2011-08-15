@@ -1,4 +1,12 @@
+=begin
+  TODO Build the custom validations for this. Needs to have one of them?
+    Talk to try to make sure. 
+
+=end
+
 class Widget < ActiveRecord::Base
+  belongs_to :widgetable, :polymorphic => true
+
 end
 
 # == Schema Information

@@ -1,23 +1,32 @@
 <!--
 	TODO Add error Messages
+	TODO Add the Frame
+	TODO remove photo button
 -->
 
 <h1>Good Reads</h1>
 
-<% form_for @post, :html => { :multipart => true } do |f| -%>
+<%= render "shared/error_messages", :target => @post %>
+
+<%= form_for @post, :html => { :multipart => true, :method => :put } do |f| -%>
+
 	<%= f.label :title, "Title" %><br>
 	<%= f.text_field :title %><br>
 
 	<%= f.label :post, "Post" %><br>
-	<%= f.text_area :post %><br><br>
+	<%= f.text_area :post, :class => "mceEditor" %><br><br>
 	
 	<%= f.label :catagory, "Category" %>
-	<%= select :good_read, :catagory_id, Catagory.find(:all).collect{|p| [p.name, p.id]} %><br>
-
 	
-	<% unless @post.image.nil? %>
-		<%= image_tag @post.image.url(:thumb) %>
+	<%= f.collection_select( :catagory_id, @catagories, :id, :name, options ={:prompt => "-Select a catagory"}, :class =>"catagory") %>
+	
+	<% if @post.image? %>
+		<%= image_tag @post.image.url(:thumb) %><br><br>
+		<%= f.label :image_delete, "Delete that image!" %>
+	    <%= f.check_box :image_delete %><br>
 	<% end %>
-	<%= f.file_field :image, :accept => "jpg/png" %><br>	
+	
+	
+	<br><%= f.file_field :image, :accept => "jpg/png" %><br>	
 	<%= f.submit "Update", :disable_with => 'Updating...' %>
 <% end -%>

@@ -1,7 +1,6 @@
-<!--
-	TODO Add Error Messages
--->
 <%= form_for @content, :url => :how_it_works_businesses_create do |f| -%>
+<%= render "shared/error_messages", :target => @content %>
+
 
 <%= f.label :title, "Title" %><br>
 <%= f.text_field :title %><br>

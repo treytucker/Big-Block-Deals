@@ -10,7 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110815165946) do
+# <<<<<<< HEAD
+# ActiveRecord::Schema.define(:version => 20110815165946) do
+# =======
+ActiveRecord::Schema.define(:version => 20110809153036) do
 
   create_table "about_us", :force => true do |t|
     t.string   "title"
@@ -215,6 +218,8 @@ ActiveRecord::Schema.define(:version => 20110815165946) do
     t.string   "words_of_wisdom"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quotable_id"
+    t.string   "quotable_type"
   end
 
   create_table "recent_deals", :force => true do |t|

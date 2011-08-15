@@ -1,0 +1,14 @@
+<h1>Quotes</h1><br>
+
+<% if @quotes.empty? %>
+	<p>No quotes currently exist. Please create one here. <%= link_to "New Quote", new_quote_path %></p>
+<% else %>
+	<% @quotes.each do |f| %>
+		<%= f.words_of_wisdom %><br>
+		- <%= f.author %>
+		<%= link_to "Edit", edit_quote_path(f.id) %> 
+		<%= link_to "Delete", { :action => "destroy", :id => f.id }, :confirm => 'Are you sure?', :method => :delete %></p><br><br>
+	<% end %>
+<% end %>
+
+<%= link_to "New Quote", new_quote_path %><br>

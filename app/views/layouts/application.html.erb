@@ -5,28 +5,17 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults, 'jquery', 'global', 'mbScrollable', 'iframe_hack' %>
   <%= csrf_meta_tag %>
+  <%= include_tiny_mce_if_needed %>
+
 </head>
 <body>
+
 	<%= render  'layouts/navigation' %>
+
 	<div id="greater-container">
 		<div id="container">
-			<div class="quote-container">
-				<a href="#" id="quote-closer">×</a>
-				<div id="all-quotes">
-					<div class="indiv-quote">
-						<p class="main-quote-text">Here's some example text to see how this stuff looks when it's all styled.</p>
-						<p class="main-quote-author"> - Author Name</p>
-					</div>
-					<div class="indiv-quote">
-						<p class="main-quote-text">Another really really nice quote that people will really love to read.</p>
-						<p class="main-quote-author"> - John Doe</p>
-					</div>
-				</div>
-				<div id="controls">
-					<a href="#" class="quote-left-btn prev"></a>
-					<a href="#" class="quote-right-btn next"></a>
-				</div>
-			</div>
+			<%= render 'layouts/quotes' %>
+			
 			<div class="content <%= @layout %>">
 				<div class="topper"></div>
 				<div class="main-content">
@@ -34,13 +23,18 @@
 				</div>
 				<div class="bottom"></div>
 			</div>
+			
+			<%= render 'layouts/widgets' %>
+
 			<% if @layout == 'three-fourths' %>
 				<%= render 'layouts/sidebar' %>
 			<% end %>
-						
+
 		</div>
 	</div>
+
 	<%= render 'layouts/footer' %>
+
 </body>
 </html>
 <%= debug(params) if Rails.env.development? %>

@@ -29,11 +29,12 @@ class CatagoriesController < ApplicationController
 
   def destroy
     @catagory = Catagory.find(params[:id])
+    # Checks if there are any good_reads associated with the catagory.
     if @catagory.good_reads.count == 0
       if @catagory.destroy
         redirect_to catagories_path, :notice => "Catagory '#{@catagory.name}' Deleted."
       else
-        render catagories_path, :notice => "The catagory was not deleted..."
+        render catagories_path, :notice => "Well that was weird, #{@catagory.name} was not deleted..."
       end
     else
       a = []
