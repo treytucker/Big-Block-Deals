@@ -9,5 +9,6 @@ BASIC_CONTROLLERS = {
   :how_it_works_consumers => {:model => "HowItWorksConsumer", :url => :how_it_works_consumer, :title => "How it Works", :layout => "full-width", :hiw_active => "consumer-active"}, 
   :privacy_policies => {:model => "PrivacyPolicy", :url => :privacy_policy, :title => "Privacy Policy", :layout => "three-fourths"}, 
   :recent_deals => {:model => "RecentDeal", :url => :recent_deals, :title => "Recent Deals", :layout => "three-fourths"},
-  :terms_of_services => {:model => "TermsOfService", :url => :terms_of_service, :title => "Terms of Service", :layout => "three-fourths"}
+  :terms_of_services => {:model => "TermsOfService", :url => :terms_of_service, :title => "Terms of Service", :layout => "three-fourths"},
+  :user_widgets => {:model => "UserWidget", :url => :user, :title => "Your Account", :layout => "three-fourths"}
 }

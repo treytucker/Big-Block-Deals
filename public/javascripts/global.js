@@ -1,7 +1,9 @@
 //Preloading Fuctions
 
+
 //Regular functions
 $(document).ready(function(){
+
 
 $('#login-dropdown').hide();
 

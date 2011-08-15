@@ -24,7 +24,7 @@ p {
 	font-family:'Trebuchet MS';
 }
 
-#container a, .sidebar .submit-btn {
+.sidebar .submit-btn {
 	text-decoration:underline;
 	text-shadow:0px 1px 0px #ea833a;
 	-moz-text-shadow:0px 1px 0px #ea833a;
@@ -640,6 +640,52 @@ iframe #large_top_share {
 }
 
 
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+		/* RECENT DEALS */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+		/* USER WIDGET */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+#DCmenu {
+	float:left;
+	margin:10px 0px 0px;
+	text-shadow:none;
+}
+
+	#DCmenu li {
+		float:left;
+	}
+	#DCmenu a {
+	    background: url("/images/white-form-btn.jpg") no-repeat scroll left top transparent;
+	    float: left;
+	    font-family: 'cafeta';
+	    font-size: 21px;
+	    height: 33px;
+	    margin: 0 5px 0 0;
+	    padding: 8px 0 0;
+	    text-align: center;
+	    text-decoration: none;
+	    text-transform: uppercase;
+	    width: 225px;
+	}
+	
+#My-Deals {
+	float:left;
+	margin:0px 0px !important;
+}
+	
+	#DealNavigation {
+		float:left !important;
+		position:static !important;
+	}
+
 		
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 		
@@ -920,8 +966,15 @@ iframe #large_top_share {
 }
 	
 	
-	
-	
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+		/* IMPORTANT GLOBAL STUFF */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+.three-fourths h2, .three-fourths h3, .three-fourths p, .three-fourths span, .three-fourths a, .full-width h2, .full-width h3,  .full-width p,  .full-width span,  .full-width a {
+	color:#595757 !important;
+}
 	
 	.debug_dump {
 		color:#fff;
