@@ -630,13 +630,14 @@ p {
 	margin:0px 0px 0px -24px !important;
 	width:720px !important;
 }
-	.content iframe .large_top_share {
-		background:none !important;
-		color:#595757 !important;
+	.content iframe form {
+		width:700px;
 	}
-	.content iframe #large_num_sold {
-		display:none !important;
-	}
+
+iframe #large_top_share {
+	background:none !important;
+	color:#595757;
+}
 
 
 		
@@ -924,5 +925,4 @@ p {
 	
 	.debug_dump {
 		color:#fff;
-		display:none;
 	}

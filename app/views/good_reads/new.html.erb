@@ -8,7 +8,7 @@
 	<%= f.text_field :title %> &nbsp;&nbsp;&nbsp;&nbsp;<%= Date.today.strftime("%d %B %Y") %><br>
 
 	<%= f.label :post, "Post" %><br>
-	<%= f.text_area :post %><br><br>
+	<%= f.text_area :post, :class => "mceEditor" %><br><br>
 	
 	<%= f.label :catagory, "Category" %>
 	<%= select :good_read, :catagory_id, Catagory.find(:all).collect{|p| [p.name, p.id]} %><br>

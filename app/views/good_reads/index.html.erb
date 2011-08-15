@@ -12,14 +12,14 @@
 <!-- This is for the first post	 -->
 	<h2><%= @posts[0].title %></h2>
 	
-	<p><%= special_date(@posts[0].created_at) %></p><br>
+	<%= special_date(@posts[0].created_at) %><br>
 	
 	
 	<% unless @posts[0].catagory.nil? %>
 		<%= link_to "#{@posts[0].catagory.name}", :action => "show_catagories", :id => @posts[0].catagory.name %><br>
 	<% end %>
 	
-	<% unless @posts[0].image.nil? %>
+	<% if @posts[0].image? %>
 		<%= image_tag @posts[0].image.url(:medium) %>
 	<% end %>
 	
@@ -39,11 +39,11 @@
 			<%= link_to "#{@posts[i].catagory.name}", :action => "show_catagories", :id => @posts[i].catagory.name %>&nbsp;<br>
 		<% end %>
 		
-		<% unless @posts[i].image.nil? %>
+		<% if @posts[i].image? %>
 			<%= image_tag @posts[i].image.url(:medium) %>
 		<% end %>
 		
-		<br>&nbsp;<br><p><%= shorten(@posts[i].post) %><br><br>
+		<br>&nbsp;<br><p><%= shorten(@posts[i].post.html_safe) %><br><br>
 		
 		<%= link_to "Read More", good_read_path(@posts[i].id) %></p><br>&nbsp;<br><br>
 	<% end %>
