@@ -10,10 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110815165946) do
-# =======
-# ActiveRecord::Schema.define(:version => 20110816133849) do
-# >>>>>>> 0526651b8d5190a898522d3522b7d72b06ae598c
+ActiveRecord::Schema.define(:version => 20110817165144) do
 
   create_table "about_us", :force => true do |t|
     t.string   "title"
@@ -47,6 +44,31 @@ ActiveRecord::Schema.define(:version => 20110815165946) do
     t.integer  "merchant"
     t.integer  "number_sold"
     t.decimal  "total_revenue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "business_contact_models", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "business_inquiries", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "company_name"
+    t.string   "website"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

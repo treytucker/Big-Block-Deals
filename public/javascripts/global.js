@@ -1,17 +1,19 @@
 //Preloading Fuctions
 
-
 //Regular functions
 $(document).ready(function(){
 
+$('#login-dropdown').removeClass('.hidden');
 $('#login-dropdown').hide();
 
+$('#quote-container').show();
 $('#all-quotes').mbScrollable({
 	width:914,
 	elementsInPage:1,
 	controls:"#controls",
 	autoscroll:false,
 });
+
 
 $('#login-link').click(function(){
 	$('#login-dropdown').slideToggle("fast");
@@ -24,7 +26,7 @@ $('.login-closer').click(function(){
 })
 
 $('#quote-closer').click(function (){
-	$('.quote-container').slideToggle("slow");
+	$('#quote-container').slideToggle("slow");
 })
 
 // Clears and stores the default value in input fields

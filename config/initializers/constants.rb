@@ -66,7 +66,7 @@ BASIC_CONTROLLERS = {
     :form => :terms_of_service,
     :title => "Terms of Service", 
     :layout => "three-fourths"
-    }
+    },
   :user_widgets => {
     :model => "UserWidget", 
     :url => :user, 

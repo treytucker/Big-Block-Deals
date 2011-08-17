@@ -24,6 +24,10 @@ p {
 	font-family:'Trebuchet MS';
 }
 
+.hidden {
+	display:none;
+}
+
 .sidebar .submit-btn {
 	text-decoration:underline;
 	text-shadow:0px 1px 0px #ea833a;
@@ -279,7 +283,7 @@ p {
 		
 /* QUOTES */
 
-.quote-container {
+#quote-container {
 	float:left;
 	height:45px;
 	margin:5px 0px;
