@@ -6,6 +6,7 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'capybara'
 gem "paperclip", "~> 2.3"
+gem "bcrypt-ruby", :require => "bcrypt"
 
 group :development do 
 	gem 'rspec-rails'

@@ -1,0 +1,9 @@
+<h1>List of the Admins</h1>
+
+<ul>
+	<% @admins.each do |f| %>
+		<li><%= f.email %> - <%= link_to "Change Password", edit_admin_path(f.id) %> - <%= link_to "Remove", { :action => :destroy, :id => f.id }, :confirm => 'Are you sure?', :method => :delete %></p></li>
+	<% end %>
+</ul>
+
+<%= link_to "Create a new administrator", new_admin_path %>

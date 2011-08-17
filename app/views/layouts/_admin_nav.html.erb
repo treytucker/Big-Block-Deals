@@ -1,0 +1,7 @@
+<% if session[:admin_id] %>
+	<div id="admin_nav">
+		<%= link_to "New Good Read", new_good_read_path %> <%= link_to "See Admins", admins_path %>
+		
+		<%= link_to "Logout", logout_path %>
+	</div>
+<% end %>

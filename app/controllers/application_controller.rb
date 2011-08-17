@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   
   private
   
-    def administration
-      unless session[:your_the_bomb_dot_com] == true
+    def bomb_dot_com
+      unless session[:admin_id]
         redirect_to root_path
       end
     end

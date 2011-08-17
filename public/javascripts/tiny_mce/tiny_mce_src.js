@@ -399,7 +399,6 @@
 		},
 
 		// Fix function for IE 9 where regexps isn't working correctly
-		// Todo: remove me once MS fixes the bug
 		_replace : function(find, replace, str) {
 			// On IE9 we have to fake $x replacement
 			if (isRegExpBroken) {
@@ -2119,7 +2118,7 @@ tinymce.html.Styles = function(settings, schema) {
 		addValidChildren(settings.valid_children);
 		addValidElements(settings.extended_valid_elements);
 
-		// Todo: Remove this when we fix list handling to be valid
+
 		addValidChildren('+ol[ul|ol],+ul[ul|ol]');
 
 		// Delete invalid elements
@@ -6875,7 +6874,7 @@ tinymce.html.Writer = function(settings) {
 			}
 		});
 
-		// Fix list elements, TODO: Replace this later
+		// Fix list elements, 
 		if (settings.fix_list_elements) {
 			htmlParser.addNodeFilter('ul,ol', function(nodes, name) {
 				var i = nodes.length, node, parentNode;
@@ -7073,7 +7072,6 @@ tinymce.html.Writer = function(settings) {
 
 			// Most browsers support this feature so we report errors
 			// for those at least to help users track their missing plugins etc
-			// todo: Removed since it produced error if the document is unloaded by navigating away, re-add it as an option
 			/*elm.onerror = function() {
 				alert('Failed to load: ' + url);
 			};*/
@@ -8993,7 +8991,6 @@ tinymce.create('tinymce.ui.ToolbarGroup:tinymce.ui.Container', {
 		var t = this, h = [], controls = t.controls, each = tinymce.each, settings = t.settings;
 
 		h.push('<div id="' + t.id + '" role="group" aria-labelledby="' + t.id + '_voice">');
-		//TODO: ACC test this out - adding a role = application for getting the landmarks working well.
 		h.push("<span role='application'>");
 		h.push('<span id="' + t.id + '_voice" class="mceVoiceLabel" style="display:none;">' + dom.encode(settings.name) + '</span>');
 		each(controls, function(toolbar) {
@@ -9918,7 +9915,7 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 			}
 
 			// Create iframe
-			// TODO: ACC add the appropriate description on this.
+
 			n = DOM.add(o.iframeContainer, 'iframe', { 
 				id : t.id + "_ifr",
 				src : u || 'javascript:""', // Workaround for HTTPS warning in IE6/7
@@ -11597,7 +11594,6 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 
 				// WebKit produces lists within block elements so we need to split them
 				// we will replace the native list creation logic to custom logic later on
-				// TODO: Remove this when the list creation logic is removed
 				listElm = dom.getParent(selection.getNode(), 'ol,ul');
 				if (listElm) {
 					listParent = listElm.parentNode;

@@ -919,9 +919,16 @@ iframe #large_top_share {
 	width:97%;
 }
 	
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+		/* ADMIN NAV */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */	
 	
 	
-	
+#admin_nav {
+	background-color: red;
+}	
 	
 	.debug_dump {
 		color:#fff;
