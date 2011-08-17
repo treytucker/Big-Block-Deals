@@ -33,6 +33,8 @@ class AdminsController < ApplicationController
   @admin = Admin.find(params[:id])
     if @admin.update_attributes(params[:admin])
       redirect_to admins_path, :notice => "Password Changed"
+    else
+      render "edit"
     end
   end
   
