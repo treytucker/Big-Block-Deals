@@ -4,7 +4,6 @@
 //Regular functions
 $(document).ready(function(){
 
-
 $('#login-dropdown').hide();
 
 $('#all-quotes').mbScrollable({
@@ -27,5 +26,45 @@ $('.login-closer').click(function(){
 $('#quote-closer').click(function (){
 	$('.quote-container').slideToggle("slow");
 })
+
+// Clears and stores the default value in input fields
+$('input[type="text"]').each(function() {
+
+       var default_value = this.value;
+
+       $(this).focus(function(){
+               if(this.value == default_value) {
+                       this.value = '';
+               }
+       });
+
+       $(this).blur(function(){
+               if(this.value == '') {
+                       this.value = default_value;
+               }
+       });
+
+});
+
+$('textarea').each(function() {
+
+       var default_value = this.value;
+
+       $(this).focus(function(){
+               if(this.value == default_value) {
+                       this.value = '';
+               }
+       });
+
+       $(this).blur(function(){
+               if(this.value == '') {
+                       this.value = default_value;
+               }
+       });
+
+});
+
+//$('.business-input').cleardefault();
+
 
 });

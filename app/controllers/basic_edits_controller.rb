@@ -3,6 +3,7 @@
   TODO Add login stuff
 =end
 class BasicEditsController < ApplicationController
+  uses_tiny_mce
 
 # BASIC_CONTROLLERS is defined in #{rails_root}/config/initializers/constants.rb
 

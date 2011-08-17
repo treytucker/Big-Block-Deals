@@ -830,7 +830,7 @@ iframe #large_top_share {
 	#business-contact-form {
 		float:left;
 		margin:20px 0px 0px;
-		width:600px;
+		width:324px;
 	}
 	
 		.half-width-form {
@@ -848,13 +848,30 @@ iframe #large_top_share {
 		}
 		
 		.half-width-form input, .full-width-form input {
-		    background: url("/images/white-form-input-bg.jpg") no-repeat scroll left top transparent;
+		    background: url("/images/business-narrow-input-bg.jpg") no-repeat scroll left top transparent;
 		    color: #595757;
 		    float: left;
 		    font-size: 12px;
 		    height: 31px;
 		    padding: 0 10px;
+			text-transform:uppercase;
 		    width: 206px;
+		}
+		
+		.state-dropdown {
+			background:url('/images/business-state-input-bg.jpg') top left no-repeat;
+			border:0px;
+			color: #595757;
+			float:left;
+			height:31px;
+			padding:8px 0px 0px 10px;
+			width:54px;
+		}
+		
+		.business-zip {
+			background:url('/images/business-zip-input-bg.jpg') top left no-repeat !important;
+			margin:0px 0px 0px 17px;
+			width:64px !important;
 		}
 		
 	.full-width-form {
@@ -865,6 +882,35 @@ iframe #large_top_share {
 		.full-width-form input {
 			background:url(/images/wide-input-bg.jpg) top left no-repeat;
 			width:303px;
+		}
+		
+		.full-width-form textarea {
+			background:url('/images/business-message-input-bg.jpg') top left no-repeat;
+			border:0px;
+			color:#595757;
+			float:left;
+			font-family:'Trebuchet MS';
+			font-size:12px;
+			height:101px;
+			padding:10px 0px 0px 10px;
+			resize:none;
+			text-transform:uppercase;
+			width:293px;
+		}
+		
+		.business-tester p {
+			margin:15px 0px 0px 5px !important;
+		}
+		.business-tester span {
+			float:left;
+			margin:0px 0px 10px 5px !important;
+		}
+		
+		.full-width-form .business-submit {
+			background:url('/images/business-submit-bg.jpg') top left no-repeat !important;
+		}
+		.full-width-form .business-submit:active {
+			background:url('/images/business-submit-down.jpg') top left no-repeat !important;
 		}
 		
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
