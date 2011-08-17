@@ -11,6 +11,9 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20110815165946) do
+# =======
+# ActiveRecord::Schema.define(:version => 20110816133849) do
+# >>>>>>> 0526651b8d5190a898522d3522b7d72b06ae598c
 
   create_table "about_us", :force => true do |t|
     t.string   "title"
@@ -21,6 +24,14 @@ ActiveRecord::Schema.define(:version => 20110815165946) do
     t.string   "header_3"
     t.text     "content_3"
     t.string   "tag_line"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "admins", :force => true do |t|
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

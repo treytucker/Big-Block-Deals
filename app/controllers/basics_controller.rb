@@ -4,8 +4,10 @@ class BasicsController < ApplicationController
   define_method(f.first) {
     @content = ActiveRecord.const_get(f.last[:model]).last
     @layout = f.last[:layout]
-     @title = f.last[:title] 
+    @title = f.last[:title]
+    @action = f.first
   }
+  
   end
 
 end

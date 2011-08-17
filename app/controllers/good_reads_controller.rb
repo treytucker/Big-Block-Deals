@@ -1,10 +1,12 @@
 =begin
   TODO Add paginaion
   TODO Add errors to views
-  TODO Add in login stuffes
+  TODO Test when there is no Good Reads
 =end
 
 class GoodReadsController < ApplicationController
+  before_filter :bomb_dot_com, :except => [:index, :show, :show_catagories, :show_dates]
+  
   uses_tiny_mce
   
   def index

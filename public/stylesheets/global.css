@@ -1011,6 +1011,12 @@ iframe #large_top_share {
 	width:97%;
 }
 	
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+		/* ADMIN NAV */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */	
+	
 	
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
@@ -1021,6 +1027,11 @@ iframe #large_top_share {
 .three-fourths h2, .three-fourths h3, .three-fourths p, .three-fourths span, .three-fourths a, .full-width h2, .full-width h3,  .full-width p,  .full-width span,  .full-width a {
 	color:#595757 !important;
 }
+
+	
+#admin_nav {
+	background-color: red;
+}	
 	
 	.debug_dump {
 		color:#fff;

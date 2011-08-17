@@ -30,6 +30,7 @@ GEM
     activesupport (3.0.9)
     annotate (2.4.0)
     arel (2.0.10)
+    bcrypt-ruby (2.1.4)
     builder (2.1.2)
     capybara (1.0.0)
       mime-types (>= 1.16)
@@ -141,6 +142,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bcrypt-ruby
   capybara
   cucumber-rails
   database_cleaner

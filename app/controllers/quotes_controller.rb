@@ -1,3 +1,6 @@
+=begin
+  TODO Test when there are no quotes
+=end
 class QuotesController < ApplicationController
   def index
     @quotes = Quote.all
@@ -9,7 +12,7 @@ class QuotesController < ApplicationController
 
   def create
     @quote = Quote.new(params[:quote])
-    if @quote.save
+    if @quote.saverequire 'basics_controller'
       redirect_to quotes_path
     else
       render :new
