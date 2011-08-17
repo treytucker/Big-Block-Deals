@@ -1,8 +1,8 @@
-<%= form_for @content, :url => :about_uses_create do |f| -%>
+<div class="content-edit"><%= form_for @content, :url => :about_uses_create do |f| -%>
 <%= render "shared/error_messages", :target => @content %>
 
 <%= f.label :title, "Title" %><br>
-<%= f.text_field :title %><br>
+<%= f.text_field :title, :class => '' %><br>
 
 <%= f.label :header_1, "Header_1" %><br>
 <%= f.text_field :header_1 %><br>
@@ -28,3 +28,5 @@
 <%= f.submit "Save", :disable_with => 'Saving...' %>
 
 <% end -%>
+
+</div>

@@ -1001,6 +1001,9 @@ iframe #large_top_share {
 		font-size:24px;
 		margin:0px 0px 20px;
 	}
+	.last-about-us {
+		margin:25px 0px 0px !important;
+	}
 	.about-us-section p {
 		line-height:22px;
 		margin:0px 0px 45px;
