@@ -1,5 +1,5 @@
 class HowItWorksConsumer < ActiveRecord::Base
-  validates_presence_of :title, :header_1, :content_1, :header_2, :content_2, :header_3, :content_3, :header_4, :content_4
+  validates_presence_of :header_1, :content_1, :header_2, :content_2, :header_3, :content_3, :header_4, :content_4
   has_many :quotes, :as => :quotable
   has_many :widgets, :as => :wedgetable
 

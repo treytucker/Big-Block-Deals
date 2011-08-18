@@ -1,9 +1,6 @@
 <%= form_for @content, :url => :recent_deals_create do |f| -%>
 <%= render "shared/error_messages", :target => @content %>
 
-<%= f.label :title, "Title" %><br>
-<%= f.text_field :title %><br>
-
 <%= f.submit "Save", :disable_with => 'Saving...' %>
 
 <% end -%>

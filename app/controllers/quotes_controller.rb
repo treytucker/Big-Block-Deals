@@ -12,7 +12,7 @@ class QuotesController < ApplicationController
 
   def create
     @quote = Quote.new(params[:quote])
-    if @quote.saverequire 'basics_controller'
+    if @quote.save 'basics_controller'
       redirect_to quotes_path
     else
       render :new

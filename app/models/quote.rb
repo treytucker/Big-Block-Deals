@@ -1,5 +1,6 @@
 =begin
   TODO Add Associations.
+  TODO Add in validations for the quote length
 =end
 class Quote < ActiveRecord::Base
   validates_presence_of :author, :words_of_wisdom

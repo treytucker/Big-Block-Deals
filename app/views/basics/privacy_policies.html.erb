@@ -1,5 +1,3 @@
-<p><%= @content.title %></p>
-<p><%= @content.content %></p>
+<p><%= @content.content.html_safe %></p>
 
-<!-- admin Stuffs -->
 <%= render :partial => 'basics/edit_admin_stuff' %>

@@ -1,9 +1,6 @@
 <%= form_for @content, :url => :contacts_create do |f| -%>
 <%= render "shared/error_messages", :target => @content %>
 
-<%= f.label :title, "Title" %><br>
-<%= f.text_field :title %><br>
-
 <%= f.label :header_1, "Header_1" %><br>
 <%= f.text_field :header_1 %><br>
 
@@ -19,8 +16,20 @@
 <%= f.label :number, "Number" %><br>
 <%= f.text_field :number %><br>
 
-<%= f.label :address, "Address" %><br>
-<%= f.text_field :address %><br>
+<%= f.label :address_name, "Address Name" %><br>
+<%= f.text_field :address_name %><br>
+
+<%= f.label :address_street, "Street Address" %><br>
+<%= f.text_field :address_street %><br>
+
+<%= f.label :city, "City" %><br>
+<%= f.text_field :city %><br>
+
+<%= f.label :state, "State" %><br>
+<%= f.text_field :state %><br>
+
+<%= f.label :zip_code, "Zip Code" %><br>
+<%= f.text_field :zip_code %><br>
 
 <%= f.submit "Save", :disable_with => 'Saving...' %>
 

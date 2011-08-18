@@ -25,7 +25,7 @@ BASIC_CONTROLLERS = {
     }, 
   :for_businesses => {
     :model => "ForBusiness", 
-    :url => :for_business,
+    :url => :for_businesses,
     :form => :for_business, 
     :title => "For Business", 
     :layout => "three-fourths"

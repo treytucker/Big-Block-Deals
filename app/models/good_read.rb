@@ -1,5 +1,7 @@
 =begin
   TODO Need to add a validation for title legnth
+  TODO Add associations with quotes and widgets
+    I believe the best course of action here would be to go ahead and create a join model just for this one. The rest will stay the same.
 =end
 
 class GoodRead < ActiveRecord::Base
@@ -44,3 +46,20 @@ end
 #  image_file_size    :integer
 #  image_updated_at   :datetime
 #
+
+# == Schema Information
+#
+# Table name: good_reads
+#
+#  id                 :integer         not null, primary key
+#  title              :string(255)
+#  post               :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#  catagory_id        :integer
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#
+

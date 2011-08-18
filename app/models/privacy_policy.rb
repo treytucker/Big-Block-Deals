@@ -1,5 +1,5 @@
 class PrivacyPolicy < ActiveRecord::Base
-  validates_presence_of :title, :content
+  validates_presence_of :content
   has_many :quotes, :as => :quotable
   has_many :widgets, :as => :wedgetable
 

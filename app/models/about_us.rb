@@ -1,6 +1,5 @@
 class AboutUs < ActiveRecord::Base
-  validates_presence_of :title, 
-                        :header_1, 
+  validates_presence_of :header_1, 
                         :content_1, 
                         :header_2, 
                         :content_2, 

@@ -1,6 +1,6 @@
 class BasicEditsController < ApplicationController
   before_filter :bomb_dot_com
-
+  uses_tiny_mce
 # BASIC_CONTROLLERS is defined in #{rails_root}/config/initializers/constants.rb
 
   BASIC_CONTROLLERS.each do |f|
@@ -12,7 +12,7 @@ class BasicEditsController < ApplicationController
     edit = f.first # Defines the edit method name
     models = f.last[:model] # used for refactoring the models
     url = f.last[:url].to_sym # Used for redirections
-    form = f.last[:form].to_sym
+    form = f.last[:form]
 
     # This dynamically creates all the actions needed to edit/create new content based on if there is content in the DB or not.
     define_method(edit) {
