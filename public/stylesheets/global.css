@@ -205,7 +205,7 @@ p {
 				color:#fff;
 				float:left;
 				font-size:24px;
-				margin:75px 0 0 30px;
+				margin:60px 0 0 30px;
 			}
 			#login-dropdown form {
 				float:left;
@@ -379,14 +379,14 @@ p {
 	margin:20px 0px 0px;
 }
 
-.three-fourths {
+.three-fourths, .blog {
 	float:left;
 	min-height:300px;
     margin:20px 35px 0px 0px;
     width: 704px;
 }
 
-	.three-fourths .topper {
+	.three-fourths .topper, .first-post .topper {
 		background:url(/images/three-fourths-topper.jpg) top left no-repeat;
 		height:46px;
 		float:left;
@@ -394,7 +394,15 @@ p {
 		width:721px;
 	}
 	
-	.three-fourths .main-content {
+	.blog .regular-post .topper {
+		background:url(/images/three-fourths-tear-topper.jpg) top left no-repeat;
+		height:31px;
+		float:left;
+		margin:0px 0px 0px -8px;
+		width:721px;
+	}
+	
+	.three-fourths .main-content, .first-post-stuff, .regular-post .post-content {
 	    background: url("/images/three-fourths-repeater.jpg") repeat-y scroll left 10px transparent;
 	    float: left;
 	    margin: 0 0 0 -8px;
@@ -402,7 +410,7 @@ p {
 		width: 704px;
 	}
 	
-	.three-fourths .bottom {
+	.three-fourths .bottom, .first-post .bottom, .regular-post .bottom {
 		background:url(/images/three-fourths-bottom.jpg) top left no-repeat;
 		float:left;
 		height:20px;
@@ -917,6 +925,67 @@ iframe #large_top_share {
 			background:url('/images/business-submit-down.jpg') top left no-repeat !important;
 		}
 		
+
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+		/* GOOD READS */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.blog h2 {
+	float:left;
+	font-family:'Trebuchet MS';
+	font-size:24px;
+	margin:0px 0px 15px;
+	width:97%;
+}
+
+.blog p, .blog a {
+	color:#828282 !important;
+	float:left;
+}
+
+.post-details {
+	float:left;
+	margin:0px;
+	width:97%;
+}
+
+.post-image {
+	border:2px solid #fff;
+	float:left;
+	margin:10px 0px 10px;
+	max-width:450px;
+	box-shadow:0px 1px 2px #b6b6b6;
+	-moz-box-shadow:0px 1px 2px #b6b6b6;
+	-webkit-box-shadow:0px 1px 2px #b6b6b6;
+}
+
+.blog a {
+	text-decoration:underline;
+}
+
+.blog p.post-text {
+	float:left;
+	margin:15px 0px 15px;
+	width:97%;
+}
+
+.blog .read-more-link {
+	color:#3fbeff !important;
+	float:left;
+	margin:0px 0px 15px;
+	text-shadow: 0px 1px 0px #2d8ec1;
+	-moz-text-shadow: 0px 1px 0px #2d8ec1;
+	-webkit-text-shadow: 0px 1px 0px #2d8ec1;
+}
+
+	.read-more-link:active {
+		margin:1px 0px 14px;
+	}
+
+
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
 		/* CONTACT */
@@ -1024,7 +1093,31 @@ iframe #large_top_share {
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */	
 	
+#admin_nav {
+	background:url(/images/admin-nav-bg.jpg) top left repeat-x;
+	color:#fff !important;
+	height:40px;
+	float:left;
+	overflow:hidden;
+	width:100%;
+}
+
+#admin-nav-container {
+	float:left;
+	margin:10px 0px 0px 30px;
+}
+
+	#admin_nav a {
+		color:#fff !important;
+		float:left;
+		margin:0px 15px 0px 0px;
+	}
 	
+	.edit-page-link {
+		position:absolute;
+		right:20px;
+		top:11px;
+	}
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 

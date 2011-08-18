@@ -1,57 +1,73 @@
-<h1>GOOD READS</h1>
-<% if @posts.nil? %>
-	<p>No New Posts. Please check back soon. </p>
-<% elsif @posts.empty? %>
-	<p>No New Posts. Please check back soon. </p>
-<% else %>
+<div class="first-post">
+	<div class="topper"></div>
+	<div class="first-post-stuff">
+		<div class="content-header">
+			<img class="page-header" src="/images/good-reads-title.jpg"/>
+		</div>
+		<% if @posts.nil? %>
+			<p>No New Posts. Please check back soon. </p>
+		<% elsif @posts.empty? %>
+			<p>No New Posts. Please check back soon. </p>
+		<% else %>
   
 
-	<% if flash[:notice] %>
-		<%= flash[:notice] %>
-	<% end %>
-<!-- This is for the first post	 -->
-	<h2><%= @posts[0].title %></h2>
-	
-	<%= special_date(@posts[0].created_at) %><br>
-	
-	
-	<% unless @posts[0].catagory.nil? %>
-		<%= link_to "#{@posts[0].catagory.name}", :action => "show_catagories", :id => @posts[0].catagory.name %><br>
-	<% end %>
-	
-	<% if @posts[0].image? %>
-		<%= image_tag @posts[0].image.url(:medium) %>
-	<% end %>
-	
-	&nbsp;<br><p><%= shorten(@posts[0].post) %><br><br>
-	<%= link_to "Read More", good_read_path(@posts[0].id) %></p>&nbsp;<br><br>
+			<% if flash[:notice] %>
+				<%= flash[:notice] %>
+			<% end %>
+		<!-- This is for the first post	 -->
 
-<!-- This is for all the posts after -->
-	<% i = 1 %>
-	<% until i == @num %>
-	<% unless @posts[i].nil? %>
-		<br>
-		<h2><%= @posts[i].title %></h2>
-		
-		<p><%= special_date(@posts[i].created_at) %></p><br>
-		
-		<% unless @posts[i].catagory.nil? %>
-			<%= link_to "#{@posts[i].catagory.name}", :action => "show_catagories", :id => @posts[i].catagory.name %>&nbsp;<br>
-		<% end %>
-		
-		<% if @posts[i].image? %>
-			<%= image_tag @posts[i].image.url(:medium) %>
-		<% end %>
-		
-		<br>&nbsp;<br><p><%= shorten(@posts[i].post.html_safe) %><br><br>
-		
-		<%= link_to "Read More", good_read_path(@posts[i].id) %></p><br>&nbsp;<br><br>
-	<% end %>
-	<% i += 1 %>
-	<% end %>
+			<h2><%= @posts[0].title %></h2>
+			
+			<div class="post-details">
+				<p class="post-date"><%= special_date(@posts[0].created_at) %>&nbsp;&nbsp;|&nbsp;&nbsp;</p>
 	
+	
+				<% unless @posts[0].catagory.nil? %>
+					<%= link_to "#{@posts[0].catagory.name}", :action => "show_catagories", :id => @posts[0].catagory.name %><br>
+				<% end %>
+			</div>
+	
+			<% if @posts[0].image? %>
+				<%= image_tag @posts[0].image.url(:medium), :class => 'post-image' %>
+			<% end %>
+	
+			&nbsp;<br><p class="post-text"><%= shorten(@posts[0].post) %></p>
+			<%= link_to "Read More", good_read_path(@posts[0].id), :class => 'read-more-link' %></p>&nbsp;<br><br>
+		</div>
+<div class="bottom"></div>
+</div>
+
+
+<div class="regular-post">
+	<div class="topper"></div>
+	<div class="post-content">
+		<!-- This is for all the posts after -->
+			<% i = 1 %>
+			<% until i == @num %>
+			<% unless @posts[i].nil? %>
+				<h2><%= @posts[i].title %></h2>
+				
+				<div class="post-details">
+					<p class="post-date"><%= special_date(@posts[i].created_at) %>&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+		
+					<% unless @posts[i].catagory.nil? %>
+						<%= link_to "#{@posts[i].catagory.name}", :action => "show_catagories", :id => @posts[i].catagory.name %>&nbsp;<br>
+					<% end %>
+				</div>
+				
+				<% if @posts[i].image? %>
+					<%= image_tag @posts[i].image.url(:medium), :class => 'post-image' %>
+				<% end %>
+		
+				<br>&nbsp;<br><p><%= shorten(@posts[i].post.html_safe) %><br><br>
+		
+				<%= link_to "Read More", good_read_path(@posts[i].id), :class => 'read-more-link' %></p><br>&nbsp;<br><br>
+			<% end %>
+			<% i += 1 %>
+			<% end %>
+		</div>
+	<div class="bottom"></div>
+</div>
 <% end %>
 
-<%= render :partial => 'catagories' %>
 
-<%= render :partial => 'dates' %>

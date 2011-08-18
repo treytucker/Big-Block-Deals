@@ -25,6 +25,23 @@ $('.login-closer').click(function(){
 	return false;
 })
 
+$('#mydeals').click(function(DCLoginListener){
+	return false
+})
+
+function DCLoginListener(user)
+{
+  if(!user)
+  {
+     document.getElementById("mydeals").style.display="none";
+     document.getElementById("login").innerHTML = "<a href=\"javascript: return false;\" onclick=\"javascript:ShowDCLogin();\"> Log In </a>";       
+  }
+  else {
+     document.getElementById("mydeals").style.display="inline";	       
+     document.getElementById("login").innerHTML = "<a href=\"javascript: return false;\" onclick=\"javascript:DCLogout();\"> Log Out </a>";
+  }
+}
+
 $('#quote-closer').click(function (){
 	$('#quote-container').slideToggle("slow");
 })

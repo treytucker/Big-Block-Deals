@@ -15,8 +15,9 @@ class GoodReadsController < ApplicationController
     @title = "Good Reads"
     @catagories = Catagory.all
     @dates = GoodRead.all( :select => "created_at", :order => "created_at" )
-    @layout = "three-fourths"
+    @layout = "blog"
     @quotes = nil
+    @page = "good_reads"
   end
 
   def show
