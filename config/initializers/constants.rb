@@ -66,6 +66,12 @@ BASIC_CONTROLLERS = {
     :form => :terms_of_service,
     :title => "Terms of Service", 
     :layout => "three-fourths"
+    },
+  :user_widgets => {
+    :model => "UserWidget", 
+    :url => :user, 
+    :title => "Your Account", 
+    :layout => "three-fourths"
     }
 }
 
@@ -73,7 +79,7 @@ BASIC_CONTROLLERS = {
 BOMB_DOT_COM = { 
   :trey => { 
     :username => "sick designer", 
-    :password => "trey's the man"
+    :password => "password"
     }, 
   :andy => {
     :username => "Andy Ellis", 

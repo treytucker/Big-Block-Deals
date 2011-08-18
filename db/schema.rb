@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(:version => 20110817154231) do
 
+
   create_table "about_us", :force => true do |t|
     t.string "header_1"
     t.text   "content_1"
@@ -41,6 +42,31 @@ ActiveRecord::Schema.define(:version => 20110817154231) do
     t.integer  "merchant"
     t.integer  "number_sold"
     t.decimal  "total_revenue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "business_contact_models", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "business_inquiries", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "company_name"
+    t.string   "website"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -218,6 +244,12 @@ ActiveRecord::Schema.define(:version => 20110817154231) do
 
   create_table "terms_of_services", :force => true do |t|
     t.text "content"
+  end
+
+  create_table "user_widgets", :force => true do |t|
+    t.string   "useless_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "widgets", :force => true do |t|

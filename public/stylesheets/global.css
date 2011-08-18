@@ -24,7 +24,11 @@ p {
 	font-family:'Trebuchet MS';
 }
 
-#container a, .sidebar .submit-btn {
+.hidden {
+	display:none;
+}
+
+.sidebar .submit-btn {
 	text-decoration:underline;
 	text-shadow:0px 1px 0px #ea833a;
 	-moz-text-shadow:0px 1px 0px #ea833a;
@@ -279,7 +283,7 @@ p {
 		
 /* QUOTES */
 
-.quote-container {
+#quote-container {
 	float:left;
 	height:45px;
 	margin:5px 0px;
@@ -640,6 +644,52 @@ iframe #large_top_share {
 }
 
 
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+		/* RECENT DEALS */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+		/* USER WIDGET */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+#DCmenu {
+	float:left;
+	margin:10px 0px 0px;
+	text-shadow:none;
+}
+
+	#DCmenu li {
+		float:left;
+	}
+	#DCmenu a {
+	    background: url("/images/white-form-btn.jpg") no-repeat scroll left top transparent;
+	    float: left;
+	    font-family: 'cafeta';
+	    font-size: 21px;
+	    height: 33px;
+	    margin: 0 5px 0 0;
+	    padding: 8px 0 0;
+	    text-align: center;
+	    text-decoration: none;
+	    text-transform: uppercase;
+	    width: 225px;
+	}
+	
+#My-Deals {
+	float:left;
+	margin:0px 0px !important;
+}
+	
+	#DealNavigation {
+		float:left !important;
+		position:static !important;
+	}
+
 		
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 		
@@ -784,7 +834,7 @@ iframe #large_top_share {
 	#business-contact-form {
 		float:left;
 		margin:20px 0px 0px;
-		width:600px;
+		width:324px;
 	}
 	
 		.half-width-form {
@@ -802,13 +852,30 @@ iframe #large_top_share {
 		}
 		
 		.half-width-form input, .full-width-form input {
-		    background: url("/images/white-form-input-bg.jpg") no-repeat scroll left top transparent;
+		    background: url("/images/business-narrow-input-bg.jpg") no-repeat scroll left top transparent;
 		    color: #595757;
 		    float: left;
 		    font-size: 12px;
 		    height: 31px;
 		    padding: 0 10px;
+			text-transform:uppercase;
 		    width: 206px;
+		}
+		
+		.state-dropdown {
+			background:url('/images/business-state-input-bg.jpg') top left no-repeat;
+			border:0px;
+			color: #595757;
+			float:left;
+			height:31px;
+			padding:8px 0px 0px 10px;
+			width:54px;
+		}
+		
+		.business-zip {
+			background:url('/images/business-zip-input-bg.jpg') top left no-repeat !important;
+			margin:0px 0px 0px 17px;
+			width:64px !important;
 		}
 		
 	.full-width-form {
@@ -819,6 +886,35 @@ iframe #large_top_share {
 		.full-width-form input {
 			background:url(/images/wide-input-bg.jpg) top left no-repeat;
 			width:303px;
+		}
+		
+		.full-width-form textarea {
+			background:url('/images/business-message-input-bg.jpg') top left no-repeat;
+			border:0px;
+			color:#595757;
+			float:left;
+			font-family:'Trebuchet MS';
+			font-size:12px;
+			height:101px;
+			padding:10px 0px 0px 10px;
+			resize:none;
+			text-transform:uppercase;
+			width:293px;
+		}
+		
+		.business-tester p {
+			margin:15px 0px 0px 5px !important;
+		}
+		.business-tester span {
+			float:left;
+			margin:0px 0px 10px 5px !important;
+		}
+		
+		.full-width-form .business-submit {
+			background:url('/images/business-submit-bg.jpg') top left no-repeat !important;
+		}
+		.full-width-form .business-submit:active {
+			background:url('/images/business-submit-down.jpg') top left no-repeat !important;
 		}
 		
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
@@ -925,6 +1021,17 @@ iframe #large_top_share {
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */	
 	
+	
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+		/* IMPORTANT GLOBAL STUFF */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+.three-fourths h2, .three-fourths h3, .three-fourths p, .three-fourths span, .three-fourths a, .full-width h2, .full-width h3,  .full-width p,  .full-width span,  .full-width a {
+	color:#595757 !important;
+}
+
 	
 #admin_nav {
 	background-color: red;

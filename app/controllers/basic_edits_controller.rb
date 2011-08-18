@@ -1,4 +1,5 @@
 class BasicEditsController < ApplicationController
+  uses_tiny_mce
   before_filter :bomb_dot_com
   uses_tiny_mce
 # BASIC_CONTROLLERS is defined in #{rails_root}/config/initializers/constants.rb
