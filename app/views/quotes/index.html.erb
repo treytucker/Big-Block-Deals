@@ -5,7 +5,12 @@
 <% else %>
 	<% @quotes.each do |f| %>
 		<%= f.words_of_wisdom %><br>
-		- <%= f.author %>
+		- <%= f.author %><br>
+		<% if f.active? %>
+			Active!
+		<% else %>
+		  Disabled
+		<% end %>
 		<%= link_to "Edit", edit_quote_path(f.id) %> 
 		<%= link_to "Delete", { :action => "destroy", :id => f.id }, :confirm => 'Are you sure?', :method => :delete %></p><br><br>
 	<% end %>

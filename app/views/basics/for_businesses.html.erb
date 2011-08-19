@@ -4,99 +4,62 @@
 <div class="for-businesses-main">
 	<h2><%= @content.header %></h2>
 	<p><%= @content.content %></p>
-	<form id="business-contact-form">
+
+	<%= form_for @business_inquiries, :as => "business_inquiries", :url => { :controller => "business_leads", :action => "index" }, :html => { :id => "business-contact-form" } do |f| -%>
 		<div class="half-width-form">
-			<input name="first_name" value="First Name" type="text"/>
+			<%= f.text_field :first_name, :value => "First Name" %>
 		</div>
+		
 		<div class="half-width-form">
-			<input name="last_name" value="Last Name" type="text"/>
+			<%= f.text_field :last_name, :value => "Last Name" %>
 		</div>
+
 		<div class="half-width-form">
-			<input name="email" value="Email" type="text"/>
+			<%= f.text_field :email, :value => "Email" %>
 		</div>
+		
 		<div class="half-width-form">
-			<input name="phone" value="Phone Number" type="text"/>
+			<%= f.text_field :phone, :value => "Phone Number" %>
 		</div>
+		
+		<div class="half-width-form">
+			<%= f.text_field :company, :value => "Company Name" %>
+		</div>
+
+		<div class="half-width-form">
+			<%= f.text_field :website, :value => "Website" %>
+		</div>
+
 		<div class="full-width-form">
-			<input name="company" value="Company Name" type="text"/>
+			<%= f.text_field :address, :value => "Street Address" %>
 		</div>
-		<div class="full-width-form">
-			<input name="website" value="Website" type="text"/>
-		</div>
-		<div class="full-width-form">
-			<input name="address" value="Street Address" type="text"/>
-		</div>
+
 		<div class="half-width-form">
-			<input class="business-input" name="city" value="City" type="text"/>
+			<%= f.text_field :city, :html => { :class => "business-input" }, :value => "City" %>
 		</div>
+		
 		<div class="half-width-form">
-			<select class="state-dropdown" name="state">
-			  <option value="">ST</option>
-		      <option value="Alabama">Alabama</option>
-		      <option value="Alaska">Alaska</option>
-		      <option value="Arizona">Arizona</option>
-		      <option value="Arkansas">Arkansas</option>
-		      <option value="California">California</option>
-		      <option value="Colorado">Colorado</option>
-		      <option value="Connecticut">Connecticut</option>
-		      <option value="Delaware">Delaware</option>
-		      <option value="Florida">Florida</option>
-		      <option value="Georgia">Georgia</option>
-		      <option value="Hawaii">Hawaii</option>
-		      <option value="Idaho">Idaho</option>
-		      <option value="Illinois">Illinois</option>
-		      <option value="Indiana">Indiana</option>
-		      <option value="Iowa">Iowa</option>
-		      <option value="Kansas">Kansas</option>
-		      <option value="Kentucky">Kentucky</option>
-		      <option value="Louisiana">Louisiana</option>
-		      <option value="Maine">Maine</option>
-		      <option value="Maryland">Maryland</option>
-		      <option value="Massachusetts">Massachusetts</option>
-		      <option value="Michigan">Michigan</option>
-		      <option value="Minnesota">Minnesota</option>
-		      <option value="Mississippi">Mississippi</option>
-		      <option value="Missouri">Missouri</option>
-		      <option value="Montana">Montana</option>
-		      <option value="Nebraska">Nebraska</option>
-		      <option value="Nevada">Nevada</option>
-		      <option value="New Hampshire">New Hampshire</option>
-		      <option value="New Jersey">New Jersey</option>
-		      <option value="New Mexico">New Mexico</option>
-		      <option value="New York">New York</option>
-		      <option value="North Carolina">North Carolina</option>
-		      <option value="North Dakota">North Dakota</option>
-		      <option value="Ohio">Ohio</option>
-		      <option value="Oklahoma">Oklahoma</option>
-		      <option value="Oregon">Oregon</option>
-		      <option value="Pennsylvania">Pennsylvania</option>
-		      <option value="Rhode Island">Rhode Island</option>
-		      <option value="South Carolina">South Carolina</option>
-		      <option value="South Dakota">South Dakota</option>
-		      <option value="Tennessee">Tennessee</option>
-		      <option value="Texas">Texas</option>
-		      <option value="Utah">Utah</option>
-		      <option value="Vermont">Vermont</option>
-		      <option value="Virginia">Virginia</option>
-		      <option value="Washington">Washington</option>
-		      <option value="West Virginia">West Virginia</option>
-		      <option value="Wisconsin">Wisconsin</option>
-		      <option value="Wyoming">Wyoming</option>
-		    </select>
-			<input class="business-zip" name="zip_code" value="ZIP Code" type="text"/>
+			<select class="state-dropdown" name="business_inquiries[state]">
+			  <%= options_for_select( [[ "State", "" ]] + State::NAMES ) %>
+			</select>
+
+		<%= f.text_field :zip_code, :value => "Zip Code" %>
 		</div>
+		
 		<div class="full-width-form">
-			<textarea class="business-message-field" name="message">Message</textarea>
+		<%= f.text_area :message, :value => "Message" %>
 		</div>
+
 		<div class="full-width-form business-tester">
-			<p class="trebuchet">Are you Human?</p><br></br>
 			<span class="trebuchet">What is three added to four?</span>
-			<input name="tester" value="" type="text"/>
+			<p class="trebuchet">Are you Human?</p><br></br>
+			<%= f.text_field :test, :value => "Whats the answer?" %>
 		</div>
 		<div class="full-width-form">
-			<input class="business-submit" type="submit" name="" value=""/>
+			<%= f.submit "Send!", :disable_with => 'Sending...', :html => { :class => "business-submit" } %>
 		</div>
-	</form>
+	<% end -%>
+
 </div>
 
 <!-- admin Stuffs -->

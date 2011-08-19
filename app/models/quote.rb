@@ -4,10 +4,12 @@
 =end
 class Quote < ActiveRecord::Base
   validates_presence_of :author, :words_of_wisdom
-  # has_and_belongs_to_many :about_us, :join_table => "about_uses_quotes"
-  belongs_to :quotable, :polymorphic => true
   
+  def self.all_active
+    @quotes = self.where("? = active", true)
+  end
 end
+
 
 
 # == Schema Information
@@ -19,7 +21,6 @@ end
 #  words_of_wisdom :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
-#  quotable_id     :integer
-#  quotable_type   :string(255)
+#  active          :boolean
 #
 

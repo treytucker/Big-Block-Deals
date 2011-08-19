@@ -5,12 +5,12 @@ describe Contact do
 end
 
 
+
 # == Schema Information
 #
 # Table name: contacts
 #
 #  id             :integer         not null, primary key
-#  title          :string(255)
 #  header_1       :string(255)
 #  link_1         :string(255)
 #  header_2       :string(255)

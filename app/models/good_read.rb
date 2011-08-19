@@ -8,7 +8,6 @@ class GoodRead < ActiveRecord::Base
   attr_accessible :post, :title, :catagory_id, :image, :image_delete
   validates_presence_of :post, :title, :catagory, :image, :message => "can't be blank"
   belongs_to :catagory
-  has_many :quotes, :as => :quotable
   has_many :widgets, :as => :wedgetable
 
 # Relates to the images

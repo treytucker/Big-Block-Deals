@@ -1,18 +1,14 @@
-<% if @quotes.nil? %>
+<% if @active_quotes.any? %>
 <div id="quote-container" class="hidden">
 	
 	<a href="#" id="quote-closer">×</a>
 	<div id="all-quotes">
+		<% @active_quotes.each do |f| %>
 			<div class="indiv-quote">
-				<p class="main-quote-text">Ok, here we go....This app will kick butt and take names.</p>
-				<p class="main-quote-author"> - Andy Ellis</p>
+				<p class="main-quote-text"><%= f.words_of_wisdom %></p>
+				<p class="main-quote-author"> - <%= f.author %></p>
 			</div>
-		
-		<div class="indiv-quote">
-			<p class="main-quote-text">Another really really nice quote that people will really love to read.</p>
-			<p class="main-quote-author"> - John Doe</p>
-		</div>
-		
+		<% end %>
 	</div>
 	
 	<div id="controls">

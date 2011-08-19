@@ -74,15 +74,3 @@ BASIC_CONTROLLERS = {
     :layout => "three-fourths"
     }
 }
-
-# This is currently used for authentication. maybe...
-BOMB_DOT_COM = { 
-  :trey => { 
-    :username => "sick designer", 
-    :password => "password"
-    }, 
-  :andy => {
-    :username => "Andy Ellis", 
-    :password => "password123"
-    }
-  }

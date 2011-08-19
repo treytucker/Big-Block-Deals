@@ -10,8 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110817154231) do
-
+ActiveRecord::Schema.define(:version => 20110819222120) do
 
   create_table "about_us", :force => true do |t|
     t.string "header_1"
@@ -46,26 +45,17 @@ ActiveRecord::Schema.define(:version => 20110817154231) do
     t.datetime "updated_at"
   end
 
-  create_table "business_contact_models", :force => true do |t|
+  create_table "business_leads", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
     t.string   "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "business_inquiries", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone_number"
-    t.string   "company_name"
+    t.string   "company"
     t.string   "website"
     t.string   "address"
     t.string   "city"
     t.string   "state"
-    t.string   "zip"
+    t.integer  "zip_code"
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -235,8 +225,7 @@ ActiveRecord::Schema.define(:version => 20110817154231) do
     t.string   "words_of_wisdom"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "quotable_id"
-    t.string   "quotable_type"
+    t.boolean  "active"
   end
 
   create_table "recent_deals", :force => true do |t|
