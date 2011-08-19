@@ -175,7 +175,15 @@ p {
 					#login-link:active {
 						background: url("/images/main-nav_down.jpg") no-repeat scroll -572px -1px transparent;
 					}
-			
+					
+					
+/*LOGIN DROPDOWN STUFF ====> NEW*/
+					
+	#dcloginpopup img {
+		/*display:none;*/
+	}
+					
+/*LOGIN DROPDOWN STUFF ====> OLD*/			
 		#login-dropdown {
 		    background: url("/images/sign-up-dropdown.png") no-repeat scroll left top transparent;
 		    height: 306px;
