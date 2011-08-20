@@ -7,8 +7,5 @@ class BusinessLeadMailer < ActionMailer::Base
      mail(:to => "andrew@andrewryanellis.com",
           :subject => "New Business Contact")
    end
-   def gmail_message
-     mail(:to => "andrew.ellis@localhost", :subject => "Registered")
-   end
   
 end
