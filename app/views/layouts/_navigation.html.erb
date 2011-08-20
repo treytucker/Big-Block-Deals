@@ -1,7 +1,3 @@
-<!--
-	TODO Make the links dynamic
--->
-
 <div id="nav-container">
 	<div id="navigation">
 		<h1 id="root-link"><a href="/">root</a></h1>
@@ -9,8 +5,8 @@
 			<!-- <li class="minor-link"><a href="/blog">Good Reads</a></li> -->
 			<li class="minor-link"><a href="http://twitter.com/bigblockdeals" target="blank"><img src="/images/twitter-link.png"/></a></li>
 			<li class="minor-link"><a href="http://facebook.com/bigblockdeals"><img src="/images/facebook-link.png"/></a></li>
-			<li class="minor-link"><a href="/contact">Contact</a></li>
-			<li class="minor-link"><a href="/about_us">About Us</a></li>
+			<li class="minor-link"><%= link_to "Contact", contact_path %></li>
+			<li class="minor-link"><%= link_to "About Us", about_us_path() %></li>
 			<li class="minor-link"><%= link_to 'My Account', :user %></li>
 		</ul>
 		<ul id="greater-nav">

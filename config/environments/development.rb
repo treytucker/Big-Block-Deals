@@ -15,7 +15,7 @@ Bigblockdeals::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
@@ -24,5 +24,19 @@ Bigblockdeals::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  
+  config.action_mailer.delivery_method = :smtp
+  
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "gmail.com",
+    :user_name            => "ellis.andy",
+    :password             => "Char060Dram58",
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
+  
 end
 

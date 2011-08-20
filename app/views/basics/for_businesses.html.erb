@@ -1,3 +1,8 @@
+<!--
+	FIXME Make sure to style out these errors
+-->
+
+<%= render "shared/error_messages", :target => @lead %>
 <div class="content-header">
 	<img class="page-header" src="/images/feature-your-business-title.jpg"/>
 </div>
@@ -7,47 +12,47 @@
 
 	<%= form_for @business_inquiries, :as => "business_inquiries", :url => { :controller => "business_leads", :action => "index" }, :html => { :id => "business-contact-form" } do |f| -%>
 		<div class="half-width-form">
-			<%= f.text_field :first_name, :value => "First Name" %>
+			<%= f.text_field :first_name, :value => @lead ? @lead.first_name : "First Name" %>
 		</div>
 		
 		<div class="half-width-form">
-			<%= f.text_field :last_name, :value => "Last Name" %>
+			<%= f.text_field :last_name, :value => @lead ? @lead.last_name : "Last Name" %>
 		</div>
 
 		<div class="half-width-form">
-			<%= f.text_field :email, :value => "Email" %>
+			<%= f.text_field :email, :value => @lead ? @lead.email : "Email" %>
 		</div>
 		
 		<div class="half-width-form">
-			<%= f.text_field :phone, :value => "Phone Number" %>
+			<%= f.text_field :phone, :value => @lead ? @lead.phone : "Phone Number" %>
 		</div>
 		
 		<div class="half-width-form">
-			<%= f.text_field :company, :value => "Company Name" %>
+			<%= f.text_field :company, :value => @lead ? @lead.company : "Company Name" %>
 		</div>
 
 		<div class="half-width-form">
-			<%= f.text_field :website, :value => "Website" %>
+			<%= f.text_field :website, :value => @lead ? @lead.website : "Website" %>
 		</div>
 
 		<div class="full-width-form">
-			<%= f.text_field :address, :value => "Street Address" %>
+			<%= f.text_field :address, :value => @lead ? @lead.address : "Street Address" %>
 		</div>
 
 		<div class="half-width-form">
-			<%= f.text_field :city, :html => { :class => "business-input" }, :value => "City" %>
+			<%= f.text_field :city, :html => { :class => "business-input" }, :value => @lead ? @lead.city : "City" %>
 		</div>
 		
 		<div class="half-width-form">
 			<select class="state-dropdown" name="business_inquiries[state]">
-			  <%= options_for_select( [[ "State", "" ]] + State::NAMES ) %>
+			  <%= options_for_select( [[ @lead ? @lead.state : "State", "" ]] + State::NAMES ) %>
 			</select>
 
-		<%= f.text_field :zip_code, :value => "Zip Code" %>
+		<%= f.text_field :zip_code, :value => @lead ? @lead.zip_code : "Zip Code" %>
 		</div>
 		
 		<div class="full-width-form">
-		<%= f.text_area :message, :value => "Message" %>
+		<%= f.text_area :message, :value => @lead ? @lead.message : "Message" %>
 		</div>
 
 		<div class="full-width-form business-tester">
