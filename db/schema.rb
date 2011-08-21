@@ -10,19 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110817165144) do
+ActiveRecord::Schema.define(:version => 20110819222120) do
 
   create_table "about_us", :force => true do |t|
-    t.string   "title"
-    t.string   "header_1"
-    t.text     "content_1"
-    t.string   "header_2"
-    t.text     "content_2"
-    t.string   "header_3"
-    t.text     "content_3"
-    t.string   "tag_line"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "header_1"
+    t.text   "content_1"
+    t.string "header_2"
+    t.text   "content_2"
+    t.string "header_3"
+    t.text   "content_3"
+    t.string "tag_line"
   end
 
   create_table "admins", :force => true do |t|
@@ -48,26 +45,17 @@ ActiveRecord::Schema.define(:version => 20110817165144) do
     t.datetime "updated_at"
   end
 
-  create_table "business_contact_models", :force => true do |t|
+  create_table "business_leads", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
     t.string   "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "business_inquiries", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone_number"
-    t.string   "company_name"
+    t.string   "company"
     t.string   "website"
     t.string   "address"
     t.string   "city"
     t.string   "state"
-    t.string   "zip"
+    t.integer  "zip_code"
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -80,21 +68,19 @@ ActiveRecord::Schema.define(:version => 20110817165144) do
   end
 
   create_table "contacts", :force => true do |t|
-    t.string   "title"
-    t.string   "header_1"
-    t.string   "link_1"
-    t.string   "header_2"
-    t.string   "link_2"
-    t.string   "number"
-    t.text     "address"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "header_1"
+    t.string  "link_1"
+    t.string  "header_2"
+    t.string  "link_2"
+    t.string  "number"
+    t.string  "address_name"
+    t.string  "address_street"
+    t.string  "city"
+    t.string  "state"
+    t.integer "zip_code"
   end
 
   create_table "current_deals", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "customer_details", :force => true do |t|
@@ -173,37 +159,31 @@ ActiveRecord::Schema.define(:version => 20110817165144) do
   end
 
   create_table "how_it_works_businesses", :force => true do |t|
-    t.string   "title"
-    t.string   "main_header"
-    t.text     "main_content"
-    t.string   "subheader_1"
-    t.text     "subcontent_1"
-    t.string   "subheader_2"
-    t.text     "subcontent_2"
-    t.string   "subheader_3"
-    t.text     "subcontent_3"
-    t.string   "subheader_4"
-    t.text     "subcontent_4"
-    t.string   "subheader_5"
-    t.text     "subcontent_5"
-    t.string   "subheader_6"
-    t.text     "subcontent_6"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "main_header"
+    t.text   "main_content"
+    t.string "subheader_1"
+    t.text   "subcontent_1"
+    t.string "subheader_2"
+    t.text   "subcontent_2"
+    t.string "subheader_3"
+    t.text   "subcontent_3"
+    t.string "subheader_4"
+    t.text   "subcontent_4"
+    t.string "subheader_5"
+    t.text   "subcontent_5"
+    t.string "subheader_6"
+    t.text   "subcontent_6"
   end
 
   create_table "how_it_works_consumers", :force => true do |t|
-    t.string   "title"
-    t.string   "header_1"
-    t.text     "content_1"
-    t.string   "header_2"
-    t.text     "content_2"
-    t.string   "header_3"
-    t.text     "content_3"
-    t.string   "header_4"
-    t.text     "content_4"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "header_1"
+    t.text   "content_1"
+    t.string "header_2"
+    t.text   "content_2"
+    t.string "header_3"
+    t.text   "content_3"
+    t.string "header_4"
+    t.text   "content_4"
   end
 
   create_table "merchant_informations", :force => true do |t|
@@ -223,10 +203,7 @@ ActiveRecord::Schema.define(:version => 20110817165144) do
   end
 
   create_table "privacy_policies", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text "content"
   end
 
   create_table "promotions", :force => true do |t|
@@ -248,21 +225,14 @@ ActiveRecord::Schema.define(:version => 20110817165144) do
     t.string   "words_of_wisdom"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "quotable_id"
-    t.string   "quotable_type"
+    t.boolean  "active"
   end
 
   create_table "recent_deals", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "terms_of_services", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text "content"
   end
 
   create_table "user_widgets", :force => true do |t|

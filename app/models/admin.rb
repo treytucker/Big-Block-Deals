@@ -1,9 +1,6 @@
-=begin
-  TODO Build validations for the email
-=end
-
 class Admin < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
   
   attr_accessor :password
   validates :password, 
@@ -31,3 +28,16 @@ class Admin < ActiveRecord::Base
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: admins
+#
+#  id            :integer         not null, primary key
+#  email         :string(255)
+#  password_hash :string(255)
+#  password_salt :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+

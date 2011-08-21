@@ -1,0 +1,13 @@
+<% form_for @quote do |f| -%>
+	<%= render "shared/error_messages", :target => @quote %>
+	<%= f.label :author, "Author" %><br>
+	<%= f.text_field :author %><br>
+
+	<%= f.label :words_of_wisdom, "Words of Wisdom" %><br>
+	<%= f.text_area :words_of_wisdom %><br>
+	
+	<%= f.label :active, "Active?" %><br>
+	<%= f.check_box :active %><br><br>
+	
+	<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end -%>

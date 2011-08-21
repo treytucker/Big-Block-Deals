@@ -25,7 +25,7 @@ BASIC_CONTROLLERS = {
     }, 
   :for_businesses => {
     :model => "ForBusiness", 
-    :url => :for_business,
+    :url => :for_businesses,
     :form => :for_business, 
     :title => "For Business", 
     :layout => "three-fourths"
@@ -74,15 +74,3 @@ BASIC_CONTROLLERS = {
     :layout => "three-fourths"
     }
 }
-
-# This is currently used for authentication. maybe...
-BOMB_DOT_COM = { 
-  :trey => { 
-    :username => "sick designer", 
-    :password => "password"
-    }, 
-  :andy => {
-    :username => "Andy Ellis", 
-    :password => "password123"
-    }
-  }

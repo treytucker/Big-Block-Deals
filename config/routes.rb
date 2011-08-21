@@ -1,11 +1,15 @@
 Bigblockdeals::Application.routes.draw do
 
+  get "business_leads/index"
+
   # This is for the Basic pages and their edit pages
   BASIC_CONTROLLERS.each do |f|
       get "#{f.last[:url].to_sym}/(:format)", :controller => "basics", :action => "#{f.first}", :as => f.last[:url]
       get "admin/#{f.last[:url].to_sym}/edit/(:id)(:format)", :controller => "basic_edits", :action => "#{f.first}", :as => "#{f.first}_edit"
       match "admin/#{f.last[:url].to_sym}/create/(:id)(:format)", :controller => "basic_edits", :action => "#{f.first}_create", :as => "#{f.first}_create"
   end
+  match "business_inquires" => "business_leads#index"
+  match "/business_leads/index" => "business_leads#index"
   root :to => "basics#current_deals"
 
 
@@ -18,19 +22,21 @@ Bigblockdeals::Application.routes.draw do
     resources :good_reads
     
   # This is for all the Quotes
-    resources :quotes
 
-  # This is for all the Widgets
-    resources :widgets
+    
+    scope "admin" do
+      resources :quotes, :as => "quotes"
+      resources :widgets, :as => "widgets"
+      resources :catagories, :as => "catagories"
+      resources :sessions, :as => "sessions"
+    end
     
   #this is for all the Catagories for the good reads
-    resources :catagories
 
   # This is for the Administration usage.
     resources :admins
     
   # This is for loggin in and out
-    resources :sessions
     get '/admin/login' => 'sessions#new', :as => "login"
     get '/admin/logout' => 'sessions#destroy', :as => "logout"
 end

@@ -1,14 +1,5 @@
-<!--
-	TODO refactor this crap
--->
+<h1>Edit this catagory!</h1>
 
-<h1>Catagories#edit</h1>
-
-<% form_for @catagory do |f| -%>
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name, :autofocus => :autofocus %>
-
-<%= f.submit "Submit", :disable_with => 'Submiting...' %>
-<% end -%>
+<%= render :partial => 'form' %>
 
 <%= link_to "Back", catagories_path %>

@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem 'capybara'
 gem "paperclip", "~> 2.3"
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'kaminari'
 
 group :development do 
 	gem 'rspec-rails'

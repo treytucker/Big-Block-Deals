@@ -4,12 +4,12 @@ describe HowItWorksBusiness do
   pending "add some examples to (or delete) #{__FILE__}"
 end
 
+
 # == Schema Information
 #
 # Table name: how_it_works_businesses
 #
 #  id           :integer         not null, primary key
-#  title        :string(255)
 #  main_header  :string(255)
 #  main_content :text
 #  subheader_1  :string(255)
@@ -24,7 +24,5 @@ end
 #  subcontent_5 :text
 #  subheader_6  :string(255)
 #  subcontent_6 :text
-#  created_at   :datetime
-#  updated_at   :datetime
 #
 

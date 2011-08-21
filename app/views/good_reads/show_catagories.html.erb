@@ -17,7 +17,7 @@
 	<% end %>
 
 	<p><%= f.post %></p>
-		<% unless session[:your_the_bomb_dot_com] %>
+		<% unless session[:admin_id] %>
 
 			<br><br>
 			<%= link_to "Edit This Post", edit_good_read_path(f.id) %><br><br>

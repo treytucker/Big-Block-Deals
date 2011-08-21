@@ -11,13 +11,19 @@ class GoodReadsController < ApplicationController
   
   def index
     @num = 12
-    @posts = GoodRead.all(:limit => @num).reverse
+    @posts = GoodRead.order("created_at DESC").page(params[:page]).per(5)
     @title = "Good Reads"
+<<<<<<< HEAD
     @catagories = Catagory.all
     @dates = GoodRead.all( :select => "created_at", :order => "created_at" )
     @layout = "blog"
     @quotes = nil
     @page = "good_reads"
+=======
+    @catagories = gather_thine_catagories
+    @dates = gather_thine_dates
+    @layout = "three-fourths"
+>>>>>>> 2dbba9842284226f455c9254b99af7e8add27dac
   end
 
   def show
@@ -45,7 +51,7 @@ class GoodReadsController < ApplicationController
         @year = "01 Jan #{params[:year]}".to_date
         @posts = GoodRead.all(:conditions => ["created_at >= ? AND created_at <= ?", @year.at_beginning_of_year, @year.at_end_of_year])
         render :show_catagories
-    end
+      end
     end
   end
   
@@ -68,7 +74,7 @@ class GoodReadsController < ApplicationController
   def edit
     @post = GoodRead.find(params[:id])
     @title = "Good Read | Edit #{@post.created_at.to_s(:good_reads_title)}"
-    @catagories = Catagory.find(:all, :order => "name")
+    @catagories = gather_thine_catagories
   end
 
   def update
@@ -87,4 +93,12 @@ class GoodReadsController < ApplicationController
     redirect_to :good_reads, :notice => "Post Deleted"
   end
 
+  private
+    def gather_thine_dates
+      @dates = GoodRead.all( :select => "created_at", :order => "created_at" )
+    end
+    
+    def gather_thine_catagories
+      @catagories = Catagory.find(:all, :order => "name")
+    end
 end

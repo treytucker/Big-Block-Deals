@@ -1,12 +1,10 @@
 class BasicEditsController < ApplicationController
   uses_tiny_mce
   before_filter :bomb_dot_com
-
+  
 # BASIC_CONTROLLERS is defined in #{rails_root}/config/initializers/constants.rb
 
   BASIC_CONTROLLERS.each do |f|
-
-    
     # This sets up all the needed variables for use later in the script
     
     create = "#{f.first}_create" # Defines the create method name
@@ -14,18 +12,15 @@ class BasicEditsController < ApplicationController
     models = f.last[:model] # used for refactoring the models
     url = f.last[:url].to_sym # Used for redirections
     form = f.last[:form]
-    
 
     # This dynamically creates all the actions needed to edit/create new content based on if there is content in the DB or not.
     define_method(edit) {
       @layout = f.last[:layout]
       if @content = ActiveRecord.const_get(models).last
         @title = "Edit #{f.last[:title]} Page"
-        @quotes = Quote.all
       else
         @content = ActiveRecord.const_get(models).new
         @title = "Edit #{f.last[:title]} Page"
-        @quotes = Quote.all
       end
     }
 

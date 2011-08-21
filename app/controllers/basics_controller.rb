@@ -7,7 +7,6 @@ class BasicsController < ApplicationController
     @title = f.last[:title]
     @action = f.first
   }
-  
   end
 
 end

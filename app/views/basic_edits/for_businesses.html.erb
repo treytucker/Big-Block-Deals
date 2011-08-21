@@ -1,9 +1,6 @@
 <%= form_for @content, :url => :for_businesses_create do |f| -%>
 <%= render "shared/error_messages", :target => @content %>
 
-<%= f.label :title, "Title" %><br>
-<%= f.text_field :title %><br>
-
 <%= f.label :header, "Header" %><br>
 <%= f.text_field :header %><br>
 

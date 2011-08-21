@@ -5,19 +5,18 @@
 	<div class="contact-left-side">
 		<h2><%= @content.header_1 %></h2>
 		<%= mail_to @content.link_1 %>
-		<!-- <a><%= @content.link_1 %></a> -->
 	</div>
 	<div class="contact-right-side">
 		<h2><%= @content.header_2 %></h2>
 		<%= mail_to @content.link_2 %>
-		<!-- <p><%= @content.link_2 %></p> -->
 	</div>
 </div>
 <div class="bottom-contact-info cafeta">
 	<img src="/images/call-us-graphic.png">
-	<p>972.850.6010 (office)</p>
-	<p>Digital Slough, LLC<br>19111 N. Dallas Parkway Ste. 350<br>Dallas, TX 75287
-	</p>
+	<p><%= @content.number %> (office)</p>
+	<p><%= @content.address_name %><br>
+	<%= @content.address_street %><br>
+	<%= @content.city %>, <%= @content.state %> <%= @content.zip_code %></p>
 </div>
 
 <!-- admin Stuffs -->

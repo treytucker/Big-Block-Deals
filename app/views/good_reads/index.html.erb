@@ -1,10 +1,11 @@
+
 <div class="first-post">
 	<div class="topper"></div>
 	<div class="first-post-stuff">
 		<div class="content-header">
 			<img class="page-header" src="/images/good-reads-title.jpg"/>
 		</div>
-		<% if @posts.nil? %>
+		<!-- <% if @posts.nil? %>
 			<p>No New Posts. Please check back soon. </p>
 		<% elsif @posts.empty? %>
 			<p>No New Posts. Please check back soon. </p>
@@ -14,7 +15,7 @@
 			<% if flash[:notice] %>
 				<%= flash[:notice] %>
 			<% end %>
-		<!-- This is for the first post	 -->
+	 		This is for the first post
 
 			<h2><%= @posts[0].title %></h2>
 			
@@ -41,7 +42,7 @@
 <div class="regular-post">
 	<div class="topper"></div>
 	<div class="post-content">
-		<!-- This is for all the posts after -->
+		 This is for all the posts after
 			<% i = 1 %>
 			<% until i == @num %>
 			<% unless @posts[i].nil? %>
@@ -68,6 +69,29 @@
 		</div>
 	<div class="bottom"></div>
 </div>
-<% end %>
+<% end %> -->
 
+<!-- ======= -->
+<h1>GOOD READS</h1>
+<% if @posts.empty? %>
+	<p>No Posts. Please check back soon. </p>
+<% else %>
+	<%= paginate @posts %>
+
+	<% @posts.each do |f| %>
+
+		<%= f.title %><br>
+		<%= special_date(f.created_at) %><br>
+		<%= link_to "#{f.catagory.name}", :action => "show_catagories", :id => f.catagory.name %><br>
+		<% if f.image? %>
+			<%= image_tag f.image.url(:medium) %><br>
+		<% end %>
+
+		<%= shorten(f.post.html_safe) %><br><br>
+
+		<%= link_to "Read More", good_read_path(f.id) %>
+
+	<% end %>
+<% end %>
+<%= render :partial => 'catagories' %>
 

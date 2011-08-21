@@ -5,8 +5,8 @@
 			<!-- <li class="minor-link"><a href="/blog">Good Reads</a></li> -->
 			<li class="minor-link"><a href="http://twitter.com/bigblockdeals" target="blank"><img src="/images/twitter-link.png"/></a></li>
 			<li class="minor-link"><a href="http://facebook.com/bigblockdeals"><img src="/images/facebook-link.png"/></a></li>
-			<li class="minor-link"><a href="/contact">Contact</a></li>
-			<li class="minor-link"><a href="/about_us">About Us</a></li>
+			<li class="minor-link"><%= link_to "Contact", contact_path %></li>
+			<li class="minor-link"><%= link_to "About Us", about_us_path() %></li>
 			<li class="minor-link"><%= link_to 'My Account', :user %></li>
 		</ul>
 		<ul id="greater-nav">
@@ -15,8 +15,10 @@
 			</li>
 			<li class="greater-nav-item"><%= link_to '', :recent_deals, :id => 'recent-deals' %></li>
 			<li class="greater-nav-item"><%= link_to '', :how_it_works_consumers, :id => 'how-it-works' %></li>
-			<li class="greater-nav-item"><%= link_to '', :for_business, :id => 'business-link' %></li>
+
+			<li class="greater-nav-item"><%= link_to '', :for_businesses, :id => 'business-link' %></li>
 			<li class="greater-nav-item"><a id="login-link" onclick="javascript:ShowDCLogin();" href="javascript:void(0);"></a></li>
+
 		</ul>
 	<!--	<div class="hidden" id="login-dropdown">
 			<h2 class="cafeta">Sign Up</h2>
