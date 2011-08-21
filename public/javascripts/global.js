@@ -21,7 +21,7 @@ $('#login-link').click(function(){
 })
 
 $('.login-closer').click(function(){
-	$('#login-dropdown').slideToggle("fast");
+	$('#dcloginpopup').hide();
 	return false;
 })
 
@@ -41,6 +41,11 @@ function DCLoginListener(user)
      document.getElementById("login").innerHTML = "<a href=\"javascript: return false;\" onclick=\"javascript:DCLogout();\"> Log Out </a>";
   }
 }
+
+$('#dcloginpopup').find('div').first().find('img').hide();
+$('#dcloginpopup').prepend('<a class="login-closer">×</a>');
+$('#dcloginpopup').find('table').find('tr').find('td:first').addClass('login-label');
+
 
 $('#quote-closer').click(function (){
 	$('#quote-container').slideToggle("slow");
@@ -66,24 +71,18 @@ $('input[type="text"]').each(function() {
 });
 
 $('textarea').each(function() {
-
        var default_value = this.value;
-
        $(this).focus(function(){
                if(this.value == default_value) {
                        this.value = '';
                }
-       });
-
+       })
        $(this).blur(function(){
                if(this.value == '') {
                        this.value = default_value;
                }
-       });
+       })
 
-});
-
-//$('.business-input').cleardefault();
-
+})
 
 });

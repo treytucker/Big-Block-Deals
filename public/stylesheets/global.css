@@ -179,8 +179,78 @@ p {
 					
 /*LOGIN DROPDOWN STUFF ====> NEW*/
 					
-	#dcloginpopup img {
-		/*display:none;*/
+	#dcloginpopup {
+		background:url(/images/sign-up-dropdown.png) left top no-repeat !important;
+		height:346px;
+		left:55.2% !important;
+		padding:40px 20px 20px !important;
+		top:147px !important;
+		width:376px;
+		z-index:25 !important;
+	}
+	
+	#dcloginpopup div, #dcloginpopup table, #dcloginpopup h2, #dcloginpopup h3, #dcloginpopup p, #dcloginpopup span, #dcloginpopup table, #dcloginpopup tbody, #dcloginpopup td, #dcloginpopup tr {
+		position:static !important;
+	}
+	
+	#dcloginpopup div img {
+		display:none;
+	}
+	
+	#loginprompt {
+		margin:auto;
+		width:350px !important;
+	}
+		#loginprompt strong {
+			color:#fff;
+			float:left;
+			font-family:'cafeta';
+			font-size:24px;
+			font-weight:normal !important;
+			margin:32px 0px;
+			text-align:center;
+			text-shadow:0px 1px 0px #1e8ec7;
+			-moz-text-shadow:0px 1px 0px #1e8ec7;
+			-webkit-text-shadow:0px 1px 0px #1e8ec7;
+			width:100%;
+		}
+			#loginprompt strong a {
+				color:#c1eaff !important;
+			}
+	
+	#dcloginpopup table {
+		float:left;
+		width:100%;
+	}
+		#dcloginpopup tr {
+			margin:15px 0px;
+		}
+		#dcloginpopup .login-label {
+			color:#fff !important;
+			font-family:'cafeta';
+			font-size:18px;
+			padding:7px 10px 0 0;
+			margin-top:-3px;
+			text-align:right;
+			text-transform:uppercase;
+			vertical-align:middle;
+		}
+		#dcloginpopup table input {
+			background:url(/images/login-input.jpg) left top no-repeat;
+			color:#fff;
+			font-family:'cafeta';
+			font-size:22px;
+			height:20px;
+			padding:7px 0px 3px 7px;
+			text-transform:uppercase;
+			width:231px;
+		}
+	
+	#big-black-box {
+		background:#000;
+		float:left;
+		height:400px;
+		width:100%;
 	}
 					
 /*LOGIN DROPDOWN STUFF ====> OLD*/			
@@ -196,9 +266,9 @@ p {
 			.login-closer {
 			    color: #A9E2FF;
 			    position: absolute;
-			    right: 24px;
+			    right: 26px;
 			    text-decoration: none;
-			    top: 50px;
+			    top: 56px;
 			}
 				.login-closer:hover {
 					background:#A9E2FF;
