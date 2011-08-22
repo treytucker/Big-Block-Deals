@@ -20,11 +20,13 @@ class GoodReadsController < ApplicationController
   end
 
   def show
+    @layout = "blog"
     @post = GoodRead.find(params[:id])
     @title = "Good Read | #{@post.created_at.to_s(:good_reads_title)}"
   end
   
   def show_catagories
+    @layout = "blog"
     @catagory = Catagory.find_by_name(params[:id])
     if @catagory.good_reads.nil?
       redirect_to good_reads_path, :notice => "There is no catagory named #{params[:id]}"
@@ -35,6 +37,7 @@ class GoodReadsController < ApplicationController
   
   # TODO Add pagination
   def show_dates
+    @layout = "blog"
     if params[:year]
       if params[:month]
         @month = "01 #{params[:month]} #{params[:year]}".to_date
@@ -49,12 +52,14 @@ class GoodReadsController < ApplicationController
   end
   
   def new
+    @layout = "blog"
     @post = GoodRead.new
     @title = "Good Read | New"
     @catagories = Catagory.list_names
   end
 
   def create
+    @layout = "blog"
     @post = GoodRead.new(params[:good_read])
     if @post.valid?
       @post.save
@@ -65,12 +70,14 @@ class GoodReadsController < ApplicationController
   end
 
   def edit
+    @layout = "blog"
     @post = GoodRead.find(params[:id])
     @title = "Good Read | Edit #{@post.created_at.to_s(:good_reads_title)}"
     @catagories = gather_thine_catagories
   end
 
   def update
+    @layout = "blog"
     @post = GoodRead.find(params[:id])
     if @post.update_attributes(params[:good_read])
       
@@ -81,6 +88,7 @@ class GoodReadsController < ApplicationController
   end
   
   def destroy
+    @layout = "blog"
     @post = GoodRead.find(params[:id])
     @post.destroy
     redirect_to :good_reads, :notice => "Post Deleted"

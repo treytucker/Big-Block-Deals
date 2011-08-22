@@ -329,7 +329,7 @@ p {
 		}
 		
 			li.minor-link {
-				float:left;
+				float:right;
 				margin:0px 0px 0px 50px;
 			}
 			
@@ -466,8 +466,13 @@ p {
 	float:left;
 	min-height:300px;
     margin:20px 35px 0px 0px;
-    width: 704px;
+    width: 960px;
 }
+
+	.regular-post, .first-post {
+		float:left;
+		width:704px;
+	}
 
 	.three-fourths .topper, .first-post .topper {
 		background:url(/images/three-fourths-topper.jpg) top left no-repeat;
@@ -485,13 +490,24 @@ p {
 		width:721px;
 	}
 	
-	.three-fourths .main-content, .first-post-stuff, .regular-post .post-content {
+	.posts-container {
+		float:left;
+		margin:0px 30px 0px 0px;
+		width:704px;
+	}
+	
+	.three-fourths .main-content, .first-post .content-header, .regular-post .post-content {
 	    background: url("/images/three-fourths-repeater.jpg") repeat-y scroll left 10px transparent;
 	    float: left;
 	    margin: 0 0 0 -8px;
 	    padding: 10px 0 5px 17px;
 		width: 704px;
 	}
+		.post-content {
+			float:left;
+			margin:0 20px 0 0;
+			width:704px;
+		}
 	
 	.three-fourths .bottom, .first-post .bottom, .regular-post .bottom {
 		background:url(/images/three-fourths-bottom.jpg) top left no-repeat;
@@ -553,7 +569,7 @@ p {
 
 .sidebar {
 	float:left;
-	margin:20px 0px 0px;
+	margin:0px;
 	position:relative;
 	width:220px;
 	z-index:5;
@@ -1016,6 +1032,12 @@ iframe #large_top_share {
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
+.back-to-all-link {
+	float:left;
+	margin:10px 0px 0px 20px;
+	width:90%;
+}
+
 .blog h2 {
 	float:left;
 	font-family:'Trebuchet MS';
@@ -1031,7 +1053,7 @@ iframe #large_top_share {
 
 .post-details {
 	float:left;
-	margin:0px;
+	margin:0px 0px 10px;
 	width:97%;
 }
 
@@ -1049,9 +1071,15 @@ iframe #large_top_share {
 	text-decoration:underline;
 }
 
-.blog p.post-text {
+.post-text {
 	float:left;
-	margin:15px 0px 15px;
+	margin:10px 0px;
+}
+
+.blog .post-text p {
+	float:left;
+	line-height:1.2em;
+	margin:3px 0px 6px;
 	width:97%;
 }
 
@@ -1067,7 +1095,29 @@ iframe #large_top_share {
 	.read-more-link:active {
 		margin:1px 0px 14px;
 	}
-
+	
+.post-admin-links a {
+	clear:both;
+	float:left;
+	margin:0px 0px 10px;
+}
+	
+.sidebar .blog-categories h3, .sidebar .blog-dates h3 {
+	float:left;
+	height:50px;
+	margin:-15px 0px 3px -9px;
+	width:100%;
+}
+.sidebar .blog-categories h3 { background:url(/images/sidebar-category-header.jpg) left top no-repeat; }
+.sidebar .blog-dates h3 { background:url(/images/sidebar-date-header.jpg) left top no-repeat; }
+.sidebar .blog-categories a, .sidebar .blog-dates a {
+	color:#fff !important;
+	float:left;
+	margin:5px;
+	text-shadow: 0px 1px 0px #828282;
+	-moz-text-shadow: 0px 1px 0px #828282;
+	-webkit-text-shadow: 0px 1px 0px #828282;
+}
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 

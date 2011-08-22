@@ -3,11 +3,13 @@
 		<h1 id="root-link"><a href="/">root</a></h1>
 		<ul id="minor-nav">
 			<!-- <li class="minor-link"><a href="/blog">Good Reads</a></li> -->
-			<li class="minor-link"><a href="http://twitter.com/bigblockdeals" target="blank"><img src="/images/twitter-link.png"/></a></li>
-			<li class="minor-link"><a href="http://facebook.com/bigblockdeals"><img src="/images/facebook-link.png"/></a></li>
+			
+			<li class="minor-link"><%= link_to "About Us", about_us_path() %></li>			
+			
 			<li class="minor-link"><%= link_to "Contact", contact_path %></li>
-			<li class="minor-link"><%= link_to "About Us", about_us_path() %></li>
-			<li class="minor-link"><%= link_to 'My Account', :user, :id => 'mydeals' %></li>
+			<li class="minor-link"><a href="http://facebook.com/bigblockdeals"><img src="/images/facebook-link.png"/></a></li>
+			<li class="minor-link"><a href="http://twitter.com/bigblockdeals" target="blank"><img src="/images/twitter-link.png"/></a></li>
+			<li class="minor-link"><%= link_to 'Good Reads', good_reads_path %></li>
 		</ul>
 		<ul id="greater-nav">
 			<li class="greater-nav-item">

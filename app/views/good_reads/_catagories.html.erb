@@ -1,13 +1,13 @@
 <!-- Trey don't laugh.... I just did this really quick so it'd be readable -->
 
-<div class="sidebar">
-	<div class="indiv-widget">
+	<div class="indiv-widget blog-categories">
 		<div class="widget-topper"></div>
 		<div class="widget-content">
 			<% if @catagories.nil? %>
-				<h3>NO CATAGORIES YO!</h3>
+				<h3></h3>
+				<p>No Categories Available</p>
 			<% else %>
-				<h3>CATAGORIES</h3>
+				<h3></h3>
 				<% @catagories.each do |f| %>
 					<%= link_to "#{f.name}", :action => "show_catagories", :id => f.name %><br>
 				<% end %>
@@ -18,4 +18,3 @@
 		</div>
 		<div class="widget-bottom"></div>
 	</div>
-</div>

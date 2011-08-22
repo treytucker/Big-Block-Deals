@@ -6,21 +6,31 @@ class CatagoriesController < ApplicationController
   before_filter :bomb_dot_com
   
   def index
+    @layout = "blog"
     @catagories = Catagory.all
     @title = "Catagories"
+    @catagories = gather_thine_catagories
+    @dates = gather_thine_dates
   end
 
   def edit
+    @layout = "blog"
     @catagory = Catagory.find(params[:id])
     @title = "Edit Catagory"
+    @catagories = gather_thine_catagories
+    @dates = gather_thine_dates
   end
 
   def new
+    @layout = "blog"
     @catagory = Catagory.new
     @title = "new Catagory"
+    @catagories = gather_thine_catagories
+    @dates = gather_thine_dates
   end
 
   def update
+    @layout = "blog"
     @catagory = Catagory.find(params[:id])
     if @catagory.update_attributes(params[:catagory])
       redirect_to( catagories_path, :notice => "Catagory Updated" )
@@ -30,6 +40,7 @@ class CatagoriesController < ApplicationController
   end
 
   def destroy
+    @layout = "blog"
     @catagory = Catagory.find(params[:id])
     # Checks if there are any good_reads associated with the catagory.
     # FIXME Flash message needs to list all the blog entries in that catagory
@@ -51,6 +62,7 @@ class CatagoriesController < ApplicationController
   end
 
   def create
+    @layout = "blog"
     @catagory = Catagory.new(params[:catagory])
     if @catagory.valid?
       @catagory.save
