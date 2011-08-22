@@ -35,10 +35,10 @@ $('#dcloginpopup').prepend('<a class="login-closer" onclick="HideDCLogin();" >×
 $('#dcloginpopup').find('table').find('tr').find('td:first').addClass('login-label');
 $('#dcloginpopup').find('#submitimg').parent().prepend('<a class="login-submit" onclick="dosubmit();" href="#">Let\'s Go!</a>');
 
-$('#login-link').find('.not-logged-in').click(function (){
-	ShowDCLogin();
-	return false;
-})
+// $('#login-link').find('.not-logged-in').click(function (){
+// 	ShowDCLogin();
+// 	return false;
+// })
 
 // Clears and stores the default value in input fields
 $('input[type="text"]').each(function() {
