@@ -13,17 +13,10 @@ class GoodReadsController < ApplicationController
     @num = 12
     @posts = GoodRead.order("created_at DESC").page(params[:page]).per(5)
     @title = "Good Reads"
-<<<<<<< HEAD
-    @catagories = Catagory.all
-    @dates = GoodRead.all( :select => "created_at", :order => "created_at" )
-    @layout = "blog"
-    @quotes = nil
     @page = "good_reads"
-=======
     @catagories = gather_thine_catagories
     @dates = gather_thine_dates
-    @layout = "three-fourths"
->>>>>>> 2dbba9842284226f455c9254b99af7e8add27dac
+    @layout = "blog"
   end
 
   def show

@@ -160,21 +160,26 @@ p {
 						background: url("/images/main-nav_down.jpg") no-repeat scroll -421px -1px transparent;
 					}
 				
-				#login-link {
+				#login a {
 					background: transparent;
 					float: left;
 				    height: 92px;
 				    margin: 0 0 0 1px;
 				    width: 148px;
 				}
-				
-					#login-link:hover {
-						background: url("/images/main-nav_hover.jpg") no-repeat scroll -572px -1px transparent;
+					.logged-out {
+						background:#fff !important;
+					}
+					.logged-out:hover {
+						background: url("/images/main-nav_hover.jpg") no-repeat scroll -572px -1px transparent !important;
 					}
 					
-					#login-link:active {
-						background: url("/images/main-nav_down.jpg") no-repeat scroll -572px -1px transparent;
+					.logged-out:active {
+						background: url("/images/main-nav_down.jpg") no-repeat scroll -572px -1px transparent !important;
 					}
+				.logged-in {
+					background:#000 !important;
+				}
 					
 					
 /*LOGIN DROPDOWN STUFF ====> NEW*/
@@ -276,7 +281,7 @@ p {
 					padding:0px 2px 2px;
 				}
 				.login-closer:active {
-					top:52px;
+					top:58px;
 				}
 			
 			#login-dropdown h2 {
