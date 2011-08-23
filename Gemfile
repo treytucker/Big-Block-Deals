@@ -9,6 +9,7 @@ gem "paperclip", "~> 2.3"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'kaminari'
 
+
 group :development do 
 	gem 'rspec-rails'
 	gem 'rails-footnotes'

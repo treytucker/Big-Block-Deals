@@ -9,9 +9,7 @@
 	<h1><%= @post.title %></h1><br>
 	<p><%= special_date(@post.created_at) %></p><br>
 
-	<% unless @post.catagory.nil? %>
-		<h1><%= @post.catagory.name %></h1><br>
-	<% end %>
+		<h1><%= @post.category.name %></h1><br>
 
 	<% if @post.image? %>
 		<%= image_tag @post.image.url(:medium) %>
@@ -19,7 +17,7 @@
 
 
 		&nbsp;<br><p><%= @post.post.html_safe %></p>
-		<% unless session[:admin_id] %>
+		<% if session[:admin_id] %>
 
 			&nbsp;<br><br>
 			<%= link_to "Edit This Post", edit_good_read_path(@post.id) %><br><br>

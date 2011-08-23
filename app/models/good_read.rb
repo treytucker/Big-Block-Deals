@@ -5,9 +5,9 @@
 =end
 
 class GoodRead < ActiveRecord::Base
-  attr_accessible :post, :title, :catagory_id, :image, :image_delete
-  validates_presence_of :post, :title, :catagory, :image, :message => "can't be blank"
-  belongs_to :catagory
+  attr_accessible :post, :title, :category_id, :image, :image_delete
+  validates_presence_of :post, :title, :category, :image, :message => "can't be blank"
+  belongs_to :category
   has_many :widgets, :as => :wedgetable
 
 # Relates to the images

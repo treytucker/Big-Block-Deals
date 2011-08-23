@@ -1,5 +1,5 @@
 =begin
-  TODO Add widget and quote models
+  TODO Add widget
 =end
 
 class UserWidgetsController < ApplicationController
