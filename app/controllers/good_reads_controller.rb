@@ -10,12 +10,8 @@ class GoodReadsController < ApplicationController
   def index
     @posts = GoodRead.order("created_at DESC").page(params[:page]).per(5)
     @title = "Good Reads"
-<<<<<<< HEAD
     @page = "good_reads"
-    @catagories = gather_thine_catagories
-=======
     @categories = gather_thine_categories
->>>>>>> f5f38f56349213a51e1040447095ed943613868b
     @dates = gather_thine_dates
     @layout = "blog"
   end
@@ -25,19 +21,12 @@ class GoodReadsController < ApplicationController
     @post = GoodRead.find(params[:id])
     @title = "Good Read | #{@post.created_at.to_s(:good_reads_title)}"
   end
-  
-<<<<<<< HEAD
-  def show_catagories
-    @layout = "blog"
-    @catagory = Catagory.find_by_name(params[:id])
-    if @catagory.good_reads.nil?
-      redirect_to good_reads_path, :notice => "There is no catagory named #{params[:id]}"
-=======
+
   def show_categories
-    @category = Category.find_by_name(params[:id])
+    @layout = "blog"
+    @catagory = Category.find_by_name(params[:id])
     if @category.good_reads.nil?
-      redirect_to good_reads_path, :notice => "There is no category named #{params[:id]}"
->>>>>>> f5f38f56349213a51e1040447095ed943613868b
+      redirect_to good_reads_path, :notice => "There is no catagory named #{params[:id]}"
     else
       @posts = @category.good_reads
     end

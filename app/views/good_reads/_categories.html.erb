@@ -6,7 +6,7 @@
 			<% if @categories.nil? %>
 				<h3>NO CATEGORIES YO!</h3>
 			<% else %>
-				<h3>categories</h3>
+				<h3></h3>
 				<% @categories.each do |f| %>
 					<%= link_to "#{f.name}", :action => "show_categories", :id => f.name %><br>
 				<% end %>
