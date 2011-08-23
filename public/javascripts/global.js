@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-$('#login-dropdown').removeClass('.hidden');
-$('#login-dropdown').hide();
+// $('#login-dropdown').removeClass('.hidden');
+// $('#login-dropdown').hide();
 
 
 // All the quotes stuff
@@ -35,10 +35,12 @@ $('#dcloginpopup').prepend('<a class="login-closer" onclick="HideDCLogin();" >×
 $('#dcloginpopup').find('table').find('tr').find('td:first').addClass('login-label');
 $('#dcloginpopup').find('#submitimg').parent().prepend('<a class="login-submit" onclick="dosubmit();" href="#">Let\'s Go!</a>');
 
-// $('#login-link').find('.not-logged-in').click(function (){
-// 	ShowDCLogin();
-// 	return false;
-// })
+//Hacking User Widget
+$('#My-Info').find('input[type="button"]').addClass('DCUser-submit');
+$('#My-Info').find('tr').find('td:first').addClass('edit-field-label');
+$('#forgotpasswordtr').find('.login-label').removeClass('login-label').find('a').addClass('login-submit');
+$('#forgotpasswordtr').prepend('<td class="login-label"></td>');
+
 
 // Clears and stores the default value in input fields
 $('input[type="text"]').each(function() {

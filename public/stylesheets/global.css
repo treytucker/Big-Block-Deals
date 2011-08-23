@@ -165,21 +165,26 @@ p {
 					float: left;
 				    height: 92px;
 				    margin: 0 0 0 1px;
+					text-indent:-9999px;
 				    width: 148px;
 				}
-					.logged-out {
-						background:#fff !important;
-					}
-					.logged-out:hover {
+					.not-logged-in:hover {
 						background: url("/images/main-nav_hover.jpg") no-repeat scroll -572px -1px transparent !important;
 					}
 					
-					.logged-out:active {
+					.not-logged-in:active {
 						background: url("/images/main-nav_down.jpg") no-repeat scroll -572px -1px transparent !important;
 					}
 				.logged-in {
-					background:#000 !important;
+					background:url(/images/main-nav-logout.jpg) no-repeat scroll -572px -1px transparent !important;
 				}
+					.logged-in:hover {
+						background: url("/images/main-nav-logout_hover.jpg") no-repeat scroll -572px -1px transparent !important;
+					}
+				
+					.logged-in:active {
+						background: url("/images/main-nav-logout_down.jpg") no-repeat scroll -572px -1px transparent !important;
+					}
 					
 					
 /*LOGIN DROPDOWN STUFF ====> NEW*/
@@ -250,6 +255,23 @@ p {
 			text-transform:uppercase;
 			width:231px;
 		}
+	.login-buttons td {
+		margin:0px 0px 0px 20px;
+	}
+	.login-submit {
+		background:url(/images/blue-button.png) left top no-repeat;
+		color:#fff;
+		height:51px;
+		float: left;
+		font-family:'cafeta';
+		font-size:18px;
+		margin:15px 0px 0px -9px;
+		padding:16px 8px 0px;
+		text-align:center;
+		text-transform:uppercase;
+		width:130px;
+	}
+	
 	
 	#big-black-box {
 		background:#000;
@@ -462,7 +484,14 @@ p {
 	margin:20px 0px 0px;
 }
 
-.three-fourths, .blog {
+.three-fourths {
+	float:left;
+	min-height:300px;
+    margin:30px -5px 0px 0px;
+    width: 740px;
+}
+
+.blog {
 	float:left;
 	min-height:300px;
     margin:20px 35px 0px 0px;
@@ -569,7 +598,7 @@ p {
 
 .sidebar {
 	float:left;
-	margin:0px;
+	margin:10px 0px 0px;
 	position:relative;
 	width:220px;
 	z-index:5;
@@ -738,7 +767,7 @@ p {
 
 .content iframe {
 	float:left;
-	margin:0px 0px 0px -24px !important;
+	margin:0px 0px 0px -34px !important;
 	width:720px !important;
 }
 	.content iframe form {
@@ -768,13 +797,14 @@ iframe #large_top_share {
 	float:left;
 	margin:10px 0px 0px;
 	text-shadow:none;
+	width:97%;
 }
 
 	#DCmenu li {
 		float:left;
 	}
-	#DCmenu a {
-	    background: url("/images/white-form-btn.jpg") no-repeat scroll left top transparent;
+	#DCmenu a, .DCUser-submit {
+	    background: url("/images/white-form-btn.jpg") no-repeat scroll left top transparent !important;
 	    float: left;
 	    font-family: 'cafeta';
 	    font-size: 21px;
@@ -796,6 +826,33 @@ iframe #large_top_share {
 		float:left !important;
 		position:static !important;
 	}
+#My-Info tr {
+	height:30px;
+}
+#My-Info-Edit tr {
+	float:left;
+	margin:0px 0px 6px;
+	width:95%;
+}
+#My-Info-Edit td {
+	vertical-align:middle;
+}
+.edit-field-label {
+	width:180px;
+}
+#My-Info-Edit input {
+	background:url(/images/business-wide-input-bg.jpg) left top no-repeat;
+	color:#828282;
+	height:31px;
+	padding:0px 10px 0px;
+	width:283px;
+}
+.DCUser-submit {
+	color:#828282;
+	margin:10px 0px 0px;
+	padding:3px 0px 0px;
+	width:225px !important;
+}
 
 		
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
