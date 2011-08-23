@@ -51,7 +51,7 @@ BASIC_CONTROLLERS = {
     :url => :privacy_policy,
     :form => :privacy_policy,
     :title => "Privacy Policy", 
-    :layout => "three-fourths"
+    :layout => "mostly-text"
     }, 
   :recent_deals => {
     :model => "RecentDeal", 
@@ -65,7 +65,7 @@ BASIC_CONTROLLERS = {
     :url => :terms_of_service,
     :form => :terms_of_service,
     :title => "Terms of Service", 
-    :layout => "three-fourths"
+    :layout => "mostly-text"
     },
   :user_widgets => {
     :model => "UserWidget", 
