@@ -740,7 +740,7 @@ p {
 	#footer-container, .debug_dump {
 		background:url(/images/footer-bg.jpg) top left repeat;
 		float:left;
-		height:50px;
+		height:60px;
 		width:100%;
 	}
 	
@@ -749,6 +749,10 @@ p {
 			font-size:12px;
 			margin:auto;
 			width:680px;
+		}
+		
+		#footer li {
+			float:left;
 		}
 		
 			.footer-link {
