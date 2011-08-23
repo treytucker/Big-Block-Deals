@@ -20,9 +20,7 @@
 			<h2><%= @post.title %></h2>
 			<div class="post-details">
 				<p class="post-date"><%= special_date(@post.created_at) %>&nbsp;&nbsp;|&nbsp;&nbsp;</p>
-				<% unless @post.catagory.nil? %>
-					<p class="post-date"><%= @post.catagory.name %></p>
-				<% end %>
+					<p class="post-date"><%= @post.category.name %></p>
 			</div>
 
 			<% if @post.image? %>

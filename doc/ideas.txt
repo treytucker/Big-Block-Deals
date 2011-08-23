@@ -1,2 +1,12 @@
 TODO Build out the Widgets
 THOUGHTS Talk to trey about the flash notification system.
+
+
+Data management
+	affiliate
+	customer_detail
+	customers_summary
+	deal_detail
+	merchant_information
+	promotion
+	

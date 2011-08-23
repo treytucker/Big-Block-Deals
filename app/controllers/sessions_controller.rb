@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   before_filter :bomb_dot_com, :except => [:new, :create]
   
   def new
+    @title = "Administrator Login"
   end
 
   def create

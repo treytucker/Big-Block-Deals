@@ -1,0 +1,14 @@
+<h1>This is all the categories</h1>
+<% if @categories.nil? %>
+	<p>there are no categories...</p><%= link_to "Add One", new_category_path %>
+<% else %>
+  <% @categories.each do |f| %>
+	<p><%= f.name %> - 
+	<%= link_to "Edit", edit_category_path(f.id) %> 
+	<%= link_to "Delete", { :action => "destroy", :id => f.id }, :confirm => 'Are you sure?', :method => :delete %></p><br>
+  <% end %>
+<% end %>
+<ul>
+
+<%= link_to "New category", new_category_path %><br>
+<%= link_to "Back to Good Reads", good_reads_path() %>

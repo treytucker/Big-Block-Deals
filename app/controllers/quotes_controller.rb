@@ -1,6 +1,3 @@
-=begin
-  TODO Test when there are no quotes
-=end
 class QuotesController < ApplicationController
   def index
     @quotes = Quote.all
@@ -12,7 +9,7 @@ class QuotesController < ApplicationController
 
   def create
     @quote = Quote.new(params[:quote])
-    if @quote.save 'basics_controller'
+    if @quote.save
       redirect_to quotes_path
     else
       render :new
@@ -36,8 +33,6 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
     if @quote.destroy
       redirect_to quotes_path, :notice => "You have deleted a quote by #{@quote.author}"
-    else
-      render :edit, :notice => "something went wrong"
     end
   end
 

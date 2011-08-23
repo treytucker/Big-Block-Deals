@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110819222120) do
+ActiveRecord::Schema.define(:version => 20110823155145) do
 
   create_table "about_us", :force => true do |t|
     t.string "header_1"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20110819222120) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "super_user"
   end
 
   create_table "affiliates", :force => true do |t|
@@ -70,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20110819222120) do
     t.datetime "updated_at"
   end
 
-  create_table "catagories", :force => true do |t|
+  create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -160,7 +161,7 @@ ActiveRecord::Schema.define(:version => 20110819222120) do
     t.text     "post"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "catagory_id"
+    t.integer  "category_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

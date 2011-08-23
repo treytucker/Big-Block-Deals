@@ -6,9 +6,9 @@
 	<%= f.label :post, "Post" %><br>
 	<%= f.text_area :post, :class => "mceEditor" %><br><br>
 	
-	<%= f.label :catagory, "Category" %>
+	<%= f.label :category, "Category" %>
 	
-	<%= f.collection_select( :catagory_id, @catagories, :id, :name, options ={:prompt => "-Select a catagory"}, :class =>"catagory") %>
+	<%= f.collection_select( :category_id, @categories, :id, :name, options ={:prompt => "-Select a category"}, :class =>"category") %>
 	
 	<% if @post.image? %>
 		<%= image_tag @post.image.url(:thumb) %><br><br>

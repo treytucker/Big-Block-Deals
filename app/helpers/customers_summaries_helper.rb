@@ -1,0 +1,2 @@
+module CustomersSummariesHelper
+end

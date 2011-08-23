@@ -1,7 +1,5 @@
 Bigblockdeals::Application.routes.draw do
 
-  get "business_leads/index"
-
   # This is for the Basic pages and their edit pages
   BASIC_CONTROLLERS.each do |f|
       get "#{f.last[:url].to_sym}/(:format)", :controller => "basics", :action => "#{f.first}", :as => f.last[:url]
@@ -16,7 +14,7 @@ Bigblockdeals::Application.routes.draw do
   # This is for all the Good Reads
     get '/admin/good_reads/new' => "good_reads#new", :as => "new_good_read"
     get '/admin/good_reads/:id/edit' => "good_reads#edit", :as => "edit_good_read"
-    get '/good_reads/catagory/:id', :controller => 'good_reads', :action => 'show_catagories', :as => "good_reads_catagory"
+    get '/good_reads/category/:id', :controller => 'good_reads', :action => 'show_categories', :as => "good_reads_category"
     match "/good_reads/date" => redirect("/good_reads") 
     get '/good_reads/date/(:year(/:month))', :controller => 'good_reads', :action => 'show_dates', :as => "good_reads_date"
     resources :good_reads
@@ -27,8 +25,15 @@ Bigblockdeals::Application.routes.draw do
     scope "admin" do
       resources :quotes, :as => "quotes"
       resources :widgets, :as => "widgets"
-      resources :catagories, :as => "catagories"
+      resources :categories, :as => "categories"
       resources :sessions, :as => "sessions"
+      resources :spreadsheets, :as => "spreadsheets"
+      resources :promotions, :as => "promotions"
+      resources :merchant_informations, :as => "merchant_informations"
+      resources :deal_details, :as => "deal_details"
+      resources :customers_summaries, :as => "customers_summaries"
+      resources :customer_details, :as => "customer_details"
+      resources :affiliates, :as => "affiliates"
     end
     
   #this is for all the Catagories for the good reads

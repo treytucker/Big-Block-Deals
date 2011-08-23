@@ -1,0 +1,34 @@
+<h1>Promotions#index</h1>
+<p>Find me in app/views/promotions/index.html.erb</p>
+
+<% if @promotions.empty? %>
+	No data has been uploaded or your data has not yet been processed.
+<% else %>
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr>
+			<th>Promotion Name</th>
+			<th>Company Name</th>
+			<th>Merchant Name</th>
+			<th>Code</th>
+			<th>Start</th>
+			<th>End</th>
+			<th>Discount</th>
+			<th>Total Used</th>
+			<th>Max Total Used</th>
+		</tr>
+		<% @promotions.each do |f| %>
+			<tr>
+				<td><%= f.promotion_name %></td>
+				<td><%= f.company_name %></td>
+				<td><%= f.merchant_name %></td>
+				<td><%= f.code %></td>
+				<td><%= f.start %></td>
+				<td><%= f.end %></td>
+				<td><%= f.discount %></td>
+				<td><%= f.total_used %></td>
+				<td><%= f.max_total_used %></td>
+			</tr>
+		<% end %>
+	</table>
+
+<% end %>
