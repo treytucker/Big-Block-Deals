@@ -2,23 +2,23 @@
 <html>
 <head>
   <title><%= title %></title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults, 'jquery', 'global', 'mbScrollable' %>
-  <script src="https://www.dealcurrent.com/embed/index.php?publisherID=232"></script>
-  <script>
-  	function DCLoginListener(user)
-	  {
-	    if(!user)
-	    {
-	       document.getElementById("mydeals").style.display="none";
-	       document.getElementById("login").innerHTML = "<a class=\"not-logged-in\" href=\"javascript: return false;\" onclick=\"javascript:ShowDCLogin();\"> Log In </a>";       
-	    }
-	    else {
-	       document.getElementById("mydeals").style.display="inline";	       
-	       document.getElementById("login").innerHTML = "<a class=\"logged-in\" href=\"#\" onclick=\"javascript:DCLogout();\"> Log Out </a>";
-	    }
-	  }
-  </script>
+  	<%= stylesheet_link_tag :all %>
+ 	<%= javascript_include_tag :defaults, 'jquery', 'global', 'mbScrollable' %>
+
+	<script>
+  		function DCLoginListener(user)
+		  {
+		    if(!user)
+		    {
+		       document.getElementById("mydeals").style.display="none";
+		       document.getElementById("login").innerHTML = "<a class=\"not-logged-in\" href=\"javascript: return false;\" onclick=\"javascript:ShowDCLogin();\"> Log In </a>";       
+		    }
+		    else {
+				document.getElementById("mydeals").style.display="inline";	       
+		       	document.getElementById("login").innerHTML = "<a class=\"logged-in\" href=\"#\" onclick=\"javascript:DCLogout();\"> Log Out </a>";
+		    	}
+		  	}
+		</script>
   <%= csrf_meta_tag %>
   <%= include_tiny_mce_if_needed %>
 
@@ -26,6 +26,8 @@
 </head>
 <body>
 	<%= render 'layouts/admin_nav' %>
+	
+	<p><%= @loaddc %></p>
 
 	<%= render 'layouts/flash_messages' %>
 
