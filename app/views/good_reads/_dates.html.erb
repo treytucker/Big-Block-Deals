@@ -1,19 +1,18 @@
 <!-- Trey don't laugh.... I just did this really quick so itd be readable -->
 
-<div class="sidebar">
-	<div class="indiv-widget">
+
+	<div class="indiv-widget blog-dates">
 		<div class="widget-topper"></div>
 		<div class="widget-content">
-			<h3>Dates</h3>
+			<h3></h3>
 			<% @year = @dates.group_by {|f| f.created_at.beginning_of_year} %>
 			<% @year.each do |year, other| %>
-				<br><%= link_to "#{year.strftime("%Y")}", :action => "show_dates", :year => year.strftime("%Y") %><br>
+				<%= link_to "#{year.strftime("%Y")}", :action => "show_dates", :year => year.strftime("%Y") %>
 				<% @month = other.group_by {|f| f.created_at.beginning_of_month} %>
 				<% @month.each do |month, specific| %>
-					<%= link_to "#{month.strftime('%B')}", :action => "show_dates", :year => "#{year.strftime("%Y")}", :month => month.strftime('%b') %><br>
+					<%= link_to "#{month.strftime('%B')}", :action => "show_dates", :year => "#{year.strftime("%Y")}", :month => month.strftime('%b') %>
 				<% end %>
 			<% end %>
 		</div>
 		<div class="widget-bottom"></div>
 	</div>
-</div>

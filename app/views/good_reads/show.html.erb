@@ -1,29 +1,45 @@
-<h1>Good Reads</h1>
+
 <!--
 	TODO Needs to add style to the flash notices
 	TODO Need to create a partial for viewing the post...Same for all the pages. 
 -->
 <p><%= flash.notice %></p><br>
-<% @post %>
+<div class="posts-container">
+	<div class="first-post">
+	<div class="topper"></div>
+		<div class="content-header">
+			<img class="page-header" src="/images/good-reads-title.jpg"/>
+			<%= link_to "Back to All Posts", good_reads_path, :class => "back-to-all-link" %>
+		</div>
+	<div class="bottom"></div>
+	</div>
+	<div class="regular-post">
+		<div class="topper"></div>
+		<div class="post-content">
+			<% @post %>
+			<h2><%= @post.title %></h2>
+			<div class="post-details">
+				<p class="post-date"><%= special_date(@post.created_at) %>&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+					<p class="post-date"><%= @post.category.name %></p>
+			</div>
 
-	<h1><%= @post.title %></h1><br>
-	<p><%= special_date(@post.created_at) %></p><br>
+			<% if @post.image? %>
+				<%= image_tag @post.image.url(:medium), :class => "post-image" %>
+			<% end %>
 
-		<h1><%= @post.category.name %></h1><br>
-
-	<% if @post.image? %>
-		<%= image_tag @post.image.url(:medium) %>
-	<% end %>
-
-
-		&nbsp;<br><p><%= @post.post.html_safe %></p>
-		<% if session[:admin_id] %>
-
-			&nbsp;<br><br>
-			<%= link_to "Edit This Post", edit_good_read_path(@post.id) %><br><br>
-			<%= link_to "Delete This Post", { :action => "destroy", :id => @post.id }, :confirm => 'Are you sure?', :method => :delete %>	
+			<div class="post-text"> <%= @post.post.html_safe %></div>
+			
+			<% unless session[:admin_id] %>
+			<div class="post-admin-links">
+				<%= link_to "Edit This Post", edit_good_read_path(@post.id) %><br><br>
+				<%= link_to "Delete This Post", { :action => "destroy", :id => @post.id }, :confirm => 'Are you sure?', :method => :delete %>
+			</div>
 
 		<% end %>
-
-<br><br>
-<%= link_to "Back to Good Reads", good_reads_path %>
+		</div>
+		<div class="bottom"></div>
+	</div>
+</div>
+<div class="sidebar">
+	<%= render 'layouts/widgets' %>
+</div>

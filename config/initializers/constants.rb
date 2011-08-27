@@ -7,7 +7,8 @@ BASIC_CONTROLLERS = {
     :url => :about_us, 
     :form => :about_us,
     :title => "About Us", 
-    :layout => "three-fourths"
+    :layout => "three-fourths",
+    :loaddc => "true"
     }, 
   :contacts => {
     :model => "Contact", 
@@ -21,14 +22,16 @@ BASIC_CONTROLLERS = {
     :url => :current_deal, 
     :form => :current_deal,
     :layout => "three-fourths", 
-    :title => "Current Deal"
+    :title => "Current Deal",
+    :page => "home"
     }, 
   :for_businesses => {
     :model => "ForBusiness", 
     :url => :for_businesses,
     :form => :for_business, 
     :title => "For Business", 
-    :layout => "three-fourths"
+    :layout => "three-fourths",
+    :page => "business"
     }, 
   :how_it_works_businesses => {
     :model => "HowItWorksBusiness", 
@@ -51,26 +54,28 @@ BASIC_CONTROLLERS = {
     :url => :privacy_policy,
     :form => :privacy_policy,
     :title => "Privacy Policy", 
-    :layout => "three-fourths"
+    :layout => "mostly-text"
     }, 
   :recent_deals => {
     :model => "RecentDeal", 
     :url => :recent_deals,
     :form => :recent_deal,
     :title => "Recent Deals", 
-    :layout => "three-fourths"
+    :layout => "three-fourths",
+    :page => "recent-deals"
     },
   :terms_of_services => {
     :model => "TermsOfService", 
     :url => :terms_of_service,
     :form => :terms_of_service,
     :title => "Terms of Service", 
-    :layout => "three-fourths"
+    :layout => "mostly-text"
     },
   :user_widgets => {
     :model => "UserWidget", 
     :url => :user, 
     :title => "Your Account", 
-    :layout => "three-fourths"
+    :layout => "three-fourths",
+    :page => "user-page"
     }
 }

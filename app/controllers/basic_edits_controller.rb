@@ -15,6 +15,7 @@ class BasicEditsController < ApplicationController
 
     # This dynamically creates all the actions needed to edit/create new content based on if there is content in the DB or not.
     define_method(edit) {
+      @layout = f.last[:layout]
       if @content = ActiveRecord.const_get(models).last
         @title = "Edit #{f.last[:title]} Page"
       else
@@ -28,6 +29,7 @@ class BasicEditsController < ApplicationController
 # If there isn't a record, it creates a new record. 
 
     define_method(create) {
+      @layout = f.last[:layout]
       if @content = ActiveRecord.const_get(models).last
         if @content.update_attributes(params[form])
           redirect_to url

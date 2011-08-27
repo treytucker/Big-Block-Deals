@@ -9,6 +9,7 @@
 <div class="for-businesses-main">
 	<h2><%= @content.header %></h2>
 	<p><%= @content.content %></p>
+	<p><%= @page %></p>
 
 	<%= form_for @business_inquiries, :as => "business_inquiries", :url => { :controller => "business_leads", :action => "index" }, :html => { :id => "business-contact-form" } do |f| -%>
 		<div class="half-width-form">
