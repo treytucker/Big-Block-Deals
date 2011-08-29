@@ -6,6 +6,7 @@ class BasicsController < ApplicationController
     @layout = f.last[:layout]
     @title = f.last[:title]
     @action = f.first
+    @loaddc = f.last[:loaddc]
   }
   end
 

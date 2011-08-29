@@ -4,36 +4,35 @@
 <%= form_for @content, :url => :contacts_create do |f| -%>
 <%= render "shared/error_messages", :target => @content %>
 
-<%= f.label :header_1, "Header_1" %><br>
-<%= f.text_field :header_1 %><br>
-
-<%= f.label :link_1, "Link_1" %><br>
-<%= f.text_field :link_1 %><br>
-
-<%= f.label :header_2, "Header_2" %><br>
-<%= f.text_field :header_2 %><br>
-
-<%= f.label :link_2, "Link_2" %><br>
-<%= f.text_field :link_2 %><br>
-
+<div class="contact-address-box">
+	<div class="contact-left-side">
+		<%= f.text_field :header_1, :class => "edit-input cafeta" %>
+		<%= f.text_field :link_1, :class => "edit-input" %>
+	</div>
+	<div class="contact-right-side">
+		<%= f.text_field :header_2, :class => "edit-input" %>
+		<%= f.text_field :link_2, :class => "edit-input" %><br>
+	</div>
+</div>
+<div class="bottom-contact-info cafeta">
 <%= f.label :number, "Number" %><br>
-<%= f.text_field :number %><br>
+<%= f.text_field :number, :class => "edit-input" %><br>
 
 <%= f.label :address_name, "Address Name" %><br>
-<%= f.text_field :address_name %><br>
+<%= f.text_field :address_name, :class => "edit-input" %><br>
 
 <%= f.label :address_street, "Street Address" %><br>
-<%= f.text_field :address_street %><br>
+<%= f.text_field :address_street, :class => "edit-input" %><br>
 
 <%= f.label :city, "City" %><br>
-<%= f.text_field :city %><br>
+<%= f.text_field :city, :class => "edit-input" %><br>
 
 <%= f.label :state, "State" %><br>
-<%= f.text_field :state %><br>
+<%= f.text_field :state, :class => "edit-input" %><br>
 
 <%= f.label :zip_code, "Zip Code" %><br>
-<%= f.text_field :zip_code %><br>
-
-<%= f.submit "Save", :disable_with => 'Saving...' %>
+<%= f.text_field :zip_code, :class => "edit-input" %><br>
+</div>
+<%= f.submit "Save", :disable_with => 'Saving...', :class => "edit-submit" %>
 
 <% end -%>

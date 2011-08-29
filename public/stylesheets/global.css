@@ -1200,12 +1200,13 @@ iframe #large_top_share {
 		width:50%;
 	}
 		.contact-left-side h2, .contact-right-side h2 {
+			background:transparent;
 		    font-size: 24px;
 		    left: 40px;
 		    position: absolute;
 		    top: 25px;
 		}
-		.contact-left-side a, .contact-right-side a {
+		.contact-left-side a, .contact-right-side a, .contact-detail-edit {
 		    color: #3FBEFF;
 		    font-size: 18px;
 		    left: 40px;
@@ -1364,7 +1365,7 @@ iframe #large_top_share {
 		/* IMPORTANT GLOBAL STUFF */
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
-.three-fourths h2, .three-fourths h3, .three-fourths p, .three-fourths span, .three-fourths a, .full-width h2, .full-width h3,  .full-width p,  .full-width span,  .full-width a {
+.three-fourths h2, .three-fourths h3, .three-fourths p, .three-fourths span, .full-width h2, .full-width h3,  .full-width p,  .full-width span,  .full-width a {
 	color:#595757 !important;
 }
 a.admin-edit-link {
@@ -1373,7 +1374,99 @@ a.admin-edit-link {
 	top:11px;
 	right:20px;
 }
+
+label.admin-edit-label {
+	color:#595757;
+	float:left;
+	font-family:'cafeta';
+	font-size:18px;
+	margin:2px 0px 3px;
+	text-transform:uppercase;
+	width:97%;
+}
+	.bottom-contact-info label {
+		color:#595757;
+		float:left;
+		font-size:16px;
+		margin:8px 0px 4px 20px;
+		width:100%;
+	}
+
+.edit-input, .edit-input-narrow {
+	background:url(/images/white-form-input-bg.jpg) left top no-repeat;
+	color:#595757;
+	float:left;
+	height:27px;
+	margin:5px 20px 15px;
+	padding:4px 10px 0px;
+	position:static !important;
+	width:203px;
+}
+	.edit-input-narrow {
+		background:url(/images/hiw-business-edit-field.jpg) left top no-repeat;
+		width:153px;
+	}
+
+.edit-submit {
+	background:url(/images/business-submit-bg.jpg) left top no-repeat;
+	float:left;
+	height:31px;
+	text-indent:-9999px;
+	width:303px;
+}
+	.edit-submit:active {
+		background:url(/images/business-submit-down.jpg) left top no-repeat;
+	}
+
+/* HOW IT WORKS */
+	
+	.hiw-consumer-text label {
+		color:#595757;
+		font-family:'Trebuchet MS';
+		text-transform:uppercase;
+	}
+	
+	.hiw-consumer-text input, .hiw-business-main input, .hiw-business-text input, .about-us-section input{
+		margin:0px 0px 10px -5px;
+	}
+	
+	.hiw-consumer-text textarea, .hiw-business-main textarea, .hiw-business-text textarea, .about-us-section textarea, .for-business-main textarea {
+		background:#e0e0e0;
+		border-top:solid 1px #cbcbcb;
+		border-bottom:solid 1px #f2f2f2;
+		border-right:0px;
+		border-left:0px;
+		color:#595757;
+		font-family:'Trebuchet MS';
+		font-size:12px;
+		padding:5px 0px 5px 5px;
+		width:200px;
+	}
+	
+	.hiw-business-main textarea {
+		height:220px;
+		width:600px;
+	}
+	.hiw-business-text textarea {
+		width: 143px;
+	}
+	.about-us-section textarea {
+		height:200px;
+		margin:0px 5px 40px 0px;
+		width:500px;
+	}
+	.for-business-main input {
+		margin:5px 0px;
+	}
+	.for-business-main textarea {
+		height:200px;
+		margin:5px 0px;
+		width:80%;
+	}
+	
 	
 	.debug_dump {
 		color:#fff;
 	}
+	
+ 

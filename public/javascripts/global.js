@@ -57,7 +57,7 @@ $('input[type="text"]').each(function() {
        });
 
 });
-$('textarea').each(function() {
+$('textarea[class="clear-input"]').each(function() {
        var default_value = this.value;
        $(this).focus(function(){
                if(this.value == default_value) {
