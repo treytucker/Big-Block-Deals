@@ -15,7 +15,8 @@ BASIC_CONTROLLERS = {
     :url => :contact, 
     :form => :contact,
     :title => "Contact", 
-    :layout => "three-fourths"
+    :layout => "three-fourths",
+    :loaddc => "true"
     }, 
   :current_deals => {
     :model => "CurrentDeal", 
@@ -23,7 +24,8 @@ BASIC_CONTROLLERS = {
     :form => :current_deal,
     :layout => "three-fourths", 
     :title => "Current Deal",
-    :page => "home"
+    :page => "home",
+    :loaddc => "false"
     }, 
   :for_businesses => {
     :model => "ForBusiness", 
@@ -31,7 +33,8 @@ BASIC_CONTROLLERS = {
     :form => :for_business, 
     :title => "For Business", 
     :layout => "three-fourths",
-    :page => "business"
+    :page => "business",
+    :loaddc => "true"
     }, 
   :how_it_works_businesses => {
     :model => "HowItWorksBusiness", 
@@ -39,7 +42,8 @@ BASIC_CONTROLLERS = {
     :form => :how_it_works_business,
     :title => "How it Works", 
     :layout => "full-width", 
-    :hiw_active => "business-active"
+    :hiw_active => "business-active",
+    :loaddc => "true"
     }, 
   :how_it_works_consumers => {
     :model => "HowItWorksConsumer", 
@@ -47,14 +51,16 @@ BASIC_CONTROLLERS = {
     :form => :how_it_works_consumer,
     :title => "How it Works", 
     :layout => "full-width", 
-    :hiw_active => "consumer-active"
+    :hiw_active => "consumer-active",
+    :loaddc => "true"
     }, 
   :privacy_policies => {
     :model => "PrivacyPolicy", 
     :url => :privacy_policy,
     :form => :privacy_policy,
     :title => "Privacy Policy", 
-    :layout => "mostly-text"
+    :layout => "mostly-text",
+    :loaddc => "true"
     }, 
   :recent_deals => {
     :model => "RecentDeal", 
@@ -62,20 +68,23 @@ BASIC_CONTROLLERS = {
     :form => :recent_deal,
     :title => "Recent Deals", 
     :layout => "three-fourths",
-    :page => "recent-deals"
+    :page => "recent-deals",
+    :loaddc => "false"
     },
   :terms_of_services => {
     :model => "TermsOfService", 
     :url => :terms_of_service,
     :form => :terms_of_service,
     :title => "Terms of Service", 
-    :layout => "mostly-text"
+    :layout => "mostly-text",
+    :loaddc => "true"
     },
   :user_widgets => {
     :model => "UserWidget", 
     :url => :user, 
     :title => "Your Account", 
     :layout => "three-fourths",
-    :page => "user-page"
+    :page => "user-page",
+    :loaddc => "true"
     }
 }

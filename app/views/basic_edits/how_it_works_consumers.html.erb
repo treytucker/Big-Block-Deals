@@ -1,30 +1,40 @@
+<div class="content-header">
+	<img class="page-header" src="/images/how-it-works-title.jpg"/>
+	<div class="how-it-works-nav">
+		<a class="consumers consumer-active"></a>
+		<%= link_to	'', :how_it_works_businesses, :class => "businesses" %>
+	</div>
+</div>
+<div class="hiw-content">
+	<img id="hiw-consumer-graphic" src="/images/how-it-works_consumer.jpg"/>
 <%= form_for @content, :url => :how_it_works_consumers_create do |f| -%>
-<%= render "shared/error_messages", :target => @content %>
-
-<%= f.label :header_1, "Header_1" %>  <br>
-<%= f.text_field :header_1 %>         <br>
-
-<%= f.label :content_1, "Content_1" %><br>
-<%= f.text_area :content_1 %>        <br>
-
-<%= f.label :header_2, "Header_2" %>  <br>
-<%= f.text_field :header_2 %>         <br>
-
-<%= f.label :content_2, "Content_2" %><br>
-<%= f.text_area :content_2 %>        <br>
-
-<%= f.label :header_3, "Header_3" %>  <br>
-<%= f.text_field :header_3 %>         <br>
-
-<%= f.label :content_3, "Content_3" %><br>
-<%= f.text_area :content_3 %>        <br>
-
-<%= f.label :header_4, "Header_4" %>  <br>
-<%= f.text_field :header_4 %>         <br>
-
-<%= f.label :content_4, "Content_4" %><br>
-<%= f.text_area :content_4 %>        <br>
-
-<%= f.submit "Save", :disable_with => 'Saving...' %>
+	<div class="hiw-consumer-text">
+		<h2>In The Beginning</h2>
+		<%= f.text_field :header_1, :class => "edit-input" %>
+		<%= f.label :content_1, "Content_1" %>
+		<%= f.text_area :content_1 %>
+	</div>
+	<div class="hiw-consumer-text">
+		<h2>Purchase the Deal</h2>
+		<%= f.text_field :header_2, :class => "edit-input" %>
+		<%= f.label :content_2, "Content_2" %>
+		<%= f.text_area :content_2 %>
+	</div>
+	<div class="hiw-consumer-text">
+		<h2>Share</h2>
+		<%= f.text_field :header_3, :class => "edit-input" %>
+		<%= f.label :content_3, "Content_3" %>
+		<%= f.text_area :content_3 %>
+	</div>
+	<div class="hiw-consumer-text">
+		<h2>Bring the Value Home</h2>
+		<%= f.text_field :header_4, :class => "edit-input" %>
+		<%= f.label :content_4, "Content_4" %>
+		<%= f.text_area :content_4 %>
+	</div>
+<%= f.submit "Save", :disable_with => 'Saving...', :class => "edit-submit" %>
 
 <% end -%>
+
+	
+</div>

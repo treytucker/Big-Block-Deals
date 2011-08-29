@@ -2,10 +2,9 @@
 	<div id="navigation">
 		<h1 id="root-link"><a href="/">root</a></h1>
 		<ul id="minor-nav">
-			<!-- <li class="minor-link"><a href="/blog">Good Reads</a></li> -->
-			<li class="minor-link"><%= link_to 'My Account', :user, :id => "mydeals" %></li>
-			<li class="minor-link"><%= link_to "About Us", about_us_path() %></li>			
+			<li class="minor-link"><a href="javascript:void(0);" id="mydeals" onclick="javascript:showMyDeals();">My Account</a></li>
 			
+			<li class="minor-link"><%= link_to "About Us", about_us_path() %></li>			
 			<li class="minor-link"><%= link_to "Contact", contact_path %></li>
 			<li class="minor-link"><a href="http://facebook.com/bigblockdeals"><img src="/images/facebook-link.png"/></a></li>
 			<li class="minor-link"><a href="http://twitter.com/bigblockdeals" target="blank"><img src="/images/twitter-link.png"/></a></li>
@@ -20,48 +19,6 @@
 
 			<li class="greater-nav-item"><%= link_to '', :for_businesses, :id => 'business-link' %></li>
 			<li id="login" class="greater-nav-item"></li>
-
 		</ul>
-	<!--	<div class="hidden" id="login-dropdown">
-			<h2 class="cafeta">Sign Up</h2>
-			<form class="dropdown-mailchimp-form">
-				<a class="login-closer" href="#">×</a>
-					 Begin MailChimp Signup Form
-					<script type="text/javascript">
-					// delete this script tag and use a "div.mce_inline_error{ XXX !important}" selector
-					// or fill this in and it will be inlined when errors are generated
-					var mc_custom_error_style = '';
-					</script>
-					<div id="mc_embed_signup">
-						<form action="http://bigblockdeals.us2.list-manage.com/subscribe/post?u=e2a52935443d9653028bbd36e&amp;id=251cbfea3a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-							<fieldset>
-
-						<div class="mc-field-group">
-						
-						<input type="text" value="Email" name="EMAIL" class="required cafeta" id="mce-EMAIL"/>
-						</div>
-						<div class="mc-field-group">
-						<input type="text" value="ZIP Code" name="MMERGE1" class="required cafeta" id="mce-MMERGE1"/>
-						</div>
-							<div id="mce-responses">
-								<div class="response" id="mce-error-response" style="display:none"></div>
-								<div class="response" id="mce-success-response" style="display:none"></div>
-							</div>
-						<div>
-						<input type="submit" value="Let's Do This" name="subscribe" id="mc-embedded-subscribe" class="submit-btn cafeta"></div>
-							</fieldset>	
-						</form>
-					</div>
-			</form>
-> 			<script src="https://www.dealcurrent.com/embed/index.php?publisherID=232"></script>
-> 			 
-> 			<table width="150">
-> 			  <tr>
-> 			   <td> <a href="javascript:void(0);" id="mydeals" onclick="javascript:showMyDeals();" style="display:none;"> My Account </a> </td>     
-> 			   <td> <span id="login"><a href="javascript:void(0);" id="login" onclick="javascript:ShowDCLogin();"> Log In </a></span> </td>
-> 			  </tr> 
-> 			 </table>
-			
-		</div> -->
 	</div>
 </div>
