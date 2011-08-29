@@ -1,4 +1,3 @@
-
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
@@ -8,6 +7,7 @@ gem 'capybara'
 gem "paperclip", "~> 2.3"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'kaminari'
+gem 'delayed_job'
 
 group :development do 
 	gem 'rspec-rails'

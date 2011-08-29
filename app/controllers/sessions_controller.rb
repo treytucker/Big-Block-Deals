@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     admin = Admin.authenticate(params[:email].downcase, params[:password])
     if admin
       session[:admin_id] = admin.id
-      redirect_to root_url, :notice => "Logged In"
+      redirect_to admins_path, :notice => "Logged In"
     else
       flash.now.alert = "Invalid authentication credentials"
       render "new"

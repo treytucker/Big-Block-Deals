@@ -1,9 +1,7 @@
 <!--
 	FIXME Needs styling
 -->
-
-<%= form_for @post, :html => { :multipart => true, :method => :put } do |f| -%>
-
+<%= form_for @post, :html => { :multipart => true, :method => target } do |f| -%>
 	<%= f.label :title, "Title" %><br>
 	<%= f.text_field :title %><br>
 
@@ -12,7 +10,8 @@
 	
 	<%= f.label :category, "Category" %>
 	
-	<%= f.collection_select( :category_id, @categories, :id, :name, options ={:prompt => "-Select a category"}, :class =>"category") %>
+	<%= collection_select(@post, :category_id, Category.all, :id, :name, :prompt => true) %>
+	
 	
 	<% if @post.image? %>
 		<%= image_tag @post.image.url(:thumb) %><br><br>
@@ -23,4 +22,5 @@
 	
 	<br><%= f.file_field :image, :accept => "jpg/png" %><br>	
 	<%= f.submit "Update", :disable_with => 'Updating...' %>
-<% end -%>
+
+<% end %>

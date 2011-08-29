@@ -30,8 +30,8 @@ Bigblockdeals::Application.routes.draw do
         resources :customers_summaries, :as => "customers_summaries"
         resources :customer_details, :as => "customer_details"
         resources :affiliates, :as => "affiliates"
-        get ":id/new" => "spreadsheets#new", :as => "new_spreadsheet"
-        match ":id/update" => "spreadsheets#update", :as => "update_spreadsheet"
+        # get ":id/new" => "spreadsheets#new", :as => "new_spreadsheet"
+        # match ":id/update" => "spreadsheets#update", :as => "update_spreadsheet"
       end
       resources :quotes, :as => "quotes"
       resources :widgets, :as => "widgets"

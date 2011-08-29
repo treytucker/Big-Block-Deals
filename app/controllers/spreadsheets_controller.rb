@@ -20,17 +20,27 @@ class SpreadsheetsController < ApplicationController
     rescue
       redirect_to spreadsheets_path, :notice => "This page does not exist"
   end
-  
-  def update
-    @model = ActiveRecord.const_get(params[:id])
-    @title = "Upload a Spreadsheet"
-    @spreadsheet = @model.new
-    rescue
-      redirect_to spreadsheets_path, :notice => "This page does not exist"
-    end
+  # 
+  # def update
+  #   @model = ActiveRecord.const_get(params[:id])
+  #   @title = "Upload a Spreadsheet"
+  #   @spreadsheet = @model.new
+  #   rescue
+  #     redirect_to spreadsheets_path, :notice => "This page does not exist"
+  #   end
+
+  def new
+    @spreadsheet  = Spreadsheet.new
+  end
 
   def create
-    
+    @spreadsheet = Spreadsheet.new(params[:spreadsheet])
+    if @spreadsheet.valid?
+      @spreadsheet.save
+      Delayed::Job.enqueue(CsvImportingJob.new(@spreadsheet.id))
+      redirect_to spreadsheets_path
+    else
+      render "new"
+    end
   end
-  
 end
