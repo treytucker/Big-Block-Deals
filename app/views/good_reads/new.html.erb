@@ -1,5 +1,31 @@
 <h1>New Good Read</h1>
 
-<%= render "shared/error_messages", :target => @post %>
 
-<%= render :partial => 'form' %>
+
+
+
+<%= form_for @post, :html => { :multipart => true, :method => :post } do |f| -%>
+
+<%= render "shared/error_messages", :target => @post %>
+	<%= f.label :title, "Title" %><br>
+	<%= f.text_field :title %><br>
+
+	<%= f.label :post, "Post" %><br>
+	<%= f.text_area :post, :class => "mceEditor" %><br><br>
+	
+	<%= f.label :category, "Category" %>
+	
+	<%= collection_select(:good_read, :category_id, Category.all, :id, :name, :prompt => true) %>
+	
+	
+	<% if @post.image? %>
+		<%= image_tag @post.image.url(:thumb) %><br><br>
+		<%= f.label :image_delete, "Delete that image!" %>
+	    <%= f.check_box :image_delete %><br>
+	<% end %>
+	
+	
+	<br><%= f.file_field :image, :accept => "jpg/png" %><br>	
+	<%= f.submit "Update", :disable_with => 'Updating...' %>
+
+<% end %>

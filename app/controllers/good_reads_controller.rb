@@ -61,7 +61,7 @@ class GoodReadsController < ApplicationController
     @post = GoodRead.new(params[:good_read])
     if @post.valid?
       @post.save
-      redirect_to :good_reads
+      redirect_to good_reads_path
     else
       render :new
     end

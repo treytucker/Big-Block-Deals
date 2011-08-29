@@ -8,7 +8,5 @@ module GoodReadsHelper
     end
   end
   
-  def special_date(date_obj)
-    date_obj.strftime("%b #{date_obj.day.ordinalize}, %Y")
-  end
+
 end

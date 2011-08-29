@@ -1,6 +1,9 @@
 # Load the rails application
 require File.expand_path('../application', __FILE__)
 require 'csv'
+require 'csv_import'
+require 'csv_importing_job'
+
 # Initialize the rails application
 Bigblockdeals::Application.initialize!
 

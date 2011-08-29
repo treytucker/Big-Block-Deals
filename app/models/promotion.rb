@@ -1,4 +1,5 @@
 class Promotion < ActiveRecord::Base
+  attr_reader :table
 end
 
 # == Schema Information
@@ -17,27 +18,3 @@ end
 #  max_total_used :integer
 #  created_at     :datetime
 #  updated_at     :datetime
-#
-# require 'fastercsv'
-# FasterCSV.foreach("#{RAILS_ROOT}/file.csv") do |row|
-#   record = Bcode.new(
-#   :term_no => row[0],
-#   :standard_term => row[1]
-#   )
-#   record.save
-# end
-
-# CSV.foreach("#{RAILS_ROOT}/public/promotion.csv") do |row|
-#   record = Promotion.new(
-#     :promotion_name => row[0],
-#     :company_name => row[1],
-#     :merchant_name => row[2],
-#     :code => row[3],
-#     :start => row[4],
-#     :end => row[5],
-#     :discount => row[6],
-#     :total_used => row[7],
-#     :max_total_used => row[8]
-#   )
-#   record.save
-# end

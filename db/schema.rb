@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110823155145) do
+ActiveRecord::Schema.define(:version => 20110829024100) do
 
   create_table "about_us", :force => true do |t|
     t.string "header_1"
@@ -42,15 +42,6 @@ ActiveRecord::Schema.define(:version => 20110823155145) do
     t.integer  "merchant"
     t.integer  "number_sold"
     t.decimal  "total_revenue"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "business_contact_models", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -148,6 +139,21 @@ ActiveRecord::Schema.define(:version => 20110823155145) do
     t.datetime "updated_at"
   end
 
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
   create_table "for_businesses", :force => true do |t|
     t.string   "title"
     t.string   "header"
@@ -239,6 +245,16 @@ ActiveRecord::Schema.define(:version => 20110823155145) do
   end
 
   create_table "recent_deals", :force => true do |t|
+  end
+
+  create_table "spreadsheets", :force => true do |t|
+    t.string   "table"
+    t.string   "csv_spreadsheet_file_name"
+    t.string   "csv_spreadsheet_content_type"
+    t.integer  "csv_spreadsheet_file_size"
+    t.datetime "csv_spreadsheet_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "terms_of_services", :force => true do |t|

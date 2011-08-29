@@ -1,2 +1,17 @@
 <h1>Spreadsheets#new</h1>
 <p>Find me in app/views/spreadsheets/new.html.erb</p>
+
+<% form_for @spreadsheet, :html => { :multipart => true } do |f| -%>
+	<%= f.label :csv_spreadsheet, "Spreadsheet" %><br>
+	<%= f.file_field :csv_spreadsheet %>
+
+	<%= f.label :table, "Table" %>
+	<%= f.radio_button :table, :Affiliate %> Affiliate<br>
+	<%= f.radio_button :table, :CustomerDetail %><br>
+	<%= f.radio_button :table, :CustomerSummary %><br>
+	<%= f.radio_button :table, :MerchantInformation %><br>
+	<%= f.radio_button :table, :DealDetail %><br>
+	<%= f.radio_button :table, :Promotion %><br><br>
+
+	<%= f.submit "Upload!", :disable_with => 'Uploading...' %>
+<% end -%>

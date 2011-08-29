@@ -1,11 +1,21 @@
-<h1><%= @title %></h1><br>
-
-List of current spreadsheets:<br><br>
-<ul>
-	<li>affiliate - Last updated: <%= @affiliate %></li>
-	<li>customer_detail - Last updated: <%= @customer_detail %></li>
-	<li>customers_summary - Last updated: <%= @customers_summary %></li>
-	<li>deal_detail - Last updated: <%= @deal_detail %></li>
-	<li>merchant_information - Last updated: <%= @merchant_information %></li>
-	<li>promotion - Last updated: <%= @promotion %></li>
-</ul>
+<div class="topper"></div>
+<div class="full-width">
+	<h1><%= @title %></h1><br>
+	<h2>Current Jobs being processed:</h2>
+	<ul>
+		<li>Affiliate</li>
+		<li>Customer Detail</li>
+	</ul><br><br>
+	
+	List of current spreadsheets:<br><br>
+	<ul>
+		<li>affiliate - Last updated: <%= @affiliate %></li>
+		<li>customer_detail - Last updated: <%= @customer_detail %></li>
+		<li>customers_summary - Last updated: <%= @customers_summary %></li>
+		<li>deal_detail - Last updated: <%= @deal_detail %></li>
+		<li>merchant_information - Last updated: <%= @merchant_information %></li>
+		<li>promotion - Last updated: <%= special_date(@promotion.created_at) %> - <%= link_to "View!", spreadsheet_path("Promotion") %></li>
+	</ul><br>
+	
+	<%= link_to "Upload a Spreadsheet", new_spreadsheet_path %>
+</div>
