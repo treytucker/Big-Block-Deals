@@ -1,2 +1,37 @@
-<h1>Spreadsheets#show</h1>
-<p>Find me in app/views/spreadsheets/show.html.erb</p>
+<h1>Promotions Spreadsheets</h1><br><br>
+
+<%= link_to "Upload", new_spreadsheet_path %><br>
+<%= link_to "Back", spreadsheets_path() %>
+
+
+<% if @spreadsheet.empty? %>
+	No data has been uploaded or your data has not yet been processed.
+<% else %>
+	<table cellspacing="15" cellpadding="5">
+		<tr>
+			<th>Promotion Name</th>
+			<th>Company Name</th>
+			<th>Merchant Name</th>
+			<th>Code</th>
+			<th>Start</th>
+			<th>End</th>
+			<th>Discount</th>
+			<th>Total Used</th>
+			<th>Max Total Used</th>
+		</tr>
+		<% @spreadsheet.each do |f| %>
+			<tr>
+				<td><%= f.promotion_name %></td>
+				<td><%= f.company_name %></td>
+				<td><%= f.merchant_name %></td>
+				<td><%= f.code %></td>
+				<td><%= f.start %></td>
+				<td><%= f.end %></td>
+				<td><%= f.discount %></td>
+				<td><%= f.total_used %></td>
+				<td><%= f.max_total_used %></td>
+			</tr>
+		<% end %>
+	</table>
+
+<% end %>

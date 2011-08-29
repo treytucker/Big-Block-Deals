@@ -1,8 +1,13 @@
+<!--
+	TODO Add in Quote manager link
+	TODO Add in Edit Widgets on current page if widgets are acceptable
+-->
+
 <% if session[:admin_id] %>
 	<div id="admin_nav">
 		<div id="admin-nav-container">
 			<%= link_to "New Good Read", new_good_read_path %> <%= link_to "See Admins", admins_path %>
-		
+			<%= link_to "Manage Spreadsheets", spreadsheets_path %>
 			<%= link_to "Logout", logout_path %>
 		</div>
 	</div>

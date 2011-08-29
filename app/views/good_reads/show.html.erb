@@ -2,6 +2,7 @@
 <!--
 	TODO Needs to add style to the flash notices
 	TODO Need to create a partial for viewing the post...Same for all the pages. 
+	TODO <b> tag isn't working
 -->
 <p><%= flash.notice %></p><br>
 <div class="posts-container">
@@ -29,7 +30,7 @@
 
 			<div class="post-text"> <%= @post.post.html_safe %></div>
 			
-			<% unless session[:admin_id] %>
+			<% if session[:admin_id] %>
 			<div class="post-admin-links">
 				<%= link_to "Edit This Post", edit_good_read_path(@post.id) %><br><br>
 				<%= link_to "Delete This Post", { :action => "destroy", :id => @post.id }, :confirm => 'Are you sure?', :method => :delete %>

@@ -1367,12 +1367,6 @@ iframe #large_top_share {
 .three-fourths h2, .three-fourths h3, .three-fourths p, .three-fourths span, .three-fourths a, .full-width h2, .full-width h3,  .full-width p,  .full-width span,  .full-width a {
 	color:#595757 !important;
 }
-
-	
-#admin_nav {
-	background-color: red;
-}
-
 a.admin-edit-link {
 	color:#fff !important;
 	position:absolute;
