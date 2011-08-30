@@ -12,7 +12,7 @@ class RemoveUnneededFields < ActiveRecord::Migration
     remove_column :recent_deals, :title
     remove_timestamps :privacy_policies
     remove_timestamps :terms_of_services
-    remove_timestamps :contacts
+    #remove_timestamps :contacts
     remove_column :privacy_policies, :title
     remove_column :terms_of_services, :title
     remove_column :contacts, :title
