@@ -23,16 +23,6 @@ Bigblockdeals::Application.routes.draw do
 
     
     scope "admin" do
-      scope "spreadsheets" do 
-        # resources :promotions, :as => "promotions"
-        resources :merchant_informations, :as => "merchant_informations"
-        resources :deal_details, :as => "deal_details"
-        resources :customers_summaries, :as => "customers_summaries"
-        resources :customer_details, :as => "customer_details"
-        resources :affiliates, :as => "affiliates"
-        # get ":id/new" => "spreadsheets#new", :as => "new_spreadsheet"
-        # match ":id/update" => "spreadsheets#update", :as => "update_spreadsheet"
-      end
       resources :quotes, :as => "quotes"
       resources :widgets, :as => "widgets"
       resources :categories, :as => "categories"
