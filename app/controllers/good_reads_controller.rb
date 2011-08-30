@@ -24,7 +24,7 @@ class GoodReadsController < ApplicationController
 
   def show_categories
     @layout = "blog"
-    @catagory = Category.find_by_name(params[:id])
+    @category = Category.find_by_name(params[:id])
     if @category.good_reads.nil?
       redirect_to good_reads_path, :notice => "There is no catagory named #{params[:id]}"
     else
