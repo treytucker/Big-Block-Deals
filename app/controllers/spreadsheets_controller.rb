@@ -2,19 +2,23 @@ class SpreadsheetsController < ApplicationController
   
   def index
     @title = "Spreadsheet Manager"
-    @affiliate = nil #Affiliate.last
-    @customer_detail = nil #CustomerDetail.last
-    @customers_summary = nil# CustomersSummary.last
-    @deal_detail = nil #DealDetail.last
-    @merchant_information = nil# MerchantInformation.last
-    @promotion = Promotion.last
+    
+    # Push this over to the model
+    hash = {}
+    Spreadsheet.gather_thine_spreadsheets.each do |f|
+      @last = ActiveRecord.const_get(f).last
+      hash.merge!(f.to_sym => @last)
+    end
+    @hash = hash
+
+    @current_jobs = Spreadsheet.all
   end
   
   def show
     if @model = ActiveRecord.const_get(params[:id])
       @title = "Spreadsheet | #{params[:id]}"
-      @columns = @model.listed_columns
-      @spreadsheet = @model.all
+      @column_names = @model.list_columns
+      @spreadsheet = @model.hashify
       
     else
       redirect_to :index, :notice => "This page does not exist"
@@ -22,14 +26,6 @@ class SpreadsheetsController < ApplicationController
     rescue
       redirect_to spreadsheets_path, :notice => "This page does not exist"
   end
-  # 
-  # def update
-  #   @model = ActiveRecord.const_get(params[:id])
-  #   @title = "Upload a Spreadsheet"
-  #   @spreadsheet = @model.new
-  #   rescue
-  #     redirect_to spreadsheets_path, :notice => "This page does not exist"
-  #   end
 
   def new
     @spreadsheet  = Spreadsheet.new

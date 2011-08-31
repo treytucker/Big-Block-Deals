@@ -1,7 +1,3 @@
-=begin
-  TODO Test when there are no Categories.
-=end
-
 class CategoriesController < ApplicationController
   before_filter :bomb_dot_com
   
@@ -44,7 +40,7 @@ class CategoriesController < ApplicationController
       @good_reads = @category.good_reads.each do |f|
         a.concat(["#{f.title}"])
       end
-      flash[:notice] = "The category was not deleted...Please move #{@good_reads.to_sentence} to a new category."
+      flash[:notice] = "The category was not deleted...Please remove all the Good Reads associated with this category."
       redirect_to categories_path
     end
 

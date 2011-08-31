@@ -1,7 +1,3 @@
-=begin
-  TODO Add errors to views
-=end
-
 class GoodReadsController < ApplicationController
   before_filter :bomb_dot_com, :except => [:index, :show, :show_categories, :show_dates]
   
@@ -32,8 +28,7 @@ class GoodReadsController < ApplicationController
     end
   end
   
-  # TODO Add pagination
-  # TODO Move to the model
+  # FIXME Move to the model(Needs refactoring)
   def show_dates
     @layout = "blog"
     if params[:year]

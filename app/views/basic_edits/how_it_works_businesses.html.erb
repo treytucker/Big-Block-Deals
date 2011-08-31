@@ -8,6 +8,7 @@
 </div>
 <div class="hiw-content">
 	<%= form_for @content, :url => :how_it_works_businesses_create do |f| -%>
+	<%= render "shared/error_messages", :target => @content %>
 	<div class="hiw-business-main">
 		<%= f.text_field :main_header, :class => "edit-input" %><br>
 		<%= f.label :main_content, "Main_content", :class => "admin-edit-label" %>

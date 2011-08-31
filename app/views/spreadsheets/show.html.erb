@@ -9,27 +9,17 @@
 <% else %>
 	<table cellspacing="15" cellpadding="5">
 		<tr>
-			<th>Promotion Name</th>
-			<th>Company Name</th>
-			<th>Merchant Name</th>
-			<th>Code</th>
-			<th>Start</th>
-			<th>End</th>
-			<th>Discount</th>
-			<th>Total Used</th>
-			<th>Max Total Used</th>
+			<% @column_names.each do |f| %>
+				<th><%= f %></th>
+			<% end %>
 		</tr>
 		<% @spreadsheet.each do |f| %>
 			<tr>
-				<td><%= f.promotion_name %></td>
-				<td><%= f.company_name %></td>
-				<td><%= f.merchant_name %></td>
-				<td><%= f.code %></td>
-				<td><%= f.start %></td>
-				<td><%= f.end %></td>
-				<td><%= f.discount %></td>
-				<td><%= f.total_used %></td>
-				<td><%= f.max_total_used %></td>
+				<% i = 0 %>
+				<% until i >= 12 %>
+					<td><%= f.last[i] %></td>
+					<% i+=1 %>
+				<% end %>
 			</tr>
 		<% end %>
 	</table>

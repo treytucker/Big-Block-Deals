@@ -1,6 +1,5 @@
 =begin
-  TODO Build the custom validations for this. Needs to have one of them?
-    Talk to try to make sure. 
+  TODO Build the custom validations for this. (Contact me if you need help, i've got some examples in another project)
 
 =end
 
