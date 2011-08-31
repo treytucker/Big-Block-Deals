@@ -51,7 +51,7 @@
 				<div class="bottom"></div>
 			</div>
 
-			<% if @layout == 'three-fourths' or 'mostly-text' %>
+			<% if @layout == 'three-fourths' || @layout == 'mostly-text' %>
 				<%= render 'layouts/sidebar' %>
 			<% end %>
 
