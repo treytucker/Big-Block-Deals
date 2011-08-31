@@ -2,7 +2,7 @@ class CsvImport
 
   def self.push_that_into_the_model(csv)
     # Sets the error count
-    # error = 0
+    error = 0
 
     # Gets the model from active record
     ar_model = ActiveRecord.const_get(csv.table)
@@ -35,6 +35,8 @@ class CsvImport
         # => puts error into the log something into the log
       end
     end
-    return true
+    if error == 0
+      csv.destroy
+    end
   end
 end

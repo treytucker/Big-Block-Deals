@@ -3,6 +3,7 @@
 </div>
 <div class="about-us-section">
 <%= form_for @content, :url => :about_uses_create do |f| -%>
+<%= render "shared/error_messages", :target => @content %>
 	<img src="/images/about-us-house.jpg"/>
 	<%= f.text_field :header_1, :class => "edit-input" %>
 	<%= f.text_area :content_1 %>

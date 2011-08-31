@@ -1,12 +1,12 @@
 =begin
-  TODO Need to add a validation for title legnth
-  TODO Add associations with quotes and widgets
+  TODO Add associations with quotes
     I believe the best course of action here would be to go ahead and create a join model just for this one. The rest will stay the same.
 =end
 
 class GoodRead < ActiveRecord::Base
   attr_accessible :post, :title, :category_id, :image, :image_delete
   validates_presence_of :post, :title, :category, :image, :message => "can't be blank"
+  validates_length_of :title, :within => 3..30, :message => "must be between 3 and 30 characters"
   belongs_to :category
   has_many :widgets, :as => :wedgetable
 

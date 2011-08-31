@@ -8,6 +8,7 @@
 <div class="hiw-content">
 	<img id="hiw-consumer-graphic" src="/images/how-it-works_consumer.jpg"/>
 <%= form_for @content, :url => :how_it_works_consumers_create do |f| -%>
+<%= render "shared/error_messages", :target => @content %>
 	<div class="hiw-consumer-text">
 		<h2>In The Beginning</h2>
 		<%= f.text_field :header_1, :class => "edit-input" %>
