@@ -1,5 +1,9 @@
 class Promotion < ActiveRecord::Base
   attr_reader :table
+  
+  def self.list_columns
+    
+  end
 end
 
 # == Schema Information

@@ -13,7 +13,9 @@ class SpreadsheetsController < ApplicationController
   def show
     if @model = ActiveRecord.const_get(params[:id])
       @title = "Spreadsheet | #{params[:id]}"
+      @columns = @model.listed_columns
       @spreadsheet = @model.all
+      
     else
       redirect_to :index, :notice => "This page does not exist"
     end
