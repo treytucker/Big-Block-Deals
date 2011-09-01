@@ -196,7 +196,7 @@ p {
 		padding:40px 20px 20px !important;
 		top:147px !important;
 		width:376px;
-		z-index:25 !important;
+		z-index:125 !important;
 	}
 	
 	#dcloginpopup div, #dcloginpopup table, #dcloginpopup h2, #dcloginpopup h3, #dcloginpopup p, #dcloginpopup span, #dcloginpopup table, #dcloginpopup tbody, #dcloginpopup td, #dcloginpopup tr {
@@ -695,7 +695,7 @@ p {
 			box-shadow:0px 1px 1px #ba6930;
 		}
 		
-		.widget-content iframe {margin:-8px 0px 1px -6px}
+		.widget-content iframe {margin:-8px 0px 1px -6px; position:relative; z-index:1 !important;}
 		
 		.widget-title {
 			color:#fff;
