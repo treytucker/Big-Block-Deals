@@ -1,6 +1,6 @@
 class CreateWidgets < ActiveRecord::Migration
   def self.up
-  #  drop_table :widgets
+    drop_table :widgets
     create_table :widgets do |t|
       t.text :text_1
       t.string :title
