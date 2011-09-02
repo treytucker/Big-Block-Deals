@@ -1,22 +1,7 @@
-=begin
-  TODO Build the custom validations for this. (Contact me if you need help, i've got some examples in another project)
-
-=end
-
 class Widget < ActiveRecord::Base
+  has_attached_file :widget_image, :styles => { :shrunk => "220x220>", :medium => "315x315>" }
+  validates_attachment_size :widget_image, :less_than => 5.megabytes
+  validates_attachment_content_type :widget_image, :content_type => ['image/jpeg', 'image/png']
+  
   belongs_to :widgetable, :polymorphic => true
-
 end
-
-# == Schema Information
-#
-# Table name: widgets
-#
-#  id         :integer         not null, primary key
-#  title      :string(255)
-#  text       :text
-#  link       :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#
-

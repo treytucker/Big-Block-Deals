@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110829024100) do
+ActiveRecord::Schema.define(:version => 20110902064442) do
 
   create_table "about_us", :force => true do |t|
     t.string "header_1"
@@ -277,11 +277,18 @@ ActiveRecord::Schema.define(:version => 20110829024100) do
   end
 
   create_table "widgets", :force => true do |t|
+    t.text     "text_1"
     t.string   "title"
-    t.text     "text"
-    t.string   "link"
+    t.text     "text_2"
+    t.string   "bottom_title"
+    t.string   "widget_image_file_name"
+    t.string   "widget_image_content_type"
+    t.integer  "widget_image_file_size"
+    t.datetime "widget_image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "widgetable_id"
+    t.string   "widgetable_type"
   end
 
 end

@@ -8,7 +8,7 @@ class AboutUs < ActiveRecord::Base
                         :tag_line
                         
   # has_and_belongs_to_many :quote, :join_table => "about_uses_quotes"
-  has_many :widgets, :as => :wedgetable
+  has_many :widgets, :as => :widgetable
 
 end
 

@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Widget do
+describe "widgets/edit.html.erb" do
   pending "add some examples to (or delete) #{__FILE__}"
 end
