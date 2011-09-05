@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   before_filter :bomb_dot_com
-  #before_filter :super_users_only, :except => [:index]
+  before_filter :super_users_only, :except => [:index]
   
   def new
     @title = "Create a new Administrator"
