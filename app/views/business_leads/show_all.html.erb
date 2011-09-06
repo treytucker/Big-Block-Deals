@@ -1,0 +1,38 @@
+<h1>All the Business Leads</h1>
+
+<table border="0" cellspacing="5" cellpadding="5">
+	<tr>
+		<th>First Name</th>
+		<th>Last name</th>
+		<th>Email</th>
+		<th>Phone</th>
+		<th>Company</th>
+		<th>Website</th>
+		<th>Street Address</th>
+		<th>City</th>
+		<th>State</th>
+		<th>Zip Code</th>
+		<th>Message</th>
+		<th>Date of Contact</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% @leads.each do |f| %>
+	<tr>
+		<td><%= f.first_name %></td>
+		<td><%= f.last_name %></td>
+		<td><%= f.email %></td>
+		<td><%= f.phone %></td>
+		<td><%= f.company %></td>
+		<td><%= f.website %></td>
+		<td><%= f.address %></td>
+		<td><%= f.city %></td>
+		<td><%= f.state %></td>
+		<td><%= f.zip_code %></td>
+		<td><%= f.message %></td>
+		<td><%= f.created_at %></td>
+		<td><%= link_to "Show!", admin_business_lead_path(f.id) %></td>
+		<td><%= link_to "Delete FOREVER!", :controller => "business_leads", :action => "destroy", :id => f.id %> </td>
+	</tr>
+	<% end %>
+</table>

@@ -1,0 +1,27 @@
+<%= form_for @widget, :html => { :multipart => true } do |f| -%>
+<div class="full-width-cleare">
+	<%= f.label :text_1, "Video Embed Code" %>
+   	<%= f.text_area :text_1 %>
+</div>	
+<div class="full-width-clearer">
+	<%= f.label :title, "Widget Title Text" %>
+   	<%= f.text_field :title %>   
+</div>
+<div class="full-width-clearer">
+	<%= f.label :text_2, "Main widget text" %>
+	<%= f.text_area :text_2 %>
+</div>   	
+<div class="full-width-clearer">
+	<%= f.label :bottom_title, "Minor Title" %>
+	<%= f.text_field :bottom_title %>
+</div>
+<div class="full-width-clearer">
+	<%= f.file_field :widget_image %>
+   <% if @widget.widget_image? %>
+   	<%= image_tag @widget.widget_image.url(:mini) %><br><br>
+   	<%= f.label :image_delete, "Delete that image!" %>
+       <%= f.check_box :image_delete %><br>
+   <% end %>
+   	<%= f.submit "Submit", :disable_with => 'Submitting...' %>
+</div>
+<% end %>
