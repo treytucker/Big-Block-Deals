@@ -1433,7 +1433,7 @@ label.admin-edit-label {
 		margin:0px 0px 10px -5px;
 	}
 	
-	.hiw-consumer-text textarea, .hiw-business-main textarea, .hiw-business-text textarea, .about-us-section textarea, .for-business-main textarea {
+	.hiw-consumer-text textarea, .hiw-business-main textarea, .hiw-business-text textarea, .about-us-section textarea, .for-business-main textarea, .edit-page textarea {
 		background:#e0e0e0;
 		border-top:solid 1px #cbcbcb;
 		border-bottom:solid 1px #f2f2f2;
@@ -1490,7 +1490,7 @@ label.admin-edit-label {
 	width:95%;
 }
 
-.full-width-clearer {float:left; margin:5px 0px 5px; width:95%}
+.full-width-clearer {float:left; margin:0px 0px 8px; width:95%}
 
 .edit-page label {margin:0px 0px 0px 10px; width:95%}
 .edit-page input {
@@ -1498,6 +1498,7 @@ label.admin-edit-label {
 }
 .edit-page input[type='submit'] {
 	background:url(/images/wide-submit-btn.jpg) left top no-repeat;
+	clear:both;
 	text-indent:-9999px;
 	height:31px;
 	margin:0px;
@@ -1518,4 +1519,26 @@ label.admin-edit-label {
 		color:#fff;
 	}
 	
- 
+
+/*	Editing Admins  */
+
+.edit-page a {color:#36BBFF; float:left; font-family:'Trebuchet MS'; font-size:11px; margin:0px 25px 5px 0px;}
+.full-width-text {float:left;width:100%; margin:0px 0px 5px}
+.edit-page textarea {clear:both; height:40px; margin:5px 0px 10px; width:400px;}
+.edit-page .narrow-label {width:auto !important;}
+.edit-page .checkbox {margin:0px 10px 0px; width:40px;}
+
+.admin-list {
+	float:left;
+	width:100%;
+}
+	.admin-list p {float:left; margin:0px 0px 5px; width:100%;}
+	.admin-list li {float:left; margin:5px 0px 10px; width:100%}
+	.admin-list a {color:#36BBFF; float:left; font-family:'Trebuchet MS'; font-size:11px; margin:0px 25px 5px 0px;}
+	
+.spreadsheet-list {float:left;width:100%;}	
+
+.indiv-quote, .spreadsheet {float:left; margin:3px 0 10px; width:100%;}
+	.indiv-quote .majority-width, .spreadsheet .majority-width {float:left; margin:0px; width:85%;}
+		.majority-width .quote-text {float:left; font-size:16px; margin:0px 0px 5px; width:100%;}
+	.indiv-quote .minor-width, .spreadsheet .minor-width {float:left; text-align:center; width:15%}

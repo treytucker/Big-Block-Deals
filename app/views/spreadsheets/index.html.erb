@@ -1,27 +1,35 @@
-<div class="topper"></div>
-<div class="full-width">
-	<h1><%= @title %></h1><br>
-	
-	<h2>List of current spreadsheets:</h2>
-	<ul>
-		<% @hash.each do |key, value| %>
-		<li><%= key %> - Last updated: <%= created_at_regardless(value) %>
-			<% unless value.nil? %>
-				<%= link_to "View!", spreadsheet_path(key) %></li>
+<div class="edit-page">
+	<div class="topper"></div>
+	<div class="main-content">
+		<h2>List of current spreadsheets:</h2>
+		<ul class="spreadsheet-list">
+			<% @hash.each do |key, value| %>
+			<li class="spreadsheet">
+				<div class="majority-width">
+					<p class="spreadsheet-name"><%= key %></p>
+					<p class="update-time">Last updated: <%= created_at_regardless(value) %></p>	
+				</div>
+				<div class="minor-width">
+					<% unless value.nil? %>
+						<%= link_to "View!", spreadsheet_path(key) %>
+					<% end %>
+				</div>
+			</li>
 			<% end %>
+		</ul>
+
+		<%= link_to "Upload a Spreadsheet", new_spreadsheet_path %>
+
+		<% unless @current_jobs.nil? %>
+		<h2>Current spreadsheets being processed:</h2>
+		<ul>
+			<% @current_jobs.each do |f| %>
+				<li><%= f.table %></li>
+			<% end %>
+		</ul>
+		<% else %>
+		  <h2>There are currently no jobs waiting to be processed.</h2>
 		<% end %>
-	</ul><br>
-	
-	<%= link_to "Upload a Spreadsheet", new_spreadsheet_path %>
-	
-	<% unless @current_jobs.nil? %>
-	<br><h2>Current spreadsheets being processed:</h2>
-	<ul>
-		<% @current_jobs.each do |f| %>
-			<li><%= f.table %></li>
-		<% end %>
-	</ul>
-	<% else %>
-	  <br><h2>There are currently no jobs waiting to be processed.</h2>
-	<% end %>
+	</div>
+	<div class="bottom"></div>	
 </div>
