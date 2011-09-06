@@ -554,7 +554,7 @@ p {
     width: 960px;
 }
 
-	.full-width .topper {
+	.full-width .topper, .edit-page-wide .topper {
 	    background: url("/images/full-width-topper.jpg") no-repeat scroll left top transparent;
 	    float: left;
 	    height: 21px;
@@ -563,7 +563,7 @@ p {
 	    width: 960px;
 	}
 
-	.full-width .main-content {
+	.full-width .main-content, .edit-page-wide .main-content {
 	    background: url("/images/full-width-repeater.jpg") repeat-y scroll left 10px transparent;
 	    float: left;
 	    margin: 0 0 0 -10px;
@@ -571,7 +571,7 @@ p {
 	    width: 960px;
 	}
 
-	.full-width .bottom {
+	.full-width .bottom, .edit-page-wide .bottom {
 	    background: url("/images/full-width-bottom.jpg") no-repeat scroll left top transparent;
 	    float: left;
 	    height: 32px;
@@ -1476,12 +1476,12 @@ label.admin-edit-label {
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
-.edit-page h2, .edit-page p, .edit-page span, .edit-page label, .edit-page input, .edit-page a {
+.edit-page h2, .edit-page p, .edit-page span, .edit-page label, .edit-page input, .edit-page-wide h2, .edit-page-wide p, .edit-page-wide span, .edit-page-wide label, .edit-page-wide input, .edit-page-wide a {
 	color:#333;
 	float:left;
 }
 
-.edit-page h2, .semi-bold-item {
+.edit-page h2, .edit-page-wide h2, .semi-bold-item {
 	color:#333;
 	font-size:28px;
 	font-family:'cafeta';
@@ -1492,11 +1492,11 @@ label.admin-edit-label {
 
 .full-width-clearer {float:left; margin:0px 0px 8px; width:95%}
 
-.edit-page label {margin:0px 0px 0px 10px; width:95%}
-.edit-page input {
+.edit-page label, .edit-page-wide label {margin:0px 0px 0px 10px; width:95%}
+.edit-page input, .edit-page-wide label {
 	padding:10px;
 }
-.edit-page input[type='submit'] {
+.edit-page input[type='submit'], .edit-page-wide input[type='submit'] {
 	background:url(/images/wide-submit-btn.jpg) left top no-repeat;
 	clear:both;
 	text-indent:-9999px;
@@ -1504,10 +1504,10 @@ label.admin-edit-label {
 	margin:0px;
 	width:303px;
 }
-	.edit-page input[type='submit']:active {margin:2px 0px -2px}
-.edit-page a {margin: 10px 0px 10px}
+	.edit-page input[type='submit']:active, .edit-page-wide input[type='submit']:active {margin:2px 0px -2px}
+.edit-page a, .edit-page-wide a {margin: 10px 0px 10px}
 .semi-bold-item {
-	font-size:18px;
+	font-size:18px !important;
 }
 
 
@@ -1522,11 +1522,11 @@ label.admin-edit-label {
 
 /*	Editing Admins  */
 
-.edit-page a {color:#36BBFF; float:left; font-family:'Trebuchet MS'; font-size:11px; margin:0px 25px 5px 0px;}
+.edit-page a, .edit-page-wide a {color:#36BBFF; float:left; font-family:'Trebuchet MS'; font-size:11px; margin:0px 25px 5px 0px;}
 .full-width-text {float:left;width:100%; margin:0px 0px 5px}
-.edit-page textarea {clear:both; height:40px; margin:5px 0px 10px; width:400px;}
-.edit-page .narrow-label {width:auto !important;}
-.edit-page .checkbox {margin:0px 10px 0px; width:40px;}
+.edit-page textarea, .edit-page-wide textarea {clear:both; height:40px; margin:5px 0px 10px; width:400px;}
+.edit-page .narrow-label, .edit-page-wide .narrow-label {width:auto !important;}
+.edit-page .checkbox, .edit-page-wide .checkbox {margin:0px 10px 0px; width:40px;}
 
 .admin-list {
 	float:left;
@@ -1542,3 +1542,9 @@ label.admin-edit-label {
 	.indiv-quote .majority-width, .spreadsheet .majority-width {float:left; margin:0px; width:85%;}
 		.majority-width .quote-text {float:left; font-size:16px; margin:0px 0px 5px; width:100%;}
 	.indiv-quote .minor-width, .spreadsheet .minor-width {float:left; text-align:center; width:15%}
+	
+/*	Editing Business Leads  */
+.indiv-bus-lead {float:left; margin:5px 0px 10px}
+.left-side-box {float:left; margin:0px 2% 0px 0px; width:28%;}
+.right-side-box {float:left; margin:0px 3% 0px 0px; width:48%;}
+.far-right-box {float:left; width:12%}
