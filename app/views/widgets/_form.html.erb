@@ -17,11 +17,34 @@
 </div>
 <div class="full-width-clearer">
 	<%= f.file_field :widget_image %>
-   <% if @widget.widget_image? %>
-   	<%= image_tag @widget.widget_image.url(:mini) %><br><br>
-   	<%= f.label :image_delete, "Delete that image!" %>
-       <%= f.check_box :image_delete %><br>
-   <% end %>
-   	<%= f.submit "Submit", :disable_with => 'Submitting...' %>
+	<% if @widget.widget_image? %>
+		<%= f.label :image_delete, "Delete that image!" %>
+		<%= f.check_box :image_delete %>
+		<%= image_tag @widget.widget_image.url(:mini) %>
+	<% end %>
+</div>
+
+<div class="full-width-clearer">
+	<p>Active Fields:</p>
+		<%= f.label :about_us_active, "About Us" %>
+		<%= f.check_box :about_us_active %>
+		<%= f.label :good_read_active, "Good Read" %>
+		<%= f.check_box :good_read_active %>
+		<%= f.label :contact_active, "Contact" %>
+		<%= f.check_box :contact_active %>
+		<%= f.label :current_deal_active, "Current Deal" %>
+		<%= f.check_box :current_deal_active %>
+		<%= f.label :recent_deal_active, "Recent Deal" %>
+		<%= f.check_box :recent_deal_active %>
+		<%= f.label :privacy_policy_active, "Privacy Policy" %>
+		<%= f.check_box :privacy_policy_active %>
+		<%= f.label :for_business_active, "For Business" %>
+		<%= f.check_box :for_business_active %>
+		<%= f.label :terms_of_service_active, "Terms Of Service" %>
+		<%= f.check_box :terms_of_service_active %>
+</div>
+
+<div class="full-width-clearer">
+	<%= f.submit "Submit", :disable_with => 'Submitting...' %>
 </div>
 <% end %>

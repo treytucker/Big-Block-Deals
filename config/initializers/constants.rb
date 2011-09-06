@@ -81,7 +81,8 @@ BASIC_CONTROLLERS = {
     },
   :user_widgets => {
     :model => "UserWidget", 
-    :url => :user, 
+    :url => :user,
+    :form => :current_deal, 
     :title => "Your Account", 
     :layout => "three-fourths",
     :page => "user-page",
