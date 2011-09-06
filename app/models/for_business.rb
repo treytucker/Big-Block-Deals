@@ -1,6 +1,6 @@
 class ForBusiness < ActiveRecord::Base
   validates_presence_of :header, :content
-  has_many :widgets, :as => :wedgetable
+  
   
 end
 

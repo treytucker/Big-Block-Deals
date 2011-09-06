@@ -8,7 +8,7 @@ class GoodRead < ActiveRecord::Base
   validates_presence_of :post, :title, :category, :image, :message => "can't be blank"
   validates_length_of :title, :within => 3..30, :message => "must be between 3 and 30 characters"
   belongs_to :category
-  has_many :widgets, :as => :wedgetable
+  
 
 # Relates to the images
   has_attached_file :image, :styles => { :thumb => "100x100>", :medium => "315x315>" }
@@ -30,21 +30,6 @@ class GoodRead < ActiveRecord::Base
       self.image.clear if @image_delete == "1"
     end
 end
-# == Schema Information
-#
-# Table name: good_reads
-#
-#  id                 :integer         not null, primary key
-#  title              :string(255)
-#  post               :text
-#  created_at         :datetime
-#  updated_at         :datetime
-#  catagory_id        :integer
-#  image_file_name    :string(255)
-#  image_content_type :string(255)
-#  image_file_size    :integer
-#  image_updated_at   :datetime
-#
 
 # == Schema Information
 #
@@ -55,7 +40,24 @@ end
 #  post               :text
 #  created_at         :datetime
 #  updated_at         :datetime
-#  catagory_id        :integer
+#  category_id        :integer
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#
+
+
+# == Schema Information
+#
+# Table name: good_reads
+#
+#  id                 :integer         not null, primary key
+#  title              :string(255)
+#  post               :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#  category_id        :integer
 #  image_file_name    :string(255)
 #  image_content_type :string(255)
 #  image_file_size    :integer

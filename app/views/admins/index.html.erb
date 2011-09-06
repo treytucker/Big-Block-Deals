@@ -7,7 +7,7 @@
 			<% @admins.each do |f| %>
 				<li class="semi-bold-item"><%= f.email %>
 					<% if super_user? %> <!-- Call this method if you want to exclude any non-super user from seeing something -->
-					 - <%= link_to "Change Password", edit_admin_path(f.id) %> - <%= link_to "Remove", { :action => :destroy, :id => f.id }, :confirm => 'Are you sure?', :method => :delete %>
+					 <%= link_to "Modify User", edit_admin_path(f.id) %> - <%= link_to "Remove User", { :action => :destroy, :id => f.id }, :confirm => 'Are you sure?', :method => :delete %>
 					<% end %>
 				</p></li>
 			<% end %>

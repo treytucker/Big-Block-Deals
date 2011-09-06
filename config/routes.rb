@@ -8,6 +8,7 @@ Bigblockdeals::Application.routes.draw do
   end
   match "business_inquires" => "business_leads#index"
   match "/business_leads/index" => "business_leads#index"
+
   root :to => "basics#current_deals"
 
 
@@ -28,6 +29,7 @@ Bigblockdeals::Application.routes.draw do
       resources :categories, :as => "categories"
       resources :sessions, :as => "sessions"
       resources :spreadsheets, :as => "spreadsheets"
+      # resources :business_leads, :as => "business_leads"
     end
     
   #this is for all the Catagories for the good reads
@@ -38,4 +40,7 @@ Bigblockdeals::Application.routes.draw do
   # This is for loggin in and out
     get '/admin/login' => 'sessions#new', :as => "login"
     get '/admin/logout' => 'sessions#destroy', :as => "logout"
+    get "/admin/business_lead/:id" => "business_leads#show", :as => "admin_business_lead"
+    get "/admin/business_leads/" => "business_leads#show_all", :as => "admin_business_leads"
+    match '/admin/business_leads/destroy/:id' => 'business_leads#destroy'
 end

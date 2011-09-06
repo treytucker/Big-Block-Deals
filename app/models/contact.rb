@@ -1,7 +1,6 @@
 class Contact < ActiveRecord::Base
   validates_presence_of :header_1, :link_1, :header_2, :link_2, :number, :address_name, :address_street, :city, :state, :zip_code
-  has_many :widgets, :as => :wedgetable
-  
+
 end
 
 # == Schema Information

@@ -1,6 +1,6 @@
 class HowItWorksBusiness < ActiveRecord::Base
   validates_presence_of :main_header, :main_content, :subheader_1, :subcontent_1, :subheader_2, :subcontent_2, :subheader_3, :subcontent_3, :subheader_4, :subcontent_4, :subheader_5, :subcontent_5, :subheader_6, :subcontent_6
-  has_many :widgets, :as => :wedgetable
+  
 
 end
 

@@ -16,11 +16,12 @@
 					<p><%= f.text_2.html_safe %></p>
 				<% end %>
 				<% if f.widget_image? %>
-					<%= image_tag f.widget_image.url(:shrunk) %>
+					<%= image_tag f.widget_image.url(:mini) %>
 				<% end %>
 				<% if f.bottom_title %>
 				 <%= f.bottom_title %>
 				<% end %>
+				<%= link_to "Edit", edit_widget_path(f.id) %>
 			</div>
 			<% end %>
 			

@@ -1,5 +1,5 @@
 class RecentDeal < ActiveRecord::Base
-  has_many :widgets, :as => :wedgetable
+  
 
 
 end

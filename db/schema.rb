@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110902064442) do
+ActiveRecord::Schema.define(:version => 20110905143224) do
 
   create_table "about_us", :force => true do |t|
     t.string "header_1"
@@ -42,15 +42,6 @@ ActiveRecord::Schema.define(:version => 20110902064442) do
     t.integer  "merchant"
     t.integer  "number_sold"
     t.decimal  "total_revenue"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "business_contact_models", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -289,6 +280,22 @@ ActiveRecord::Schema.define(:version => 20110902064442) do
     t.datetime "updated_at"
     t.integer  "widgetable_id"
     t.string   "widgetable_type"
+    t.boolean  "good_read_active"
+    t.boolean  "contact_active"
+    t.boolean  "about_us_active"
+    t.boolean  "current_deal_active"
+    t.boolean  "recent_deal_active"
+    t.boolean  "privacy_policy_active"
+    t.boolean  "for_business_active"
+    t.boolean  "terms_of_service_active"
+    t.integer  "good_read_order"
+    t.integer  "contact_order"
+    t.integer  "about_us_order"
+    t.integer  "current_deal_order"
+    t.integer  "recent_deal_order"
+    t.integer  "privacy_policy_order"
+    t.integer  "for_business_order"
+    t.integer  "terms_of_service_order"
   end
 
 end
