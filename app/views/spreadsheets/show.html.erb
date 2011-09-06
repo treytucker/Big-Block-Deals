@@ -16,7 +16,7 @@
 		<% @spreadsheet.each do |f| %>
 			<tr>
 				<% i = 0 %>
-				<% until i >= 12 %>
+				<% until i >= @column_names.count %>
 					<td><%= f.last[i] %></td>
 					<% i+=1 %>
 				<% end %>

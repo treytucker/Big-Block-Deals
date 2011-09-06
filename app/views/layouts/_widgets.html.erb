@@ -16,19 +16,39 @@
 		</div>
 		<div class="widget-bottom"></div>
 	</div>
+	
+	<% form_tag(move_dim_widgets_path, :method => "post") do %>
 
 	<% @widgets.each do |f| %>
+
+		
 		<div class="indiv-widget">
 			<div class="widget-topper"></div>
 			<div class="widget-content">
-				<iframe width="200" height="150" src="http://www.youtube.com/embed/2HH8clXjq2c" frameborder="0" allowfullscreen></iframe>
-				<img class="widget-image" src="/images/armbar_example.jpg"/>
-				<h3 class="widget-title">Baby Armbar</h3>
-				<span class="widget-text">T9000 baby dominates other babies with armbars. <a href="#" class="widget-link">Example Link</a></span>
-				<span class="minor-widget-text">Says Sensai.</span>
-						</div>
+			<%= hidden_field_tag "order[]", "#{f.id},4" %>
+
+				<% if f.text_1 %>
+					<iframe width="200" height="150" src="<%= f.text_1 %>" frameborder="0" allowfullscreen></iframe>
+				<% end %>
+				<% if f.widget_image? %>
+					<%= image_tag f.widget_image.url(:side_bar) %>
+				<% end %>
+				<% if f.title %>
+					<h3 class="widget-title"><%= f.title %></h3>
+				<% end %>
+				<% if f.text_2 %>
+					<span class="widget-text"><%= f.text_2 %></span>
+				<% end %>
+				<% if f.bottom_title %>
+					<span class="minor-widget-text"><%= f.bottom_title %></span>
+				<% end %>
+			</div>
 			<div class="widget-bottom"></div>
 		</div>
 	<% end %>
+	
+	<%= submit_tag "Save changes", :disable_with => "Please wait..." %>
+	<% end %>
+
 </div>
 

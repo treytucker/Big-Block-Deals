@@ -1,15 +1,15 @@
 class GoodReadsController < ApplicationController
   before_filter :bomb_dot_com, :except => [:index, :show, :show_categories, :show_dates]
-  
   uses_tiny_mce
   
   def index
     @posts = GoodRead.order("created_at DESC").page(params[:page]).per(5)
     @title = "Good Reads"
-    @page = "good_reads"
+    @page = "good_read"
     @categories = gather_thine_categories
     @dates = gather_thine_dates
     @layout = "blog"
+    @widgets = Widget.where("? = good_read_active", true).order(:good_read_order)
   end
 
   def show

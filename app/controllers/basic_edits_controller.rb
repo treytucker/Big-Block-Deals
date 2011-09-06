@@ -12,7 +12,7 @@ class BasicEditsController < ApplicationController
     models = f.last[:model] # used for refactoring the models
     url = f.last[:url].to_sym # Used for redirections
     form = f.last[:form]
-
+    @page = f.last[:form]
     # This dynamically creates all the actions needed to edit/create new content based on if there is content in the DB or not.
     define_method(edit) {
       @layout = f.last[:layout]
