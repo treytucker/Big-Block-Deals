@@ -19,7 +19,7 @@
 		    if(!user)
 		    {
 		       document.getElementById("mydeals").style.display="none";
-		       document.getElementById("login").innerHTML = "<a class=\"not-logged-in\" href=\"javascript: return false;\" onclick=\"javascript:ShowDCLogin();\"> Log In </a>";       
+		       document.getElementById("login").innerHTML = "<a class=\"not-logged-in\" href=\"javascript: return false;\" onclick=\"javascript:ShowDCLogin();\"> Log In or Sign Up </a>";       
 		    }
 		    else {
 				document.getElementById("mydeals").style.display="inline";	       
@@ -29,6 +29,21 @@
 		</script>
   <%= csrf_meta_tag %>
   <%= include_tiny_mce_if_needed %>
+	
+<!--  GOOGLE ANALYTICS  -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25592624-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 
 
 </head>

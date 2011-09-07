@@ -1,5 +1,7 @@
 class WidgetsController < ApplicationController
   
+  uses_tiny_mce
+  
   def index
     @widgets = Widget.all
   end

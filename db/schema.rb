@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(:version => 20110905143224) do
     t.datetime "updated_at"
   end
 
+  create_table "business_contact_models", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "business_leads", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -296,6 +305,10 @@ ActiveRecord::Schema.define(:version => 20110905143224) do
     t.integer  "privacy_policy_order"
     t.integer  "for_business_order"
     t.integer  "terms_of_service_order"
+    t.string   "wimage_file_name"
+    t.string   "wimage_content_type"
+    t.integer  "wimage_file_size"
+    t.datetime "wimage_updated_at"
   end
 
 end

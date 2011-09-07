@@ -16,24 +16,13 @@ $('#all-quotes').mbScrollable({
 	autoscroll:false,
 })
 
-// function DCLoginListener(user)
-// {
-//   if(!user)
-//   {
-//      document.getElementById("mydeals").style.display="none";
-//      document.getElementById("login-link").innerHTML = "<a href=\"javascript: return false;\" onclick=\"javascript:ShowDCLogin();\"> Log In </a>";       
-//   }
-//   else {
-//      document.getElementById("mydeals").style.display="inline";	       
-//      document.getElementById("login-link").innerHTML = "<a class=\"logged-in\" href=\"javascript: return false;\" onclick=\"javascript:DCLogout();\"> Log Out </a>";
-//   }
-// }
 
 //hacking the DC Login Box
 $('#dcloginpopup').find('div').first().find('img').hide();
 $('#dcloginpopup').prepend('<a class="login-closer" onclick="HideDCLogin();" >×</a>');
 $('#dcloginpopup').find('table').find('tr').find('td:first').addClass('login-label');
 $('#dcloginpopup').find('#submitimg').parent().prepend('<a class="login-submit" onclick="dosubmit();" href="#">Let\'s Go!</a>');
+
 
 //Hacking User Widget
 $('#My-Info').find('input[type="button"]').addClass('DCUser-submit');

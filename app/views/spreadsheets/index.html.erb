@@ -4,14 +4,14 @@
 		<h2>List of current spreadsheets:</h2>
 		<ul class="spreadsheet-list">
 			<% @hash.each do |key, value| %>
-			<li class="spreadsheet">
+			<li class="spreadsheet-preview">
 				<div class="majority-width">
-					<p class="spreadsheet-name"><%= key %></p>
+					<p class="spreadsheet-name semi-bold-item full-width-clearer"><%= key %></p>
 					<p class="update-time">Last updated: <%= created_at_regardless(value) %></p>	
 				</div>
 				<div class="minor-width">
 					<% unless value.nil? %>
-						<%= link_to "View!", spreadsheet_path(key) %>
+						<%= link_to "View!", spreadsheet_path(key), :class => "spreadsheet-view-link" %>
 					<% end %>
 				</div>
 			</li>

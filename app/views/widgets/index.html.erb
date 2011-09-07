@@ -5,17 +5,53 @@
 		<%= link_to "New Widget", new_widget_path %>
 		<div class="all-widget-previews">
 			<% @widgets.each do |f| %>
-			<div class="widget-preview">
-				<h2><%= f.title %></h2>
-				<%= f.text_1.html_safe %>
-				<p><%= f.text_2.html_safe %></p>
-				<% if f.widget_image? %>
-					<%= image_tag f.widget_image.url(:mini) %>
+				<% unless f.text_1 == nil || f.text_1.empty? %>
+				<div class="video-widget-preview full-width-clearer">
+					<table border="0" cellspacing="5" cellpadding="5">
+						<tr>
+							<td class="widget-iframe"><%= f.text_1.html_safe %></td>
+							<td class="main-widget-stuff">
+								<h2 class="semi-bold-item"><%= f.title %></h2>
+								<% if f.widget_image? %>
+									<%= image_tag f.widget_image.url(:mini) %>
+								<% end %>	
+								<div class="widget-text-stuff">
+									<% if f.text_2 %>
+										<p><%= f.text_2.html_safe %></p>
+									<% end %>
+									<p class="full-width-clearer"><%= f.bottom_title %></p>
+								</div>
+								<p class="full-width-clearer">Active Pages: <%= active(f).to_sentence %></p>	
+							</td>
+							<td class="right-side-edit-button"><%= link_to "Edit", edit_widget_path(f.id) %></td>
+						</tr>
+					</table>
+				</div>				
+				
+				<% else %>
+			
+				<div class="widget-preview full-width-clearer">
+					<table border="0" cellspacing="5" cellpadding="5">
+						<tr>
+							<td class="main-widget-stuff">
+								<h2 class="semi-bold-item"><%= f.title %></h2>
+								<% if f.widget_image? %>
+									<%= image_tag f.widget_image.url(:mini) %>
+								<% end %>	
+								<div class="widget-text-stuff">
+									<% if f.text_2 %>
+										<p><%= f.text_2.html_safe %></p>
+									<% end %>
+									<p class="full-width-clearer"><%= f.bottom_title %></p>
+								</div>
+								<p class="full-width-clearer">Active Pages: <%= active(f).to_sentence %></p>	
+							</td>
+							<td class="right-side-edit-button"><%= link_to "Edit", edit_widget_path(f.id) %></td>
+						</tr>
+					</table>
+				</div>
+			
 				<% end %>
-				<%= f.bottom_title %>
-				<p>Activated on: <%= active(f).to_sentence %></p>
-				<%= link_to "Edit", edit_widget_path(f.id) %>
-			</div>
 			<% end %>
 			
 		</div>

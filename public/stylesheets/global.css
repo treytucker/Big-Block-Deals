@@ -6,6 +6,18 @@
 	font-style: normal;
 }
 
+@font-face {
+    font-family: 'title';
+    src: url('/fonts/title/title-webfont.eot');
+    src: url('/fonts/title/title-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/title/title-webfont.woff') format('woff'),
+         url('/fonts/title/title-webfont.ttf') format('truetype'),
+         url('/fonts/title/title-webfont.svg#titleRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
 	overflow:hidden !important;
 }
@@ -74,13 +86,13 @@ p {
 	}
 	
 		h1#root-link a {
-		    background: none;
+		    background: url(/images/logo.png) top left no-repeat;
 		    height: 70px;
-		    left: 7px;
+		    left: -9px;
 		    position: absolute;
 			text-indent:-9999px;
-		    top: 37px;
-		    width: 225px;
+		    top: 39px;
+		    width: 246px;
 			
 		}
 		
@@ -95,6 +107,17 @@ p {
 				float:left;
 				height:92px;
 			}
+				.greater-nav-item a {
+					color:#fff;
+					font-family:'Verdana';
+					font-size:12px;
+					letter-spacing:0px;
+					padding-top:12px;
+					text-align:center;
+					text-decoration:none;
+					text-transform:uppercase;
+					text-shadow:0px 1px 0px #24a6e8; -moz-text-shadow:0px 1px 0px #24a6e8; -webkit-text-shadow:0px 1px 0px #24a6e8;
+				}
 			
 				#today-link {
 				    background: none;
@@ -165,8 +188,7 @@ p {
 					float: left;
 				    height: 92px;
 				    margin: 0 0 0 1px;
-					text-indent:-9999px;
-				    width: 148px;
+					width: 148px;
 				}
 					.not-logged-in:hover {
 						background: url("/images/main-nav_hover.jpg") no-repeat scroll -572px -1px transparent !important;
@@ -563,7 +585,7 @@ p {
 	    width: 960px;
 	}
 
-	.full-width .main-content, .edit-page-wide .main-content {
+	.full-width .main-content, .edit-page-wide .main-content, .edit-page-wide .main-spreadsheet-content {
 	    background: url("/images/full-width-repeater.jpg") repeat-y scroll left 10px transparent;
 	    float: left;
 	    margin: 0 0 0 -10px;
@@ -1285,37 +1307,6 @@ iframe #large_top_share {
 	width:97%;
 }
 	
-/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
-
-		/* ADMIN NAV */
-
-/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */	
-	
-#admin_nav {
-	background:url(/images/admin-nav-bg.jpg) top left repeat-x;
-	color:#fff !important;
-	height:40px;
-	float:left;
-	overflow:hidden;
-	width:100%;
-}
-
-#admin-nav-container {
-	float:left;
-	margin:10px 0px 0px 30px;
-}
-
-	#admin_nav a {
-		color:#fff !important;
-		float:left;
-		margin:0px 15px 0px 0px;
-	}
-	
-	.edit-page-link {
-		position:absolute;
-		right:20px;
-		top:11px;
-	}
 
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
@@ -1361,6 +1352,7 @@ iframe #large_top_share {
 	margin:2px 0px 2px;
 	width:95%;
 }
+
 
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
@@ -1469,6 +1461,40 @@ label.admin-edit-label {
 	
 
 
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+		/* ADMIN NAV */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = */	
+
+#admin_nav {
+	background:url(/images/admin-nav-bg.jpg) top left repeat-x;
+	color:#fff !important;
+	height:40px;
+	float:left;
+	overflow:hidden;
+	width:100%;
+}
+
+#admin-nav-container {
+	float:left;
+	margin:10px 0px 0px 30px;
+}
+
+	#admin_nav a {
+		color:#fff !important;
+		float:left;
+		margin:0px 15px 0px 0px;
+	}
+
+	.edit-page-link {
+		position:absolute;
+		right:20px;
+		top:11px;
+	}
+
+
+
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
@@ -1491,6 +1517,7 @@ label.admin-edit-label {
 }
 
 .full-width-clearer {float:left; margin:0px 0px 8px; width:95%}
+.half-width-box {float:left; margin:3px 2% 8px 0px; width:46%;}
 
 .edit-page label, .edit-page-wide label {margin:0px 0px 0px 10px; width:95%}
 .edit-page input, .edit-page-wide label {
@@ -1511,22 +1538,27 @@ label.admin-edit-label {
 }
 
 
-.all-widget-previews {float:left; width:710px}
-.widget-preview {float:left; width:350px}
+/*	Editing Widgets + Global Edit Styles */
 
-.edit-page iframe {margin:0px 10px !important; width:200px !important; float:left}
-	.debug_dump {
-		color:#fff;
-	}
-	
+.all-widget-previews {float:left; width:710px}
+.video-widget-preview, .widget-preview, .spreadsheet-preview, .active-page-checkbox  {float:left; background:#efefef; border-top:1px solid #fff; border-bottom:1px solid #c5c5c5; margin:0px 0px 10px; padding:10px; width:93%; }
+.video-widget-preview .main-widget-stuff {float:left; width:400px}
+.widget-preview .main-widget-stuff {float:left; width:620px}
+	.widget-text-stuff {float:left; width:285px}
+	.video-widget-preview img, .widget-preview img {border:2px solid #fff; box-shadow:0px 0px 1px #c5c5c5; -moz-box-shadow:0px 0px 1px #c5c5c5; -webkit-box-shadow:0px 0px 1px #c5c5c5; float:left; margin:0 10px 10px 0; width:100px !important;}
+.right-side-edit-button {text-align:right; vertical-align:middle; width:40px}
+	.right-side-edit-button a {float:right !important; margin:0px !important; text-align:right;}
+.widget-iframe iframe {margin:0px 10px 13px 0px !important; width:200px !important; float:left}
+.active-page-checkbox {float:left; padding:10px; margin:2px 10px 3px; min-width:120px; width:auto !important;}	
+	.active-page-checkbox label {float:left; width:auto}
+.mceIframeContainer {float:left; width:98% !important}
 
 /*	Editing Admins  */
-
 .edit-page a, .edit-page-wide a {color:#36BBFF; float:left; font-family:'Trebuchet MS'; font-size:11px; margin:0px 25px 5px 0px;}
-.full-width-text {float:left;width:100%; margin:0px 0px 5px}
+.full-width-text {float:left; width:100%; margin:0px 0px 5px}
 .edit-page textarea, .edit-page-wide textarea {clear:both; height:40px; margin:5px 0px 10px; width:400px;}
 .edit-page .narrow-label, .edit-page-wide .narrow-label {width:auto !important;}
-.edit-page .checkbox, .edit-page-wide .checkbox {margin:0px 10px 0px; width:40px;}
+.edit-page .checkbox, .edit-page-wide .checkbox {margin:0px 0px 0px 10px; width:auto;}
 
 .admin-list {
 	float:left;
@@ -1536,15 +1568,36 @@ label.admin-edit-label {
 	.admin-list li {float:left; margin:5px 0px 10px; width:100%}
 	.admin-list a {color:#36BBFF; float:left; font-family:'Trebuchet MS'; font-size:11px; margin:0px 25px 5px 0px;}
 	
+	
+/*	Editing Spreadsheets  */
+.spreadsheet-table {float:left; overflow-x:scroll; width:940px;}
 .spreadsheet-list {float:left;width:100%;}	
+.spreadsheet-preview {float:left; margin:0px 0px 10px}
+	.spreadsheet-preview .spreadsheet-view-link {float:right !important; font-size:14px; margin:13px 0px 0px}
+.second-spreadsheet-row {color:#fff}
+.spreadsheet-viewer {border-collapse:separate !important; border-spacing:25px 9px}
+	.spreadsheet-viewer tr { background:#efefef; border-top:1px solid #fff; border-bottom:1px solid #c5c5c5;}
+	
 
+
+
+/*	Editing Quotes  */
 .indiv-quote, .spreadsheet {float:left; margin:3px 0 10px; width:100%;}
-	.indiv-quote .majority-width, .spreadsheet .majority-width {float:left; margin:0px; width:85%;}
+	.indiv-quote .majority-width, .spreadsheet-preview .majority-width {float:left; margin:0px; width:85%;}
 		.majority-width .quote-text {float:left; font-size:16px; margin:0px 0px 5px; width:100%;}
-	.indiv-quote .minor-width, .spreadsheet .minor-width {float:left; text-align:center; width:15%}
+	.indiv-quote .minor-width, .spreadsheet-preview .minor-width {float:left; text-align:center; width:15%}
+
 	
 /*	Editing Business Leads  */
 .indiv-bus-lead {float:left; margin:5px 0px 10px}
 .left-side-box {float:left; margin:0px 2% 0px 0px; width:28%;}
 .right-side-box {float:left; margin:0px 3% 0px 0px; width:48%;}
 .far-right-box {float:left; width:12%}
+
+
+
+
+
+.debug_dump {
+	color:#fff;
+}
