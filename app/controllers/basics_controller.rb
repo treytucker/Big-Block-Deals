@@ -7,6 +7,7 @@ class BasicsController < ApplicationController
     @title = f.last[:title]
     @action = f.first
     @loaddc = f.last[:loaddc]
+    @page = f.last[:form]
     unless f.last[:layout] == "full-width"
       @widgets = Widget.where("? = #{f.last[:form].to_s + "_active"}", true)
     end

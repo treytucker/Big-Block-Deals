@@ -52,6 +52,11 @@
 				</div>
 			
 				<% end %>
+				<%= f.bottom_title %>
+				<p>Activated on: <%= active(f).to_sentence %></p>
+				<%= link_to "Edit", edit_widget_path(f.id) %>
+				<%= link_to "Delete", { :action => "destroy", :id => f.id }, :confirm => 'Are you sure?', :method => :delete %>
+			</div>
 			<% end %>
 			
 		</div>

@@ -26,6 +26,7 @@ Bigblockdeals::Application.routes.draw do
     scope "admin" do
       resources :quotes, :as => "quotes"
       resources :widgets, :as => "widgets"
+      match 'widgets/move_dim_widgets' => 'widgets#move_dim_widgets', :as => :move_dim_widgets
       resources :categories, :as => "categories"
       resources :sessions, :as => "sessions"
       resources :spreadsheets, :as => "spreadsheets"

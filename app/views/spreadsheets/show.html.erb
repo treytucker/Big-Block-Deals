@@ -17,23 +17,18 @@
 					<% end %>
 				</tr>
 				<% @spreadsheet.each do |f| %>
-				      <tr>
 						<tr>
 				        <% i = 0 %>
 				        <% until i >= @column_names.count %>
 				          <td><%= f.last[i] %></td>
 							
 				          <% i+=1 %>
-
-				        <% end %>
+	        			<% end %>
 						</tr>
-
-					</tr>
 				    <% end %>
 			</table>
 		</div>
 			
-
 		<% end %>
 	</div>
 	<div class="bottom"></div>
