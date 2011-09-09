@@ -30,6 +30,7 @@ Bigblockdeals::Application.routes.draw do
       resources :categories, :as => "categories"
       resources :sessions, :as => "sessions"
       resources :spreadsheets, :as => "spreadsheets"
+      resources :affiliates, :as => "affiliates"
       # resources :business_leads, :as => "business_leads"
     end
     
@@ -44,4 +45,5 @@ Bigblockdeals::Application.routes.draw do
     get "/admin/business_lead/:id" => "business_leads#show", :as => "admin_business_lead"
     get "/admin/business_leads/" => "business_leads#show_all", :as => "admin_business_leads"
     match '/admin/business_leads/destroy/:id' => 'business_leads#destroy'
+    
 end
