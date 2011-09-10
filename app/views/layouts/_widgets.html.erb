@@ -17,38 +17,62 @@
 		<div class="widget-bottom"></div>
 	</div>
 	
-	<% form_tag(move_dim_widgets_path, :method => "post") do %>
-
-	<% @widgets.each do |f| %>
-
+	<% if session[:admin_id] %>
 		
-		<div class="indiv-widget">
-			<div class="widget-topper"></div>
-			<div class="widget-content">
-			<%= hidden_field_tag "order[]", "#{f.id},#{f.order}" %>
+		<!-- LOGGED IN WIDGET VIEWS -->
+		<% form_tag(move_dim_widgets_path, :method => "post") do %>
+		<% @widgets.each do |f| %>
+			<div class="indiv-widget">
+				<div class="widget-topper"></div>
+				<div class="widget-content">
+				<%= hidden_field_tag "order[]", "#{f.id},#{f.order}" %>
 
-				<% if f.text_1 %>
-					<iframe width="200" height="150" src="<%= f.text_1 %>" frameborder="0" allowfullscreen></iframe>
-				<% end %>
-				<% if f.widget_image? %>
-					<%= image_tag f.widget_image.url(:side_bar) %>
-				<% end %>
-				<% if f.title %>
-					<h3 class="widget-title"><%= f.title %></h3>
-				<% end %>
-				<% if f.text_2 %>
-					<span class="widget-text"><%= f.text_2 %></span>
-				<% end %>
-				<% if f.bottom_title %>
-					<span class="minor-widget-text"><%= f.bottom_title %></span>
-				<% end %>
+					<% if f.text_1 %>
+						<iframe width="200" height="150" src="<%= f.text_1 %>" frameborder="0" allowfullscreen></iframe>
+					<% end %>
+					<% if f.widget_image? %>
+						<%= image_tag f.widget_image.url(:side_bar) %>
+					<% end %>
+					<% if f.title %>
+						<h3 class="widget-title"><%= f.title %></h3>
+					<% end %>
+					<% if f.text_2 %>
+						<span class="widget-text"><%= f.text_2 %></span>
+					<% end %>
+					<% if f.bottom_title %>
+						<span class="minor-widget-text"><%= f.bottom_title %></span>
+					<% end %>
+				</div>
+				<div class="widget-bottom"></div>
 			</div>
-			<div class="widget-bottom"></div>
-		</div>
+		<% end %>
+	
+		<%= submit_tag "Save Widgets", :disable_with => "Please wait...", :class => "widget-submit-btn" %>
+		<% end %>
+		<!-- END OF LOGGED IN WIDGET VIEWS -->
+	
+	<% else %>
+	
+	<% @widgets.each do |f| %>
+	
+	Are you here?
+		<!-- NOT LOGGED IN WIDGET VIEWS -->
+		<% if f.widgetable_type == "Facebook" %>
+			Here's a facebook Widget
+		<% end %>
+		
+		<% if f.widgetable_type == "twitter" %>
+			Here's a twitter widget
+		<% end %>
+		
+		<% if f.widgetable_type == "custom" %>
+			Here's a custom widget.
+		<% end %>
+		<% end %>
+		<!-- END OF NOT LOGGED IN WIDGET VIEWS -->
 	<% end %>
 	
-	<%= submit_tag "Save changes", :disable_with => "Please wait..." %>
-	<% end %>
+
 
 </div>
 

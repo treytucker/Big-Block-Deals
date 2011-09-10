@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :the_method_that_came_before
+  before_filter :the_method_that_came_before, :grab_the_widgets
   
   private
+    
+    def grab_the_widgets
+      @widgets = Widget.all
+    end
     
     def the_method_that_came_before
       @active_quotes = Quote.all_active.shuffle!

@@ -29,22 +29,6 @@
 		</script>
   <%= csrf_meta_tag %>
   <%= include_tiny_mce_if_needed %>
-	
-<!--  GOOGLE ANALYTICS  -->
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-25592624-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
 
 </head>
 <body>
@@ -56,6 +40,18 @@
 
 	<div id="greater-container">
 		<div id="container">
+			<div id="social-links">
+				<a id="twitter-icon" target="blank" href="http://twitter.com/bigblockdeals"></a>
+				<div id="fb-root"></div>
+				<script>(function(d){
+				  var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+				  js = d.createElement('script'); js.id = id; js.async = true;
+				  js.src = "//connect.facebook.net/en_US/all.js#appId=245265552184407&xfbml=1";
+				  d.getElementsByTagName('head')[0].appendChild(js);
+				}(document));</script>
+				<div class="fb-like" data-href="beta.bigblockdeals.com" data-send="true" data-layout="button_count" data-width="225" data-show-faces="false"></div>
+			</div>
+			
 			<%= render 'layouts/quotes' %>
 			
 			<div class="content <%= @layout %>">
@@ -74,6 +70,23 @@
 	</div>
 
 	<%= render 'layouts/footer' %>
+
+
+<!--  GOOGLE ANALYTICS  -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25592624-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- END GOOGLE ANALYTICS -->
 
 </body>
 </html>

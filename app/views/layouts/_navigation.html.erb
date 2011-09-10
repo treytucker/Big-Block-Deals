@@ -1,24 +1,18 @@
 <div id="nav-container">
 	<div id="navigation">
 		<h1 id="root-link"><a href="/">root</a></h1>
-		<ul id="minor-nav">
-			<li class="minor-link"><a href="javascript:void(0);" id="mydeals" onclick="javascript:showMyDeals();">My Account</a></li>
-			
-			<li class="minor-link"><%= link_to "About Us", about_us_path() %></li>			
-			<li class="minor-link"><%= link_to "Contact", contact_path %></li>
-			<li class="minor-link"><a href="http://facebook.com/bigblockdeals"><img src="/images/facebook-link.png"/></a></li>
-			<li class="minor-link"><a href="http://twitter.com/bigblockdeals" target="blank"><img src="/images/twitter-link.png"/></a></li>
-			<li class="minor-link"><%= link_to 'Good Reads', good_reads_path %></li>
-		</ul>
-		<ul id="greater-nav">
-			<li class="greater-nav-item">
-				<%= link_to	'Today\'s Deal', :root, :id => 'today-link' %>
-			</li>
-			<li class="greater-nav-item"><%= link_to 'Recent Deals', :recent_deals, :id => 'recent-deals' %></li>
-			<li class="greater-nav-item"><%= link_to 'How It Works', :how_it_works_consumers, :id => 'how-it-works' %></li>
-
-			<li class="greater-nav-item"><%= link_to 'For Businesses', :for_businesses, :id => 'business-link' %></li>
-			<li id="login" class="greater-nav-item"></li>
+		
+		<table id="greater-nav">
+			<tr>
+				<td class="greater-nav-item"><%= link_to 'Today\'s Deal', :root, :id => 'today-link' %></td>
+				<td class="greater-nav-item"><%= link_to 'Recent Deals', :recent_deals %></td>
+				<td class="greater-nav-item"><%= link_to 'How It Works', :how_it_works_consumers %></td>
+				<td class="greater-nav-item"><%= link_to 'For Businesses', :for_businesses %></td>
+				<td class="greater-nav-item"><%= link_to 'Good Reads', good_reads_path %></td>
+				<td class="greater-nav-item"><a href="javascript:void(0);" id="mydeals" onclick="javascript:showMyDeals();">My Account</a></td>
+				<td class="greater-nav-item" id="login"></td>
+			</tr>
+		</table>
 		</ul>
 	</div>
 </div>
