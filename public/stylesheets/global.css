@@ -711,6 +711,7 @@ input {border:0px}
 				padding-left:10px;
 				position:relative;
 				width:690px;
+				z-index:1001;
 			}
 				#useful-links img {position:absolute; top:0px; right:0px;}
 			
@@ -759,8 +760,9 @@ input {border:0px}
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
-.content iframe {
+.main-content iframe {
 	float:left;
+	height:1200px;
 	margin:0px 0px 0px -34px !important;
 	width:720px !important;
 }
