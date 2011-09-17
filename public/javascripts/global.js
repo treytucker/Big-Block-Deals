@@ -17,6 +17,13 @@ $('#all-quotes').mbScrollable({
 })
 
 
+//Flash Notice Closer
+$('#flash-notice-closer').click(function(){
+	$('#flash-notice-container').slideToggle('fast');
+	return false;
+})
+
+
 //hacking the DC Login Box
 $('#dcloginpopup').find('div').first().find('img').hide();
 $('#dcloginpopup').prepend('<a class="login-closer" onclick="HideDCLogin();" >×</a>');
@@ -61,8 +68,21 @@ $('textarea[class="clear-input"]').each(function() {
 
 })
 
-//Trying to hack the Facebook iframe
 
+//Sorting the Widgets
+$("#sidebar-sorter").sortable({
+	placeholder: "ui-state-highlight",
+	axis: 'y',
+	update: function(event, ui) { //this is where we'll do some updating crap
+		$("#sidebar-sorter").find('.indiv-widget').each(function(){
+				var val = $(this).find('.widget_order_input').val();// this val will be like "124,1"
+				var result = val.split(',');
+				var order = $("#sidebar-sorter .indiv-widget").index($(this))//getting the order of the current element in the loop
+				result[1] = order; // we're reassigning the order
+				$(this).find('input.widget_order_input').val(result.toString());//we're putting the values back in, as "124,0" or "125,3" or whatever.
+			})
+		}
+})
 
 
 });

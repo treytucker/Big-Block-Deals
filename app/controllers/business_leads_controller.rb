@@ -7,13 +7,14 @@ class BusinessLeadsController < ApplicationController
       if @lead.valid?
         @lead.save
         BusinessLeadMailer.business_contact(@lead).deliver 
-        redirect_to root_path, :notice => "Thank You! We will contact you soon."
+        redirect_to for_businesses_path, :notice => "Thank You! We will contact you soon."
       else
-        @bc = BASIC_CONTROLLERS[:for_businesses]
-        @content = ActiveRecord.const_get(@bc[:model]).last
-        @layout = @bc[:layout]
-        @title = @bc[:title]
-        render "basics/for_businesses"
+        redirect_to for_businesses_path, :notice => "Sorry. There were errors in your submission. Please make sure all required fields are filled."
+        # @bc = BASIC_CONTROLLERS[:for_businesses]
+        #         @content = ActiveRecord.const_get(@bc[:model]).last
+        #         @layout = @bc[:layout]
+        #         @title = @bc[:title]
+        #         render "basics/for_businesses"
       end
     else
       redirect_to for_businesses_path, :notice => "nothing submitted"

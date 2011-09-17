@@ -8,8 +8,9 @@ class BasicsController < ApplicationController
     @action = f.first
     @loaddc = f.last[:loaddc]
     @page = f.last[:form]
+    @widget_order = f.last[:widget_order]
     unless f.last[:layout] == "full-width"
-      @widgets = Widget.where("? = #{f.last[:form].to_s + "_active"}", true)
+      @widgets = Widget.find(:all, :conditions=>["#{f.last[:form].to_s + "_active"}=?", true], :order => f.last[:widget_order]) 
     end
   }
   end

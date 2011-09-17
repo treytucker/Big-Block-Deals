@@ -1,78 +1,98 @@
+<% if session[:admin_id] %>
+<!-- LOGGED IN WIDGET VIEWS -->
+<% form_tag(move_dim_widgets_path, :method => "post") do %>
 
-
-<div class="sidebar">
+<ul id="sidebar-sorter">
 	
-	<div class="indiv-widget">
+	<!-- <li class="indiv-widget">
 		<div class="widget-topper"></div>
 		<div class="widget-content">
-			<img src="/images/sidebar-signup-title.jpg"/>
-			<form class="sidebar-form">
-				<label>Email</label>
-				<input value="" name="email" type="text"></input>
-				<label>ZIP</label>
-				<input value="" name="ZIP" type="text"></input>
-				<input class="submit-btn" value="Let's do this!" name="submit" type="submit"></input>
-			</form>
+			<%= render 'layouts/sidebar_email_form' %>
 		</div>
 		<div class="widget-bottom"></div>
-	</div>
-	
-	<% if session[:admin_id] %>
-		
-		<!-- LOGGED IN WIDGET VIEWS -->
-		<% form_tag(move_dim_widgets_path, :method => "post") do %>
-		<% @widgets.each do |f| %>
-			<div class="indiv-widget">
-				<div class="widget-topper"></div>
-				<div class="widget-content">
-				<%= hidden_field_tag "order[]", "#{f.id},#{f.order}" %>
+	</li>	 -->	
 
-					<% if f.text_1 %>
-						<iframe width="200" height="150" src="<%= f.text_1 %>" frameborder="0" allowfullscreen></iframe>
-					<% end %>
-					<% if f.widget_image? %>
-						<%= image_tag f.widget_image.url(:side_bar) %>
-					<% end %>
-					<% if f.title %>
-						<h3 class="widget-title"><%= f.title %></h3>
-					<% end %>
-					<% if f.text_2 %>
-						<span class="widget-text"><%= f.text_2 %></span>
-					<% end %>
-					<% if f.bottom_title %>
-						<span class="minor-widget-text"><%= f.bottom_title %></span>
-					<% end %>
-				</div>
-				<div class="widget-bottom"></div>
+	<% @widgets.each do |f| %>
+		<li class="indiv-widget">
+			<div class="widget-topper"></div>
+			<div class="widget-content">				
+				
+				<% if @widget_order == "current_deal_order" %>
+					<%= hidden_field_tag "order[]", "#{f.id},#{f.current_deal_order}", :class => "widget_order_input" %>
+				<% end %>
+				<% if @widget_order == "recent_deal_order" %>
+					<%= hidden_field_tag "order[]", "#{f.id},#{f.recent_deal_order}", :class => "widget_order_input" %>
+				<% end %>
+				<% if @widget_order == "for_business_order" %>
+					<%= hidden_field_tag "order[]", "#{f.id},#{f.for_business_order}", :class => "widget_order_input" %>
+				<% end %>
+				<% if @widget_order == "contact_order" %>
+					<%= hidden_field_tag "order[]", "#{f.id},#{f.contact_order}", :class => "widget_order_input" %>
+				<% end %>
+				<% if @widget_order == "privacy_policy_order" %>
+					<%= hidden_field_tag "order[]", "#{f.id},#{f.privacy_policy_order}", :class => "widget_order_input" %>
+				<% end %>
+				<% if @widget_order == "terms_of_service_order" %>
+					<%= hidden_field_tag "order[]", "#{f.id},#{f.terms_of_service_order}", :class => "widget_order_input" %>
+				<% end %>
+				
+				
+				<% unless f.text_1 == nil || f.text_1.empty? %>
+					<%= f.text_1.html_safe %>
+				<% end %>
+				<% if f.widget_image? %>
+					<%= image_tag f.widget_image.url(:side_bar), :class => 'widget-image' %>
+				<% end %>
+				<% if f.title %>
+					<h3 class="widget-title"><%= f.title %></h3>
+				<% end %>
+				<% if f.text_2 %>
+					<span class="widget-text"><%= f.text_2.html_safe %></span>
+				<% end %>
+				<% if f.bottom_title %>
+					<span class="minor-widget-text"><%= f.bottom_title %></span>
+				<% end %>
 			</div>
-		<% end %>
-	
-		<%= submit_tag "Save Widgets", :disable_with => "Please wait...", :class => "widget-submit-btn" %>
-		<% end %>
-		<!-- END OF LOGGED IN WIDGET VIEWS -->
+			<div class="widget-bottom"></div>
+		</li>
+	<% end %>		
+</ul>
+
+<%= submit_tag "Save Widgets", :disable_with => "Please wait...", :class => "widget-submit-btn" %>
+<% end %>
+<!-- END OF LOGGED IN WIDGET VIEWS -->
 	
 	<% else %>
-	
-	<% @widgets.each do |f| %>
-	
-	Are you here?
-		<!-- NOT LOGGED IN WIDGET VIEWS -->
-		<% if f.widgetable_type == "Facebook" %>
-			Here's a facebook Widget
+
+<!-- NOT LOGGED IN WIDGET VIEWS -->	
+	<ul id="sidebar">
+		<% @widgets.each do |f| %>
+		<li class="indiv-widget">
+			<div class="widget-topper"></div>
+			<div class="widget-content">
+				<% unless f.text_1 == nil || f.text_1.empty? %>
+					<%= f.text_1.html_safe %>
+				<% end %>
+				<% if f.widget_image? %>
+					<%= image_tag f.widget_image.url(:side_bar), :class => 'widget-image' %>
+				<% end %>
+				<% if f.title %>
+					<h3 class="widget-title"><%= f.title %></h3>
+				<% end %>
+				<% if f.text_2 %>
+					<span class="widget-text"><%= f.text_2.html_safe %></span>
+				<% end %>
+				<% if f.bottom_title %>
+					<span class="minor-widget-text"><%= f.bottom_title %></span>
+				<% end %>
+			</div>
+			<div class="widget-bottom"></div>
+		</li>	
 		<% end %>
-		
-		<% if f.widgetable_type == "twitter" %>
-			Here's a twitter widget
-		<% end %>
-		
-		<% if f.widgetable_type == "custom" %>
-			Here's a custom widget.
-		<% end %>
-		<% end %>
-		<!-- END OF NOT LOGGED IN WIDGET VIEWS -->
-	<% end %>
+	</ul>
+
+<% end %>
 	
 
 
-</div>
 

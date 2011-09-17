@@ -27,7 +27,7 @@
 			<%= image_tag f.image.url(:medium), :class => 'post-image' %><br>
 		<% end %>
 
-		<div class="post-text"> <%= shorten(f.post) %> </div><br><br>
+		<div class="post-text"> <%= shorten(f.post.html_safe) %> </div><br><br>
 
 		<%= link_to "Read More", good_read_path(f.id), :class => 'read-more-link' %>
 		</div>

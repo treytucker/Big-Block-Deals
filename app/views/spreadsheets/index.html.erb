@@ -2,6 +2,7 @@
 	<div class="topper"></div>
 	<div class="main-content">
 		<h2>List of current spreadsheets:</h2>
+		<%= link_to "Upload a Spreadsheet", new_spreadsheet_path %>
 		<ul class="spreadsheet-list">
 			<% @hash.each do |key, value| %>
 			<li class="spreadsheet-preview">
@@ -17,8 +18,6 @@
 			</li>
 			<% end %>
 		</ul>
-
-		<%= link_to "Upload a Spreadsheet", new_spreadsheet_path %>
 
 		<% unless @current_jobs.nil? %>
 		<h2>Current spreadsheets being processed:</h2>

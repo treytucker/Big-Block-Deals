@@ -22,6 +22,7 @@ class WidgetsController < ApplicationController
   
   def show
     @widget = Widget.find(params[:id])
+    @page = "good_read"
   end
   
   def edit
@@ -42,6 +43,7 @@ class WidgetsController < ApplicationController
   end
   
   def move_dim_widgets
+    @layout = "edit-page"
     # TODO Update the widgets
     arr = params[:order]
     array = []

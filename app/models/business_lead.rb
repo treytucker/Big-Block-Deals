@@ -3,7 +3,7 @@
 =end
 
 class BusinessLead < ActiveRecord::Base
-  validates_presence_of :first_name, :last_name, :email, :phone, :company, :website, :address, :city, :state, :zip_code, :message
+  validates_presence_of :first_name, :last_name, :email, :company, #:website, :address, :city, :state, :zip_code, :message
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
   validates_format_of :zip_code, :with => /[0-9]+$/, :on => :create, :message => "has to be digits"
   validates_format_of :test, :with => /(^seven$|^7$)/, :on => :create, :message => "Evidently you are NOT human."

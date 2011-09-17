@@ -2,12 +2,39 @@ class AffiliatesController < ApplicationController
   # GET /affiliates
   # GET /affiliates.xml
   before_filter :bomb_dot_com
+  
+  require 'csv'
+  
   def index
     @affiliates = Affiliate.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @affiliates }
+    end
+  end
+  
+   def csv_import
+     @parsed_file=CSV::Reader.parse(params[:dump][:file])
+     n=0
+     @parsed_file.each do |row|
+
+     c=Affiliate.new
+     c.entity_name=row[1]
+     c.email=row[2]
+     c.address=row[3]
+     c.city=row[4]
+     c.state=row[5]
+     c.zip=[6]
+     c.sales_price=row[7]
+     c.merchant=row[8]
+     c.number_sold=row[9]
+     c.total_revenue=row[10]
+     if c.save
+         n=n+1
+         GC.start if n%50==0
+      end
+      flash.now[:message]="CSV Import Successful,  #{n} new records added to data base"
     end
   end
 

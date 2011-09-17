@@ -1,7 +1,8 @@
 <div class="sidebar">
 	<% if @page == "good_read" %>
-		<%= render :partial => 'categories' %>
-		<%= render :partial => 'dates' %>
+	<p>test</p>
+		<%= render 'good_reads/categories' %>
+		<%= render 'good_reads/dates' %>
 	<% else %>
 		<%= render 'layouts/widgets' %>
 	<% end %>

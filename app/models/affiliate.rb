@@ -1,4 +1,5 @@
 class Affiliate < ActiveRecord::Base
+  
   def self.list_columns
     column_names = self.column_names
     @bad_columns = [ "id", "created_at", "updated_at" ]

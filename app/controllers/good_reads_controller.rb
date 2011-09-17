@@ -1,6 +1,11 @@
 class GoodReadsController < ApplicationController
   before_filter :bomb_dot_com, :except => [:index, :show, :show_categories, :show_dates]
-  uses_tiny_mce
+  uses_tiny_mce(:options => {
+    :theme => 'advanced',
+    :theme_advanced_buttons2 => %w{spellchecker},
+    :plugins => %w{contextmenu paste spellchecker},
+    :spellchecker_languages => "+English=en",
+  })
   
   def index
     @posts = GoodRead.order("created_at DESC").page(params[:page]).per(5)
@@ -16,11 +21,14 @@ class GoodReadsController < ApplicationController
     @layout = "blog"
     @post = GoodRead.find(params[:id])
     @title = "Good Read | #{@post.created_at.to_s(:good_reads_title)}"
+    @widgets = Widget.all
+    @page = "good_read"
   end
 
   def show_categories
     @layout = "blog"
     @category = Category.find_by_name(params[:id])
+    @page = "good_read"
     if @category.good_reads.nil?
       redirect_to good_reads_path, :notice => "There is no catagory named #{params[:id]}"
     else

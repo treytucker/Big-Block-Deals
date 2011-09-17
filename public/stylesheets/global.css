@@ -20,6 +20,7 @@
 
 body {
 	overflow:hidden;
+	position:relative;
 }
 
 p {
@@ -52,6 +53,42 @@ input {border:0px}
 .content h2, h3, p, span, table {
 	color:#434343;
 }
+
+#flash-notice-container {
+	float:left;
+	margin:0px 0px 0px -250px;
+	position:absolute;
+	left:50%;
+	top:20px;
+	width:500px;
+}
+.flash-notice-box {
+    background: none repeat scroll 0 0 #0AAAF6;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 7px #666666;
+    color: #FFFFFF;
+    float: left;
+    padding: 10px;
+    position: absolute;
+    width: 500px;
+    z-index: 10000;
+}
+
+	#flash-notice-closer {
+		color: #CFCEC4;
+	    font-size: 10px;
+	    padding: 1px 1px 2px 2px;
+	    position: absolute;
+	    right: -20px;
+	    text-decoration: none !important;
+	    top: 0;
+	    z-index: 10001;
+	}
+	#flash-notice-closer:hover {
+		background:#A9E2FF;
+		color:#34baff;
+	}
+	#flash-notice-closer:active {top:2px}
 
 
 
@@ -149,10 +186,13 @@ input {border:0px}
 		height:345px;
 		left:43% !important;
 		padding:0 17px 0px!important;
+		position:relative;
 		top:92px !important;
 		width:519px;
 		z-index:125 !important;
 	}
+	
+	#dropdown-login-button {position:absolute}
 	
 	#dcloginpopup div, #dcloginpopup table, #dcloginpopup h2, #dcloginpopup h3, #dcloginpopup p, #dcloginpopup span, #dcloginpopup table, #dcloginpopup tbody, #dcloginpopup td, #dcloginpopup tr {
 		position:static !important;
@@ -327,18 +367,18 @@ input {border:0px}
 }
 
 	#quote-closer {
-		color:#cfcec4;
+		color:#A9E2FF;
 		font-size:10px;
 		padding:1px 1px 2px 2px;
 		position:absolute;
-		right:0px;
+		right:-18px;
 		text-decoration:none !important;
-		top:-11px;
+		top:0px;
 	}
 
 		#quote-closer:hover {
-			background:#e98036;
-			color:#ff964c;
+			background:#888;
+			color:#ECEADA;
 		}
 	
 		#quote-coser:active {
@@ -431,7 +471,7 @@ input {border:0px}
 .three-fourths, .blog, .edit-page {
 	float:left;
 	min-height:300px;
-    margin:30px -5px 0px 0px;
+    margin:15px -5px 0px 0px;
     width: 740px;
 }
 	.edit-page {margin:auto !important}
@@ -551,8 +591,9 @@ input {border:0px}
 
 .sidebar img {
 	float:left;
-	margin:-5px 0px 4px;
+	margin:0px 0px 4px -6px;
 }
+.sidebar span {float:left}
 
 .sidebar label, input {
 	float:left;
@@ -596,6 +637,7 @@ input {border:0px}
 		.widget-submit-btn:hover {background:#f6f5e8 !important;}
 		.widget-submit-btn:active {background:#d6d5c7 !important; border-top:#c4c2af !important; border-bottom:#fff !important;}
 
+#sidebar, #sidebar-sorter {list-style:none}
 	.indiv-widget {
 		float:left;
 		margin:0px 0px 15px;
@@ -647,10 +689,10 @@ input {border:0px}
 			border:2px solid #fff;
 			float:left;
 			margin:0px 0px 5px;
-			box-shadow:0px 1px 1px #ba6930;
+			box-shadow:0px 1px 1px #888;
 		}
 		
-		.widget-content iframe {margin:-8px 0px 1px -6px; position:relative; z-index:1 !important;}
+		.widget-content iframe {margin:-8px 0px 10px -6px; position:relative; z-index:1 !important;}
 		
 		.widget-title {
 			color:#fff;
@@ -670,9 +712,7 @@ input {border:0px}
 		.minor-widget-text {
 			float:left;
 			margin:7px 0px 4px;
-			text-shadow:0px 1px 0px #ea833a;
-			-moz-text-shadow:0px 1px 0px #ea833a;
-			-webkit-text-shadow:0px 1px 0px #ea833a;
+			text-shadow:0px 1px 0px #fff; -moz-text-shadow:0px 1px 0px #fff; -webkit-text-shadow:0px 1px 0px #fff;
 			width:100%;
 		}
 
@@ -760,9 +800,9 @@ input {border:0px}
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
-.main-content iframe {
+#largewidget_232_iframe {
 	float:left;
-	height:1200px;
+	height:1200px !important;
 	margin:0px 0px 0px -34px !important;
 	width:720px !important;
 }
@@ -1019,17 +1059,21 @@ iframe #large_top_share {
 		    height: 31px;
 		    padding: 0 10px;
 			text-transform:uppercase;
-		    width: 206px;
+		    width: 125px;
 		}
 		
 		.state-dropdown {
-			background:url('/images/business-state-input-bg.jpg') top left no-repeat;
-			border:0px;
-			color: #595757;
-			float:left;
-			height:31px;
-			padding:8px 0px 0px 10px;
-			width:54px;
+		    background: none repeat scroll 0 0 #EFEFEF;
+		    border-color: #FFFFFF -moz-use-text-color #888888;
+		    border-radius: 3px 3px 3px 3px;
+		    border-style: solid none;
+		    border-width: 1px 0;
+		    color: #595757;
+		    float: left;
+		    margin: 6px 0 0;
+		    padding: 0 0 0 10px;
+		    text-transform: uppercase;
+		    width: 100px;
 		}
 		
 		.business-zip {
@@ -1038,6 +1082,9 @@ iframe #large_top_share {
 			width:64px !important;
 		}
 		
+		#business_inquiries_city {margin:0px 10px 0px 0px; width:87px;}
+		#business_inquiries_zip_code {width:55px; margin:0px 0px 0px 10px}
+		
 	.full-width-form {
 		float:left;
 		width:100%;
@@ -1045,7 +1092,7 @@ iframe #large_top_share {
 	
 		.full-width-form input, .edit-page input {
 			background:url(/images/wide-input-bg.jpg) top left no-repeat;
-			width:303px;
+			width:280px;
 		}
 		
 		.full-width-form textarea {
@@ -1445,15 +1492,24 @@ label.admin-edit-label {
 
 #admin-nav-container {
 	float:left;
-	margin:10px 0px 0px 30px;
+	margin:9px 0px 0px 30px;
 }
 
 	#admin_nav a {
-		color:#fff !important;
+		background:#444;
+		border-top:1px solid #666;
+		border-bottom:1px solid #000;
+		color:#CECECE !important;
 		float:left;
-		margin:0px 15px 0px 0px;
+		font-size:10px;
+		margin:0px 10px 0px 0px;
+		padding:5px;
+		text-decoration:none;
+		text-transform:uppercase;
 	}
-
+		#admin_nav a:hover {color:#fff !important}
+		#admin_nav a:active {border-top:0px; margin:2px 10px -2px 0px}
+		
 	.edit-page-link {
 		position:absolute;
 		right:20px;
@@ -1490,7 +1546,7 @@ label.admin-edit-label {
 .edit-page input, .edit-page-wide label {
 	padding:10px;
 }
-.edit-page input[type='submit'], .edit-page-wide input[type='submit'] {
+.edit-page input[type='submit'], .edit-page-wide input[type='submit'], #business-contact-form input[type='submit'] {
 	background:url(/images/wide-submit-btn.jpg) left top no-repeat;
 	clear:both;
 	text-indent:-9999px;
@@ -1508,14 +1564,16 @@ label.admin-edit-label {
 /*	Editing Widgets + Global Edit Styles */
 
 .all-widget-previews {float:left; width:710px}
-.video-widget-preview, .widget-preview, .spreadsheet-preview, .active-page-checkbox  {float:left; background:#efefef; border-top:1px solid #fff; border-bottom:1px solid #c5c5c5; margin:0px 0px 10px; padding:10px; width:93%; }
+.video-widget-preview, .widget-preview, .spreadsheet-preview, .active-page-checkbox, .indiv-bus-lead, .indiv-quote-preview  {float:left; background:#efefef; border-top:1px solid #fff; border-bottom:1px solid #c5c5c5; border-radius:5px; box-shadow:0px 1px 3px #aaa; -moz-box-shadow:0px 1px 3px #aaa; -webkit-box-shadow:0px 1px 3px #aaa; margin:10px 0px 6px; padding:10px 10px 10px; width:93%; }
 .video-widget-preview .main-widget-stuff {float:left; width:400px}
 .widget-preview .main-widget-stuff {float:left; width:620px}
+	.main-widget-stuff h2, .widget-text-stuff h2 {margin:0px 0px 15px}
 	.widget-text-stuff {float:left; width:285px}
-	.video-widget-preview img, .widget-preview img {border:2px solid #fff; box-shadow:0px 0px 1px #c5c5c5; -moz-box-shadow:0px 0px 1px #c5c5c5; -webkit-box-shadow:0px 0px 1px #c5c5c5; float:left; margin:0 10px 10px 0; width:100px !important;}
+	.video-widget-preview img, .widget-preview img {border:2px solid #fff; box-shadow:0px 0px 1px #c5c5c5; -moz-box-shadow:0px 0px 1px #c5c5c5; -webkit-box-shadow:0px 0px 1px #c5c5c5; float:left; margin:0 10px 10px 0; width:60px !important;}
 .right-side-edit-button {text-align:right; vertical-align:middle; width:40px}
-	.right-side-edit-button a {float:right !important; margin:0px !important; text-align:right;}
-.widget-iframe iframe {margin:0px 10px 13px 0px !important; width:200px !important; float:left}
+	.right-side-edit-button a {float:right !important; margin:0px 0px 10px !important; text-align:right;}
+.widget-iframe {float:left}
+	.widget-iframe iframe {border:2px solid #fff; box-shadow:0 0 1px #C5C5C5; -moz-box-shadow:0 0 1px #C5C5C5; -webkit-box-shadow:0 0 1px #C5C5C5; margin:0px 10px 13px 0px !important; width:200px !important; float:left}
 .active-page-checkbox {float:left; padding:10px; margin:2px 10px 3px; min-width:120px; width:auto !important;}	
 	.active-page-checkbox label {float:left; width:auto}
 .mceIframeContainer {float:left; width:98% !important}
@@ -1549,14 +1607,14 @@ label.admin-edit-label {
 
 
 /*	Editing Quotes  */
-.indiv-quote, .spreadsheet {float:left; margin:3px 0 10px; width:100%;}
-	.indiv-quote .majority-width, .spreadsheet-preview .majority-width {float:left; margin:0px; width:85%;}
+ .spreadsheet {float:left; margin:3px 0 10px; width:100%;}
+	.indiv-quote-preview .majority-width, .spreadsheet-preview .majority-width {float:left; margin:0px; width:85%;}
 		.majority-width .quote-text {float:left; font-size:16px; margin:0px 0px 5px; width:100%;}
-	.indiv-quote .minor-width, .spreadsheet-preview .minor-width {float:left; text-align:center; width:15%}
+	.indiv-quote-preview .minor-width, .spreadsheet-preview .minor-width {float:left; text-align:center; width:15%}
 
 	
 /*	Editing Business Leads  */
-.indiv-bus-lead {float:left; margin:5px 0px 10px}
+.indiv-bus-lead {float:left; margin:5px 0px 10px; padding:10px 20px}
 .left-side-box {float:left; margin:0px 2% 0px 0px; width:28%;}
 .right-side-box {float:left; margin:0px 3% 0px 0px; width:48%;}
 .far-right-box {float:left; width:12%}

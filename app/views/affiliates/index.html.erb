@@ -1,21 +1,42 @@
-<h1>Listing affiliates</h1>
+<div class="edit-page">
+	<div class="topper"></div>
+	<div class="main-content">
+		<h1>Listing affiliates</h1>
+		
+		<% form_for :dump, :url=> { :controller => "Affiliate", :action => "csv_import"}, :html => { :multipart => true } do |f| %>
+		 <table>
+		   <tr>
+		     <td>
+		      <label for="dump_file">
+		        Select a CSV File :
+		      </label>
+		     </td>
+		     <td >
+		       <%= f.file_field :file %>
+		     </td>
+		   </tr>
+		   <tr>
+		     <td colspan='2'>
+		       <%= submit_tag 'Submit' %>
+		     </td>
+		   </tr>
+		 </table>
+		<% end -%>
+		
+		<% @affiliates.each do |f| %>
+		<p><%= f.entity_name %></p>
+		  <!-- <tr>
+		    <td><%= link_to 'Show', affiliate %></td>
+		    <td><%= link_to 'Edit', edit_affiliate_path(affiliate) %></td>
+		    <td><%= link_to 'Destroy', affiliate, :confirm => 'Are you sure?', :method => :delete %></td>
+		  </tr> -->
+		<% end %>
+		</table>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+		<br />
 
-<% @affiliates.each do |affiliate| %>
-  <tr>
-    <td><%= link_to 'Show', affiliate %></td>
-    <td><%= link_to 'Edit', edit_affiliate_path(affiliate) %></td>
-    <td><%= link_to 'Destroy', affiliate, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Affiliate', new_affiliate_path %>
+		<%= link_to 'New Affiliate', new_affiliate_path %>
+		
+	</div>
+	<div class="bottom"></div>
+</div>
